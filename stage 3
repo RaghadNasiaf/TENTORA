@@ -1,1 +1,2274 @@
+1. Document Purpose
 
+This document converts the approved Stage 1 concept and Stage 2 charter into a technical plan for the TENTORA MVP.
+
+It defines:
+
+The system architecture.
+
+Backend and frontend module boundaries.
+
+Core user and data flows.
+
+The relational database model.
+
+The Ready Design editor model.
+
+Taste Profile and Creative DNA structures.
+
+Matching and team-recommendation logic.
+
+AI responsibilities and safety boundaries.
+
+REST API resources.
+
+Authentication, storage, security, testing, and deployment strategies.
+
+The document replaces the earlier interior-design execution-provider architecture. TENTORA no longer operates as a homeowner, designer, provider, plan, and offer marketplace. Its current model is based on sectors, services, ready designs, visual taste, creatives, recommendations, and creative project workspaces.
+
+2. Approved Product Scope
+
+TENTORA has one shared entry and two connected product paths.
+
+2.1 Shared Entry
+
+Sector → Service → Choose Product Path
+
+2.2 Design Now
+
+Sector → Service → Ready Interactive Design → Customize → Preview → Export or Save
+
+Design Now starts from a ready structured design. It does not require a full taste test and does not begin with blank-canvas AI generation.
+
+2.3 Work With a Creative
+
+Sector → Services and Work → My Project Needs → One Taste Test → Optional Service Direction → Up to Six Recommendations → Selection → Workspace → Delivery
+
+2.4 Connected Handoff
+
+Saved Design Session → Continue With a Creative → Transfer Design Context → Match or Select → Professional Development
+
+3. Technical Principles
+
+Visual-first: users should understand services and choices through visual work rather than long forms.
+
+Progressive complexity: collect data only when the next action requires it.
+
+One project, one main taste: reuse the Main Taste Profile across selected services.
+
+Controlled customization: Ready Design properties define what the user and AI may change.
+
+Human authorship: preserve creator identity, ownership, licences, and compensation metadata.
+
+Explainable matching: show meaningful reasons for recommendations.
+
+Small recommendation sets: return no more than six options.
+
+Modular MVP: isolate domains without introducing microservice complexity.
+
+Provider abstraction: AI, storage, export, and communication providers must be replaceable behind interfaces.
+
+Auditable decisions: record important permission, AI, export, matching, and project-state events.
+
+4. System Architecture
+
+4.1 Recommended MVP Architecture
+
+Use a modular monolith for the MVP:
+
+React single-page application for the web interface.
+
+Flask REST API for application and domain logic.
+
+PostgreSQL for relational and structured JSON data.
+
+Object storage for images, portfolio assets, uploads, previews, and deliverables.
+
+Background worker for exports, image processing, and longer AI operations.
+
+AI adapter layer for optional external or locally hosted model providers.
+
+This structure is simpler to develop, test, and deploy than microservices while keeping domain boundaries clear enough for future extraction.
+
+flowchart TD
+    UI["React Web App"] --> API["Flask REST API"]
+    API --> DB[(PostgreSQL)]
+    API --> STORE["Object Storage"]
+    API --> QUEUE["Task Queue"]
+    QUEUE --> WORKER["Export and AI Worker"]
+    WORKER --> STORE
+
+4.2 Logical Layers
+
+Layer
+
+Responsibility
+
+Presentation
+
+Sector and service discovery, editor, taste test, recommendations, profiles, and workspace.
+
+API
+
+HTTP validation, authentication, authorization, serialization, pagination, and versioning.
+
+Application
+
+Use-case orchestration such as save design, build taste profile, run matching, and start project.
+
+Domain
+
+Business rules for designs, permissions, taste, Creative DNA, recommendations, and project states.
+
+Data
+
+PostgreSQL repositories, migrations, object references, and transactions.
+
+Integration
+
+AI adapters, object storage, export renderer, email or notification services.
+
+Background Processing
+
+Preview rendering, export generation, image processing, and asynchronous AI actions.
+
+5. Application Modules
+
+Module
+
+Main Responsibilities
+
+Identity
+
+Users, roles, authentication, anonymous sessions, profile ownership.
+
+Catalogue
+
+Sectors, services, service examples, tags, and discovery ordering.
+
+Creatives
+
+Creative profiles, portfolios, services, Creative DNA, availability metadata.
+
+Ready Designs
+
+Design definitions, versions, editable properties, creator rights, licences, and publication.
+
+Design Sessions
+
+Client values, uploads, previews, saves, exports, and handoff snapshots.
+
+Taste
+
+Visual test sets, selections, Main Taste Profiles, service directions, and taste tags.
+
+Matching
+
+Candidate filtering, scoring, explanation, team composition, and recommendation sets.
+
+Projects
+
+My Project Needs, selected services, creative selection, and project lifecycle.
+
+Workspace
+
+Members, milestones, messages, files, feedback, approvals, and deliverables.
+
+AI Orchestration
+
+Approved AI actions, provider adapters, policy checks, result validation, and logs.
+
+Administration
+
+Curation, publishing, rights review, tag management, matching configuration, and moderation.
+
+Analytics
+
+Funnel events, editor events, test completion, matching feedback, and operational metrics.
+
+Each module should expose application services to the API layer and avoid direct access to another module's internal tables except through defined repository or service interfaces.
+
+6. User Roles and Permissions
+
+6.1 Roles
+
+Role
+
+Description
+
+Anonymous Visitor
+
+Explores sectors, services, public work, ready designs, and begins temporary sessions.
+
+Client
+
+Saves designs, owns projects, completes taste tests, views recommendations, selects creatives, and uses workspaces.
+
+Creative
+
+Manages an approved profile, portfolio, services, Ready Designs, and assigned project activity.
+
+Curator
+
+Reviews portfolios, Ready Designs, tags, creator rights, and publication quality.
+
+Project Coordinator
+
+Supports managed project membership, milestones, responsibilities, and delivery.
+
+Administrator
+
+Manages platform configuration, roles, moderation, audit review, and system-level operations.
+
+6.2 Permission Matrix
+
+Action
+
+Anonymous
+
+Client
+
+Creative
+
+Curator
+
+Admin
+
+Browse sectors, services, and public work
+
+Yes
+
+Yes
+
+Yes
+
+Yes
+
+Yes
+
+Start temporary Design Now session
+
+Yes
+
+Yes
+
+Yes
+
+Yes
+
+Yes
+
+Save or export owned design session
+
+Login required
+
+Yes
+
+Own work only
+
+Review only
+
+Yes
+
+Complete taste test
+
+Yes, temporary
+
+Yes
+
+No
+
+Review only
+
+Yes
+
+Save project needs and Taste Profile
+
+Login required
+
+Yes
+
+No
+
+Review only
+
+Yes
+
+View recommendation set
+
+Temporary preview allowed
+
+Yes
+
+No
+
+Review only
+
+Yes
+
+Edit creative profile or portfolio
+
+No
+
+No
+
+Own profile
+
+Review
+
+Yes
+
+Publish Ready Design
+
+No
+
+No
+
+Submit only
+
+Approve
+
+Yes
+
+Access project workspace
+
+No
+
+Member only
+
+Member only
+
+Assigned only
+
+Yes
+
+Change creator rights or licence
+
+No
+
+No
+
+Draft own terms
+
+Review
+
+Yes
+
+Authorization must be enforced by the backend, not only hidden in the frontend.
+
+7. Core System Flows
+
+7.1 Design Now Sequence
+
+sequenceDiagram
+    participant U as User
+    participant W as Web App
+    participant A as API
+    participant D as Database
+    participant R as Renderer
+
+    U->>W: Select sector and service
+    W->>A: Request published ready designs
+    A->>D: Query service catalogue
+    A-->>W: Designs and editable properties
+    U->>W: Select and customize design
+    W->>A: Save property values
+    A->>D: Store design session
+    U->>W: Request preview or export
+    A->>R: Render validated session
+    R-->>A: Output asset
+    A-->>W: Preview or download reference
+
+7.2 Work With a Creative Sequence
+
+sequenceDiagram
+    participant C as Client
+    participant W as Web App
+    participant A as API
+    participant T as Taste Engine
+    participant M as Matcher
+
+    C->>W: Select services
+    W->>A: Save project needs
+    C->>W: Complete visual test
+    A->>T: Build Main Taste Profile
+    T-->>A: Weighted taste attributes
+    A->>M: Request recommendations
+    M-->>A: Up to six options and reasons
+    A-->>W: Recommendation set
+    C->>W: Select creative or team
+    W->>A: Start project workspace
+
+7.3 Design-to-Creative Handoff
+
+The handoff creates an immutable snapshot containing:
+
+Ready Design and version.
+
+Current property values.
+
+User-provided content.
+
+Uploaded assets.
+
+Preview references.
+
+AI actions applied.
+
+Creator and licence references.
+
+A structured summary of the user's editing choices.
+
+The snapshot becomes a project reference. The original Ready Design remains unchanged.
+
+8. Data Architecture
+
+8.1 Data Strategy
+
+Use PostgreSQL for transactional data and JSONB only where a controlled property structure varies by design type. Store binary assets in object storage and keep metadata, ownership, checksums, and access state in PostgreSQL.
+
+Use UUID primary keys. All mutable business tables should include:
+
+created_at
+
+updated_at
+
+created_by where applicable
+
+status
+
+Optional optimistic-lock version
+
+Use soft deletion for user-generated or commercially relevant records that may require recovery or audit.
+
+8.2 Core Catalogue and Creative Entities
+
+Table
+
+Purpose
+
+Key Fields
+
+users
+
+Identity and account state.
+
+id, email, password_hash, role, status
+
+client_profiles
+
+Client display and preference data.
+
+user_id, display_name, locale
+
+creative_profiles
+
+Curated creative identity.
+
+user_id, display_name, bio, location, pricing_level, review_status
+
+sectors
+
+Five initial project sectors and future additions.
+
+id, slug, name, status, sort_order
+
+services
+
+Creative service catalogue.
+
+id, slug, name, description, status
+
+sector_services
+
+Services available in each sector.
+
+sector_id, service_id, sort_order
+
+creative_services
+
+Services offered by a creative.
+
+creative_id, service_id, proficiency_level
+
+portfolio_items
+
+Curated creative work.
+
+id, creative_id, title, description, status
+
+portfolio_item_services
+
+Services demonstrated by an item.
+
+portfolio_item_id, service_id
+
+style_tags
+
+Controlled visual vocabulary.
+
+id, slug, label, category, status
+
+portfolio_item_tags
+
+Weighted visual attributes of work.
+
+portfolio_item_id, tag_id, weight, source
+
+8.3 Project and Taste Entities
+
+Table
+
+Purpose
+
+Key Fields
+
+projects
+
+Client project context.
+
+id, client_id, sector_id, name, status
+
+project_services
+
+One or multiple selected services.
+
+project_id, service_id, status, priority
+
+taste_tests
+
+Versioned visual test definition.
+
+id, sector_id, version, status
+
+taste_test_items
+
+Images and tag vectors shown in a test.
+
+id, taste_test_id, asset_id, position
+
+taste_test_item_tags
+
+Ground-truth attributes for a test item.
+
+item_id, tag_id, weight
+
+taste_sessions
+
+One user attempt and its state.
+
+id, project_id, test_id, status, started_at, completed_at
+
+taste_selections
+
+Selected, skipped, or rejected test images.
+
+session_id, item_id, value, response_time_ms
+
+taste_profiles
+
+Main structured taste result.
+
+id, project_id, source_session_id, version, status
+
+taste_profile_tags
+
+Weighted profile attributes.
+
+taste_profile_id, tag_id, weight, confidence
+
+service_taste_directions
+
+Optional service-specific variation.
+
+id, project_service_id, base_profile_id, status
+
+service_direction_tags
+
+Weighted changes for one service.
+
+direction_id, tag_id, weight, operation
+
+8.4 Recommendation and Workspace Entities
+
+Table
+
+Purpose
+
+Key Fields
+
+recommendation_runs
+
+Reproducible matching execution.
+
+id, project_id, algorithm_version, status, created_at
+
+recommendation_options
+
+Ranked creative, studio, or team option.
+
+id, run_id, rank, option_type, score, explanation
+
+recommendation_members
+
+Creatives contained in an option.
+
+option_id, creative_id, role, covered_service_ids
+
+recommendation_feedback
+
+Saved, rejected, selected, or rated result.
+
+option_id, client_id, action, rating, reason
+
+workspace_members
+
+Project access membership.
+
+project_id, user_id, workspace_role, status
+
+milestones
+
+Project stages and due state.
+
+id, project_id, title, owner_id, due_at, status
+
+messages
+
+Project communication.
+
+id, project_id, sender_id, body, created_at
+
+feedback_items
+
+Structured feedback or revision request.
+
+id, project_id, asset_id, author_id, status
+
+deliverables
+
+Submitted and approved outputs.
+
+id, project_id, service_id, asset_id, version, status
+
+8.5 Domain Relationship Diagrams
+
+Catalogue and Creative Domain
+
+erDiagram
+    SECTORS ||--o{ SECTOR_SERVICES : contains
+    SERVICES ||--o{ SECTOR_SERVICES : appears_in
+    CREATIVE_PROFILES ||--o{ PORTFOLIO_ITEMS : owns
+    PORTFOLIO_ITEMS ||--o{ PORTFOLIO_ITEM_TAGS : has
+    STYLE_TAGS ||--o{ PORTFOLIO_ITEM_TAGS : classifies
+
+Project and Taste Domain
+
+erDiagram
+    PROJECTS ||--o{ PROJECT_SERVICES : needs
+    PROJECTS ||--o| TASTE_PROFILES : has_main
+    TASTE_PROFILES ||--o{ TASTE_PROFILE_TAGS : contains
+    PROJECT_SERVICES ||--o| SERVICE_TASTE_DIRECTIONS : overrides
+    STYLE_TAGS ||--o{ TASTE_PROFILE_TAGS : describes
+
+Recommendation Domain
+
+erDiagram
+    PROJECTS ||--o{ RECOMMENDATION_RUNS : requests
+    RECOMMENDATION_RUNS ||--o{ RECOMMENDATION_OPTIONS : returns
+    RECOMMENDATION_OPTIONS ||--o{ RECOMMENDATION_MEMBERS : contains
+    CREATIVE_PROFILES ||--o{ RECOMMENDATION_MEMBERS : participates
+    RECOMMENDATION_OPTIONS ||--o{ RECOMMENDATION_FEEDBACK : receives
+
+9. Ready Design Technical Model
+
+9.1 Core Entities
+
+Table
+
+Purpose
+
+Key Fields
+
+ready_designs
+
+Commercial and discovery identity.
+
+id, creator_id, service_id, title, status, current_version_id
+
+ready_design_versions
+
+Immutable renderable definition.
+
+id, ready_design_id, version, renderer_type, schema_json, source_asset_id
+
+ready_design_properties
+
+Valid editable controls.
+
+id, version_id, key, type, constraints_json, default_json, ai_policy
+
+ready_design_licences
+
+Usage and customization rights.
+
+id, ready_design_id, licence_type, terms_version, commercial_use, exclusivity
+
+design_sessions
+
+User instance of a design version.
+
+id, user_id, anonymous_session_id, design_version_id, status
+
+design_session_values
+
+Current values for allowed properties.
+
+session_id, property_id, value_json, updated_at
+
+design_exports
+
+Requested and generated outputs.
+
+id, session_id, format, status, asset_id, error_code
+
+design_handoff_snapshots
+
+Immutable transfer to a project.
+
+id, session_id, project_id, snapshot_json, created_at
+
+9.2 Property Types
+
+The MVP property schema may support:
+
+text
+
+number
+
+boolean
+
+color
+
+font_choice
+
+image_asset
+
+enum
+
+layout_variant
+
+dimension
+
+repeater for controlled lists such as menu items
+
+Each property includes validation constraints. The renderer must reject values outside the approved schema.
+
+9.3 Example Ready Design Definition
+
+{
+  "renderer_type": "svg-template",
+  "canvas": {
+    "width": 1080,
+    "height": 1350
+  },
+  "properties": [
+    {
+      "key": "brand_name",
+      "type": "text",
+      "default": "Your Brand",
+      "constraints": { "max_length": 40 },
+      "ai_policy": "rewrite_only"
+    },
+    {
+      "key": "accent_color",
+      "type": "color",
+      "default": "#D75B39",
+      "constraints": { "allowed_mode": "hex" },
+      "ai_policy": "suggest"
+    },
+    {
+      "key": "hero_image",
+      "type": "image_asset",
+      "constraints": { "max_mb": 10, "aspect_ratio": "4:5" },
+      "ai_policy": "background_removal_allowed"
+    }
+  ],
+  "exports": ["png"]
+}
+
+9.4 Versioning Rules
+
+Published Ready Design versions are immutable.
+
+New creator changes produce a new version.
+
+Existing user sessions remain linked to the version on which they started.
+
+Handoffs and exports record the exact version.
+
+A design may be unpublished without deleting historical licences, sessions, or exports.
+
+10. Taste Engine
+
+10.1 MVP Input
+
+The MVP uses curated image selections. Every test image has reviewed weighted style tags.
+
+User actions may include:
+
+Select.
+
+Reject.
+
+Skip.
+
+Strong preference, if included in the interface.
+
+10.2 Profile Calculation
+
+For tag t, the initial profile weight can be calculated as:
+
+raw_weight(t) = Σ selection_value(i) × item_tag_weight(i, t)
+profile_weight(t) = normalize(raw_weight(t))
+
+Where:
+
+A selected image contributes a positive value.
+
+A rejected image may contribute a controlled negative value.
+
+Skipped images contribute zero.
+
+Normalization converts the result to a stable comparison range.
+
+The exact weights must be configurable and versioned rather than hard-coded.
+
+10.3 Service Direction Calculation
+
+A service direction stores a delta from the Main Taste Profile:
+
+effective_service_taste = main_taste + service_direction_delta
+
+This avoids duplicating the entire Taste Profile and makes inheritance explicit.
+
+10.4 Future AI Enhancement
+
+Later versions may use image embeddings to:
+
+Classify uploaded references.
+
+Discover similarity beyond predefined tags.
+
+Recommend complementary directions.
+
+Improve tag confidence.
+
+The tag model remains useful for user-facing explanations even when embeddings are added.
+
+11. Creative DNA
+
+Creative DNA is a structured representation of a creative's work and capability.
+
+11.1 Inputs
+
+Approved portfolio item tags.
+
+Services demonstrated by each item.
+
+Sector experience.
+
+Creative-declared services confirmed during curation.
+
+Multidisciplinary or studio capabilities.
+
+Optional operational data such as availability and project scale when collected later.
+
+11.2 Aggregation
+
+The MVP calculates a weighted Creative DNA vector from approved portfolio items. Curator-reviewed tags should have higher trust than unreviewed self-declared tags.
+
+creative_tag_weight(t) = weighted_average(approved portfolio item weights for t)
+
+Store the aggregation version and source portfolio set so the result can be recalculated and audited.
+
+11.3 Curation State
+
+State
+
+Meaning
+
+Draft
+
+Creative is preparing profile or work.
+
+Submitted
+
+Ready for curator review.
+
+Changes Requested
+
+Requires correction or more evidence.
+
+Approved
+
+Eligible for discovery and matching.
+
+Suspended
+
+Temporarily hidden from discovery.
+
+Only approved Creative DNA participates in client recommendations.
+
+12. Matching and Team Recommendation
+
+12.1 Candidate Filtering
+
+Before scoring, remove candidates that do not meet mandatory conditions:
+
+Creative profile is not approved.
+
+No selected service is offered.
+
+Required portfolio evidence is missing.
+
+Creative is suspended or hidden.
+
+Do not require price, location, or availability at the initial discovery stage unless the user explicitly supplies these filters later.
+
+12.2 Initial Single-Creative Score
+
+The MVP may use the following configurable starting weights:
+
+match_score =
+    0.50 × taste_similarity
+  + 0.30 × service_coverage
+  + 0.15 × sector_relevance
+  + 0.05 × portfolio_evidence
+
+Factor
+
+Meaning
+
+Taste similarity
+
+Weighted similarity between effective project taste and Creative DNA.
+
+Service coverage
+
+Proportion and priority of selected services covered.
+
+Sector relevance
+
+Evidence of relevant sector work.
+
+Portfolio evidence
+
+Strength and quality of tagged approved work supporting the match.
+
+Weights are configuration data attached to an algorithm_version.
+
+12.3 Taste Similarity
+
+Use cosine similarity for normalized tag vectors in the MVP:
+
+similarity(A, B) = (A · B) / (||A|| × ||B||)
+
+For a service with a custom direction, use the effective service taste rather than the unchanged Main Taste Profile.
+
+12.4 Team Recommendation
+
+Team composition is considered only when no strong single creative or studio covers the selected services.
+
+The MVP team builder should:
+
+Generate a small candidate pool per uncovered service.
+
+Combine candidates until required service coverage is reached.
+
+Reject combinations above the configured maximum team size.
+
+Calculate project-taste fit for every member.
+
+Calculate visual coherence between members.
+
+Penalize unnecessary team size.
+
+team_score =
+    0.40 × project_taste_fit
+  + 0.30 × service_coverage
+  + 0.20 × member_coherence
+  + 0.10 × sector_relevance
+  - team_size_penalty
+
+For the MVP, a team should normally contain no more than three creatives unless the scope is formally expanded.
+
+12.5 Result Diversification
+
+The final six options should not be near-duplicates. A diversification step may limit repeated creatives, studios, or extremely similar style vectors.
+
+12.6 Recommendation Explanation
+
+Every option should include concise reasons, for example:
+
+Matches the project's bold, warm, and typographic direction.
+
+Covers identity, menu, and packaging.
+
+Includes relevant Food and Beverage work.
+
+Proposed team maintains a shared visual direction across selected services.
+
+Do not expose raw internal weights as if they were objective guarantees.
+
+13. Artificial Intelligence Architecture
+
+13.1 AI Responsibilities
+
+Area
+
+MVP Responsibility
+
+Future Responsibility
+
+Ready Design
+
+Controlled text, image, colour, or format assistance for approved properties.
+
+More advanced layout and multi-format adaptation.
+
+Taste
+
+Structured calculation from curated image tags.
+
+Image embedding and uploaded-reference analysis.
+
+Matching
+
+Weighted similarity and rule-based ranking.
+
+Learned ranking based on consented outcome data.
+
+Handoff
+
+Structured summary from saved session data.
+
+Richer brief generation and creative-direction assistance.
+
+Workspace
+
+Optional feedback grouping and action extraction.
+
+Predictive coordination and risk alerts.
+
+13.2 AI Orchestration Flow
+
+flowchart TD
+    REQ["Approved AI Action"] --> POLICY["Permission and Policy Check"]
+    POLICY --> ADAPTER["AI Provider Adapter"]
+    ADAPTER --> VALIDATE["Schema and Quality Validation"]
+    VALIDATE --> SAVE["Store Result and Audit Event"]
+
+13.3 Provider Interface
+
+All model calls should use an internal interface such as:
+
+AIProvider.execute(action_type, input_payload, policy_context) -> structured_result
+
+The application must not depend directly on one provider's response format.
+
+13.4 Guardrails
+
+Check the Ready Design ai_policy before every action.
+
+Send only the minimum required content to a model provider.
+
+Validate model output against a strict schema.
+
+Do not overwrite user content without preview and confirmation.
+
+Do not use portfolio or Ready Design assets for training without explicit permission.
+
+Log provider, model version, action type, input references, result status, and user acceptance.
+
+Provide deterministic fallback when an AI action fails.
+
+14. API Design
+
+14.1 Conventions
+
+Base path: /api/v1
+
+Content type: application/json
+
+Resource identifiers: UUID
+
+Dates: ISO 8601 UTC
+
+Pagination: cursor-based for growing lists
+
+Authentication: bearer token for protected endpoints
+
+Idempotency key: required for export, handoff, and project-creation commands
+
+Errors: stable machine code plus localized user-safe message
+
+14.2 Catalogue APIs
+
+Method
+
+Endpoint
+
+Purpose
+
+GET
+
+/sectors
+
+List active sectors.
+
+GET
+
+/sectors/{sector_id}
+
+Get sector details.
+
+GET
+
+/sectors/{sector_id}/services
+
+List relevant services.
+
+GET
+
+/services/{service_id}
+
+Get service details and path availability.
+
+GET
+
+/services/{service_id}/work
+
+List curated portfolio examples.
+
+14.3 Ready Design APIs
+
+Method
+
+Endpoint
+
+Purpose
+
+GET
+
+/services/{service_id}/ready-designs
+
+List published ready designs.
+
+GET
+
+/ready-designs/{design_id}
+
+Get design metadata and current version.
+
+POST
+
+/design-sessions
+
+Start temporary or authenticated session.
+
+GET
+
+/design-sessions/{session_id}
+
+Load owned session.
+
+PATCH
+
+/design-sessions/{session_id}/values
+
+Validate and update editable values.
+
+POST
+
+/design-sessions/{session_id}/ai-actions
+
+Run permitted AI customization.
+
+POST
+
+/design-sessions/{session_id}/preview
+
+Generate or refresh preview.
+
+POST
+
+/design-sessions/{session_id}/exports
+
+Request export.
+
+GET
+
+/design-exports/{export_id}
+
+Read export status and authorized asset reference.
+
+POST
+
+/design-sessions/{session_id}/handoff
+
+Create project handoff snapshot.
+
+14.4 Project and Taste APIs
+
+Method
+
+Endpoint
+
+Purpose
+
+POST
+
+/projects
+
+Create project context.
+
+GET
+
+/projects/{project_id}
+
+Get owned project summary.
+
+PATCH
+
+/projects/{project_id}
+
+Update allowed project metadata.
+
+PUT
+
+/projects/{project_id}/services
+
+Replace selected service set safely.
+
+GET
+
+/taste-tests?sector_id={id}
+
+Get active test definition.
+
+POST
+
+/projects/{project_id}/taste-sessions
+
+Start taste attempt.
+
+POST
+
+/taste-sessions/{session_id}/selections
+
+Record visual choices.
+
+POST
+
+/taste-sessions/{session_id}/complete
+
+Calculate Main Taste Profile.
+
+GET
+
+/projects/{project_id}/taste-profile
+
+Get explainable main profile.
+
+PUT
+
+/project-services/{id}/taste-direction
+
+Create or replace service-specific delta.
+
+14.5 Matching APIs
+
+Method
+
+Endpoint
+
+Purpose
+
+POST
+
+/projects/{project_id}/recommendation-runs
+
+Generate a versioned result set.
+
+GET
+
+/recommendation-runs/{run_id}
+
+Get up to six ranked options.
+
+POST
+
+/recommendation-options/{option_id}/feedback
+
+Save, reject, rate, or select.
+
+POST
+
+/projects/{project_id}/creative-selection
+
+Confirm creative or team.
+
+14.6 Creative APIs
+
+Method
+
+Endpoint
+
+Purpose
+
+GET
+
+/creatives/{creative_id}
+
+Get public approved profile.
+
+GET
+
+/creatives/{creative_id}/portfolio
+
+Get approved portfolio items.
+
+GET
+
+/creatives/{creative_id}/ready-designs
+
+Get published ready designs.
+
+PATCH
+
+/me/creative-profile
+
+Update owned draft profile.
+
+POST
+
+/me/portfolio-items
+
+Create portfolio draft.
+
+POST
+
+/me/ready-designs
+
+Create Ready Design draft.
+
+POST
+
+/me/creative-profile/submit
+
+Submit profile for review.
+
+14.7 Workspace APIs
+
+Method
+
+Endpoint
+
+Purpose
+
+GET
+
+/projects/{project_id}/workspace
+
+Get workspace summary.
+
+GET/POST
+
+/projects/{project_id}/messages
+
+List or create messages.
+
+GET/POST
+
+/projects/{project_id}/files
+
+List metadata or register upload.
+
+GET/POST
+
+/projects/{project_id}/milestones
+
+List or create milestones.
+
+PATCH
+
+/milestones/{milestone_id}
+
+Update milestone status.
+
+GET/POST
+
+/projects/{project_id}/feedback
+
+List or create feedback.
+
+GET/POST
+
+/projects/{project_id}/deliverables
+
+List or submit deliverables.
+
+POST
+
+/deliverables/{deliverable_id}/approve
+
+Record client approval.
+
+14.8 Administrative APIs
+
+Administrative endpoints must require curator or administrator roles and cover publication review, tag management, rights completeness, catalogue ordering, algorithm configuration, and audit access.
+
+15. Frontend Architecture
+
+15.1 Recommended Structure
+
+src/
+├── app/
+│   ├── router/
+│   ├── providers/
+│   └── layouts/
+├── features/
+│   ├── catalogue/
+│   ├── design-now/
+│   ├── taste/
+│   ├── project-needs/
+│   ├── recommendations/
+│   ├── creatives/
+│   ├── workspace/
+│   ├── auth/
+│   └── admin/
+├── components/
+│   ├── ui/
+│   ├── media/
+│   └── feedback/
+├── services/
+│   ├── api/
+│   ├── analytics/
+│   └── storage/
+├── hooks/
+├── state/
+├── types/
+└── utils/
+
+15.2 Main Route Groups
+
+Route
+
+Purpose
+
+/
+
+Artistic landing and primary product paths.
+
+/sectors
+
+Sector discovery.
+
+/sectors/:sectorSlug
+
+Services and curated work for a sector.
+
+/services/:serviceSlug
+
+Service work and Design Now / Creative choice.
+
+/design-now/:designId
+
+Interactive ready-design editor.
+
+/taste/:projectId
+
+Visual taste test.
+
+/projects/:projectId/needs
+
+Selected multi-service context.
+
+/projects/:projectId/recommendations
+
+Up-to-six recommendation options.
+
+/creatives/:creativeSlug
+
+Public creative profile.
+
+/projects/:projectId/workspace
+
+Collaboration and delivery.
+
+/creative/dashboard
+
+Creative portfolio and Ready Design management.
+
+/admin/curation
+
+Curator review queues.
+
+15.3 Key Components
+
+Component
+
+Responsibility
+
+SectorGrid
+
+Displays the five sector entry points.
+
+ServiceGallery
+
+Combines service discovery and curated work.
+
+ProductPathChoice
+
+Presents Design Now and Work With a Creative.
+
+ReadyDesignGallery
+
+Filters published designs by service.
+
+DesignEditorShell
+
+Coordinates canvas, controls, save, preview, AI actions, and export.
+
+PropertyControlRenderer
+
+Renders controls from the Ready Design property schema.
+
+DesignCanvas
+
+Displays the validated design state.
+
+ProjectNeedsTray
+
+Maintains selected services across exploration.
+
+TasteTestGrid
+
+Presents images and records choices.
+
+TasteProfileSummary
+
+Explains the resulting visual direction.
+
+ServiceDirectionEditor
+
+Performs optional short refinement.
+
+RecommendationGrid
+
+Displays no more than six options.
+
+RecommendationReason
+
+Explains taste, service, and sector fit.
+
+CreativeProfile
+
+Shows portfolio, services, Ready Designs, and work-with-me information.
+
+WorkspaceBoard
+
+Displays milestones, responsibilities, and delivery state.
+
+FilePanel
+
+Uploads and lists authorized project assets.
+
+FeedbackPanel
+
+Creates and resolves structured feedback.
+
+15.4 State Management
+
+Use server state caching for catalogue, profiles, projects, and workspaces.
+
+Keep editor interaction state local and persist debounced validated changes.
+
+Persist anonymous session identifiers safely in the browser.
+
+Do not place authorization decisions or licence enforcement only in client state.
+
+Use optimistic updates only for reversible low-risk actions such as saving or milestone status, with rollback on failure.
+
+16. Authentication and Anonymous Sessions
+
+16.1 Progressive Authentication
+
+Users can browse and begin temporary journeys without login. Authentication is required when an action establishes ownership or persistent collaboration, including:
+
+Saving a design permanently.
+
+Exporting or purchasing when required by licence.
+
+Saving project needs and results across devices.
+
+Selecting a creative.
+
+Starting or entering a workspace.
+
+Publishing creative content.
+
+16.2 Anonymous Session Model
+
+Create a server-side anonymous_sessions record linked to a secure opaque browser token. Temporary projects, taste sessions, and design sessions may reference it.
+
+On signup or login:
+
+Verify the anonymous token.
+
+Verify that resources are still claimable.
+
+Transfer ownership inside one transaction.
+
+Rotate the anonymous token.
+
+Record an audit event.
+
+Prevent one anonymous session from claiming resources already owned by another user.
+
+16.3 Token Strategy
+
+Short-lived access token.
+
+Rotating refresh token stored using secure browser protections.
+
+Passwords hashed with a modern adaptive algorithm.
+
+Role and resource ownership verified on every protected request.
+
+Rate limits on login, signup, password reset, AI actions, and export creation.
+
+17. Files, Assets, Preview, and Export
+
+17.1 Asset Model
+
+Field
+
+Purpose
+
+id
+
+Stable asset identifier.
+
+owner_type and owner_id
+
+User, creative, project, ready design, or platform ownership.
+
+storage_key
+
+Private object-storage reference.
+
+mime_type
+
+Validated content type.
+
+size_bytes
+
+Upload and quota enforcement.
+
+checksum
+
+Integrity and duplicate detection.
+
+visibility
+
+Public, private, project-only, or internal.
+
+moderation_status
+
+Pending, approved, rejected, or quarantined.
+
+17.2 Upload Flow
+
+Client requests an upload authorization.
+
+Backend verifies role, purpose, size, and allowed type.
+
+Client uploads to restricted object storage.
+
+Backend verifies completion and metadata.
+
+Processing worker creates safe derivatives if required.
+
+Original remains private unless explicitly approved for public display.
+
+17.3 Preview and Export
+
+Preview may be synchronous for lightweight SVG templates.
+
+Larger image processing and final export should use background jobs.
+
+Export state: queued, processing, completed, failed, or expired.
+
+The renderer consumes only validated property values.
+
+Download references must be short-lived and authorized.
+
+Export records include design version, licence, user, format, and checksum.
+
+18. Workspace and Project State
+
+18.1 Project States
+
+stateDiagram-v2
+    [*] --> Draft
+    Draft --> Matching
+    Matching --> CreativeSelected
+    CreativeSelected --> Active
+    Active --> Review
+    Review --> Active: Revision requested
+    Review --> Completed: Approved
+    Draft --> Archived
+
+State transitions must be validated by the backend. Completion requires all required deliverables to be approved or explicitly waived.
+
+18.2 Milestone States
+
+pending
+
+in_progress
+
+in_review
+
+changes_requested
+
+approved
+
+completed
+
+18.3 Feedback Rules
+
+Feedback may reference a project, milestone, deliverable, asset, or version.
+
+Resolved feedback remains visible for audit history.
+
+New deliverable versions do not overwrite previous versions.
+
+Approval records include approver, time, and exact deliverable version.
+
+19. Security, Privacy, and Creative Rights
+
+19.1 Security Controls
+
+Server-side authorization for every protected resource.
+
+Parameterized database access through SQLAlchemy.
+
+Strict file-type, size, and content validation.
+
+Private object storage by default.
+
+Malware scanning or quarantine for user uploads where available.
+
+Rate limiting for authentication, taste submission, AI actions, and exports.
+
+CSRF protection where cookie-based authentication is used.
+
+Secure headers and content-security policy.
+
+Secrets stored outside source control.
+
+Audit logs for administrative and rights-sensitive actions.
+
+19.2 Privacy
+
+Collect only data needed for the active user journey.
+
+Separate public portfolio data from private project content.
+
+Define retention periods for abandoned anonymous sessions and exports.
+
+Allow users to access and remove their data subject to legal and commercial retention requirements.
+
+Do not treat product analytics consent as model-training consent.
+
+19.3 Creative Rights
+
+Every Ready Design must record:
+
+Original creator.
+
+Ownership status.
+
+Approved source assets.
+
+Permitted editable properties.
+
+Permitted AI actions.
+
+Licence and terms version.
+
+Commercial-use permission.
+
+Exclusivity or repeat-licensing status.
+
+Compensation model.
+
+Whether professional changes must return to the original creative.
+
+The platform must block publication if required rights fields are incomplete.
+
+20. Validation and Error Handling
+
+20.1 Error Format
+
+{
+  "error": {
+    "code": "DESIGN_PROPERTY_INVALID",
+    "message": "The selected value is not available for this design.",
+    "field": "accent_color",
+    "request_id": "uuid"
+  }
+}
+
+20.2 HTTP Status Guidance
+
+Status
+
+Use
+
+200
+
+Successful read or update.
+
+201
+
+Resource created.
+
+202
+
+Background export or AI job accepted.
+
+400
+
+Invalid request structure.
+
+401
+
+Authentication required or invalid.
+
+403
+
+Authenticated but not authorized.
+
+404
+
+Resource not found or not visible.
+
+409
+
+State or version conflict.
+
+422
+
+Domain validation failure.
+
+429
+
+Rate limit exceeded.
+
+500
+
+Unexpected internal failure with safe message.
+
+Do not expose provider errors, stack traces, private storage references, or internal model prompts to users.
+
+21. Testing and Quality Assurance
+
+21.1 Test Levels
+
+Level
+
+Focus
+
+Unit
+
+Property validation, taste weights, score calculation, rights rules, and state transitions.
+
+Integration
+
+API, database, object storage, renderer, worker, and AI adapter boundaries.
+
+Contract
+
+Request and response schemas, background-job payloads, and provider adapters.
+
+End-to-End
+
+Both primary journeys, handoff, authentication conversion, and workspace delivery.
+
+Accessibility
+
+Keyboard interaction, focus order, labels, contrast, alternative text, and editor controls.
+
+Security
+
+Ownership, role escalation, upload validation, token handling, rate limits, and data isolation.
+
+Usability
+
+Path comprehension, editor clarity, taste-test speed, result relevance, and handoff understanding.
+
+21.2 Critical MVP Scenarios
+
+Anonymous visitor selects a sector and service.
+
+Visitor starts Design Now, edits allowed properties, previews, authenticates, and exports.
+
+Invalid property value is rejected without corrupting the session.
+
+AI action outside the design permission is blocked.
+
+Client selects multiple services and completes one taste test.
+
+Main taste applies to all services.
+
+One service receives a short custom direction without a full retest.
+
+Matching returns no more than six explainable options.
+
+Multi-service gap produces a compatible team option.
+
+Saved design session transfers to a creative project.
+
+Unauthorized user cannot access another project, design session, or asset.
+
+Creative submits content; curator approves or requests changes.
+
+Deliverable revision and approval preserve version history.
+
+21.3 Matching Evaluation
+
+Create a small reviewed test set containing project needs, Taste Profiles, and expected relevant creatives. Measure:
+
+Precision in the top six.
+
+Client-rated relevance.
+
+Service coverage.
+
+Diversity of results.
+
+Explanation clarity.
+
+Team coherence for multi-service cases.
+
+22. Observability and Analytics
+
+22.1 Operational Monitoring
+
+API latency and error rate.
+
+Database query performance.
+
+Worker queue length and failure rate.
+
+Preview and export duration.
+
+AI action latency, failure, and fallback use.
+
+Storage failures and upload rejection.
+
+Authentication and rate-limit events.
+
+22.2 Product Events
+
+Track privacy-aware events such as:
+
+Sector selected.
+
+Service selected.
+
+Product path selected.
+
+Ready Design opened.
+
+Property edited.
+
+AI action requested and accepted or rejected.
+
+Preview and export completed.
+
+Taste test started and completed.
+
+Recommendation viewed, saved, rejected, or selected.
+
+Design-to-Creative handoff started and completed.
+
+Workspace milestone or deliverable completed.
+
+Analytics identifiers should not contain private project text or raw creative assets.
+
+23. Development and Source Control
+
+23.1 Repository Structure
+
+tentora/
+├── backend/
+│   ├── app/
+│   │   ├── api/
+│   │   ├── modules/
+│   │   ├── models/
+│   │   ├── repositories/
+│   │   ├── integrations/
+│   │   └── workers/
+│   ├── migrations/
+│   └── tests/
+├── frontend/
+│   ├── src/
+│   └── tests/
+├── docs/
+│   ├── stage-1-idea-development.md
+│   ├── stage-2-project-charter.md
+│   └── stage-3-technical-documentation.md
+├── scripts/
+└── README.md
+
+23.2 Branching
+
+main: stable, reviewed state.
+
+develop: optional integration branch if required by the team workflow.
+
+feature/<short-name>: isolated feature work.
+
+fix/<short-name>: defect correction.
+
+docs/<short-name>: documentation-only work.
+
+Use pull requests, automated checks, and at least one review before merging into the stable branch.
+
+23.3 Required Automated Checks
+
+Backend formatting and linting.
+
+Frontend formatting and linting.
+
+Unit and integration tests.
+
+Database migration check.
+
+API schema validation.
+
+Dependency vulnerability scan where available.
+
+Build verification.
+
+24. Deployment Strategy
+
+24.1 Environments
+
+Environment
+
+Purpose
+
+Local
+
+Individual development and unit testing.
+
+Test
+
+Automated integration and end-to-end testing.
+
+Staging
+
+Production-like acceptance testing with non-production data.
+
+Production
+
+Approved live release.
+
+24.2 Deployment Units
+
+Frontend web application.
+
+Flask API application.
+
+Background worker.
+
+PostgreSQL database.
+
+Object-storage bucket or equivalent.
+
+Optional queue or broker.
+
+24.3 Release Process
+
+Merge reviewed code.
+
+Run automated checks.
+
+Build immutable artifacts.
+
+Apply database migrations in staging.
+
+Run smoke and acceptance tests.
+
+Promote the same tested version to production.
+
+Monitor errors, latency, exports, and critical journeys.
+
+Cloud provider selection is deferred. The architecture should avoid provider-specific application logic where practical.
+
+25. Implementation Order
+
+Iteration 1: Foundation
+
+Repository and environment setup.
+
+Flask application structure.
+
+React application structure.
+
+PostgreSQL migrations.
+
+Identity, sectors, services, and basic administration.
+
+Iteration 2: Creative Catalogue
+
+Creative profiles.
+
+Portfolio items and assets.
+
+Service relationships.
+
+Style tags and curator workflow.
+
+Iteration 3: Design Now Pilot
+
+Ready Design schema and versioning.
+
+Property-driven editor.
+
+Design sessions and previews.
+
+First export format.
+
+Creator rights and licences.
+
+First approved AI customization action.
+
+Iteration 4: Project Needs and Taste
+
+Multi-service project selection.
+
+Taste-test definitions and sessions.
+
+Main Taste Profile calculation.
+
+Service direction refinement.
+
+Iteration 5: Matching
+
+Creative DNA aggregation.
+
+Candidate filtering and scoring.
+
+Up-to-six recommendation result.
+
+Explanations and feedback.
+
+Limited team composition.
+
+Iteration 6: Connected Delivery
+
+Design-to-Creative handoff.
+
+Creative selection.
+
+Workspace membership.
+
+Messages, files, milestones, feedback, and deliverables.
+
+Iteration 7: Hardening
+
+Progressive authentication conversion.
+
+Security and rights testing.
+
+Performance and accessibility work.
+
+Analytics and observability.
+
+Acceptance testing and demo preparation.
+
+26. Technical Decisions Required Before Stage 4
+
+The following decisions remain intentionally open and must be resolved through small prototypes or Architecture Decision Records:
+
+Final five Design Now pilot services.
+
+Exact first export format or formats.
+
+SVG, Canvas, or another renderer for the first ready-design types.
+
+Ready Design authoring workflow and schema source.
+
+Object-storage provider.
+
+Background queue and worker technology.
+
+AI provider or local-model strategy for each approved action.
+
+Authentication token storage approach.
+
+Final style-tag taxonomy and curation process.
+
+Initial matching weights and minimum service-coverage rules.
+
+Maximum MVP team size and when team generation is allowed.
+
+Anonymous-session retention period.
+
+Licence types, creator compensation rules, and purchase flow.
+
+Whether payments remain outside the MVP or a minimal purchase path is required for Design Now.
+
+Target deployment environment and operational budget.
+
+No unresolved item should be silently converted into implementation scope. Each decision must record its rationale, alternatives, and effect on the MVP.
+
+27. Stage 3 Conclusion
+
+The TENTORA MVP should be implemented as a modular React and Flask application backed by PostgreSQL, object storage, and asynchronous processing for exports and selected AI actions.
+
+The architecture supports two distinct but connected journeys:
+
+Design Now: sector → service → ready design → controlled customization → preview → export.
+
+Work With a Creative: sector → services → one project taste → up to six compatible creative or team options → selection → workspace → delivery.
+
+The system's most important technical rules are:
+
+Ready Designs are structured, versioned, and permission-controlled.
+
+AI may modify only approved properties and must return validated results.
+
+One Main Taste Profile is reused across a multi-service project.
+
+A service-specific direction is stored as an override, not a repeated full test.
+
+Creative DNA is derived from approved portfolio evidence and versioned.
+
+Recommendation logic is explainable, configurable, and limited to six options.
+
+A team is one recommendation option and is used only when needed for service coverage.
+
+Creator rights, licences, and AI permissions are first-class data.
+
+Anonymous work can become authenticated ownership without losing progress.
+
+A saved self-service design can move into human creative execution without restarting.
+
+This document provides the technical baseline for Stage 4 MVP development. The open decisions in Section 26 must be approved before their related features are implemented.
