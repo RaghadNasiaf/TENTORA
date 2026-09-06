@@ -1,0 +1,1101 @@
+Document type: Master product, business, technical, implementation, and closure report
+Status: Integrated project baseline — implementation outcomes remain pending evidence
+Coverage: Stages 1–5
+Primary audiences: Project owner, development team, creative partners, advisors, reviewers, and funding evaluators
+Last updated: 6 September 2026
+
+Document Purpose
+
+This report is the unified conclusion of the five TENTORA project stages. It explains the complete project in one coherent document: the problem, concept, product experience, users, sectors, value proposition, artificial-intelligence role, creative-rights model, business logic, brand direction, architecture, MVP scope, implementation plan, evaluation approach, risks, funding relevance, and closure requirements.
+
+It does not replace the detailed stage documents. It consolidates their approved direction and identifies what remains proposed, unverified, or undecided.
+
+Status
+
+Meaning
+
+Approved direction
+
+A product principle consistently established across the project documents.
+
+Proposed
+
+A recommended approach requiring owner or technical approval.
+
+Pending evidence
+
+Planned or potentially implemented, but not proven through a repository, test, deployment, or signed approval.
+
+Open decision
+
+A choice that materially affects scope, cost, rights, or implementation.
+
+Source Documents
+
+Stage
+
+Document
+
+Primary purpose
+
+1
+
+Idea Development
+
+Defines and evaluates the product concept.
+
+2
+
+Project Charter
+
+Establishes scope, requirements, stakeholders, and acceptance direction.
+
+3
+
+Technical Documentation
+
+Defines the proposed architecture, data model, APIs, and technical rules.
+
+4
+
+MVP Development and Evidence Plan
+
+Organizes implementation, QA, sprints, risks, and evidence collection.
+
+5
+
+Project Closure and Handover
+
+Defines final verification, handover, and closure conditions.
+
+1. Executive Conclusion
+
+TENTORA is a viable and differentiated creative-technology concept, but its strength depends on disciplined execution rather than feature quantity.
+
+The platform addresses a recognizable problem: project owners may know what creative outcome they need, yet struggle to translate their taste into a useful brief, identify the right creative professional, maintain consistency across multiple services, and manage the work through delivery. Existing alternatives often solve only one part of that journey.
+
+TENTORA proposes one connected system with two paths:
+
+Design Now: a fast self-service path using curated, creator-authored designs that customers personalize only through approved properties.
+
+Work With a Creative: a guided path that converts visual choices into a reusable Main Taste Profile and recommends no more than six relevant creatives, studios, or multidisciplinary teams.
+
+The differentiating idea is not “AI creates art.” It is that AI helps structure taste, control safe customization, improve matching, preserve consistency, and organize the transition from a ready design to professional creative work—while human creators retain authorship and control.
+
+The recommended decision is to proceed with a controlled MVP, subject to four conditions:
+
+Validate the most important user assumptions with real project owners and creatives.
+
+Deliver one complete vertical slice for each product path before expanding catalogue breadth.
+
+Secure creator rights, licences, and usable curated content before publishing Ready Designs.
+
+Treat all performance, relevance, adoption, and impact targets as proposed until measured.
+
+2. The Problem
+
+2.1 Client problem
+
+Project owners commonly face five connected difficulties:
+
+They understand their business need but may not know the correct creative service.
+
+They browse many portfolios without knowing which style fits their project.
+
+They struggle to express visual taste in a conventional written brief.
+
+Multi-service projects can become fragmented across unrelated creatives and tools.
+
+Messages, files, feedback, approvals, and deliveries become difficult to track.
+
+2.2 Creative problem
+
+Creatives also face structural problems:
+
+Opportunities may be poorly matched to their genuine style or experience.
+
+Portfolio discovery often rewards volume and popularity rather than relevance.
+
+Repetitive enquiries consume time before project fit is known.
+
+Creator-authored reusable designs lack a controlled commercialization and licensing layer.
+
+Attribution, modification limits, AI permissions, and compensation can become unclear.
+
+2.3 Market gap to validate
+
+The project hypothesis is that clients do not need another unlimited freelance marketplace or generic template library. They need a curated route from sector and need to a suitable result, with visual guidance and reduced choice overload.
+
+This hypothesis is plausible but must be validated through interviews, usability tests, and pilot transactions. The current documents establish the concept; they do not yet prove demand, willingness to pay, acquisition cost, or retention.
+
+3. Product Definition
+
+TENTORA is an intelligent curated platform for creative solutions. It combines:
+
+Sector-led service discovery.
+
+Curated project imagery and creative portfolios.
+
+Creator-authored Ready Designs.
+
+Controlled customization and AI assistance.
+
+Visual Taste Discovery.
+
+A reusable Main Taste Profile.
+
+Creative DNA for creatives and studios.
+
+Explainable creative and team recommendations.
+
+A connected project workspace.
+
+Rights, licence, attribution, and handoff records.
+
+3.1 Product boundaries
+
+TENTORA is not intended to be:
+
+A conventional open freelance marketplace.
+
+A generic high-volume template library.
+
+A blank-canvas generative-design system.
+
+An AI substitute for artists or designers.
+
+An unlimited recommendation feed.
+
+A generic SaaS dashboard presented as a creative brand.
+
+4. Target Users
+
+User group
+
+Need
+
+TENTORA response
+
+Project owners
+
+Reach a suitable creative outcome without understanding every design discipline.
+
+Sector-led discovery and two guided paths.
+
+SMEs and emerging brands
+
+Obtain coordinated creative work with less search and operational friction.
+
+Multi-service needs, matching, and workspace.
+
+Clients with urgent needs
+
+Produce a usable design quickly.
+
+Controlled Ready Design customization and export.
+
+Clients requiring original work
+
+Find a suitable creative, studio, or team.
+
+Taste Discovery and explainable matching.
+
+Independent creatives
+
+Receive relevant opportunities and monetize reusable work.
+
+Creative DNA, projects, Ready Designs, attribution, and licences.
+
+Studios and multidisciplinary teams
+
+Cover projects involving several services.
+
+Service coverage and compatible-team recommendations.
+
+Curators and administrators
+
+Maintain quality, rights, and trusted data.
+
+Review, publishing, moderation, tagging, and audit controls.
+
+5. Approved Initial Sectors
+
+The product must preserve the following five sector names consistently:
+
+#
+
+Sector
+
+Example needs
+
+1
+
+Restaurants & Cafés
+
+Identity, menus, packaging, social content, displays, environmental artwork.
+
+2
+
+Events & Occasions
+
+Event identity, invitations, signage, decorative visuals, photography, motion.
+
+3
+
+Exhibitions & Conferences
+
+Booth graphics, presentations, signage, digital screens, printed material.
+
+4
+
+Real Estate & Development
+
+Branding, brochures, renders, campaigns, signage, marketing content.
+
+5
+
+E-commerce Stores
+
+Identity, packaging, product imagery, store visuals, campaigns, social content.
+
+The sectors are structured entry points, not random categories. Services may overlap across sectors, but their examples, language, and priorities should reflect each sector’s context.
+
+6. End-to-End Product Experience
+
+6.1 Shared entry
+
+Sector → Service → Visual Examples → Choose Product Path
+
+Starting from the sector reduces the need for clients to understand creative terminology before exploring solutions.
+
+6.2 Path A — Design Now
+
+Sector → Service → Ready Design → Controlled Customization → Preview → Save or Export
+
+The user selects a curated design made by a verified creator or studio. The creator defines which properties may change, such as:
+
+Text and content.
+
+Approved color values or palettes.
+
+Font choices.
+
+Images and image treatments.
+
+Layout variants.
+
+Dimensions and export formats.
+
+Controlled repeaters, such as menu items.
+
+AI may assist with approved actions such as rewriting, translation, image cleanup, background removal, color suggestions, content arrangement, or resizing. Every action must remain within the Ready Design schema, be previewed, and preserve the creator’s artistic boundaries.
+
+6.3 Path B — Work With a Creative
+
+Sector → One or More Services → My Project Needs → Taste Discovery → Main Taste Profile → Optional Service Direction → Up to Six Recommendations → Selection → Workspace → Delivery
+
+The client completes one visual test for the project rather than repeating a separate test for every service. The Main Taste Profile represents weighted preferences such as style, atmosphere, color, composition, material, form, and visual direction.
+
+A service-specific direction is stored as a limited adjustment to the project’s main taste. It must not replace or fragment the shared project direction.
+
+6.4 Connected handoff
+
+Saved Design Session → Continue With a Creative → Immutable Handoff Snapshot → Match or Select → Professional Development
+
+The handoff preserves the selected Ready Design version, property values, text, uploaded assets, previews, AI actions, creator attribution, licence reference, and a structured summary of the customer’s choices.
+
+The client therefore continues the same journey instead of restarting the brief.
+
+7. Taste Discovery and Creative DNA
+
+7.1 Main Taste Profile
+
+The MVP should derive the profile from curated visual selections with reviewed style tags. It should be understandable to the user and reusable across the project.
+
+The profile is a decision aid, not an objective psychological diagnosis. Results must avoid claims of perfect or scientifically guaranteed taste detection.
+
+7.2 Creative DNA
+
+Creative DNA represents a creative’s actual working identity using evidence such as:
+
+Approved portfolio work.
+
+Services offered.
+
+Style and medium tags.
+
+Relevant sector experience.
+
+Capacity to cover one or several services.
+
+Curator review and publication status.
+
+Creative DNA must be versioned and based on real approved evidence. Creatives should be able to review how their work is represented.
+
+7.3 Explainable matching
+
+The initial matching system should combine transparent factors:
+
+Required-service coverage.
+
+Taste similarity.
+
+Sector relevance.
+
+Portfolio evidence.
+
+Availability or capacity, when verified.
+
+Multi-service coverage.
+
+Team compatibility when no single creative covers the project.
+
+The system returns no more than six options. Each option must explain the main reasons it was recommended. Matching weights remain configurable and require evaluation before they become an approved formula.
+
+8. Artificial Intelligence Strategy
+
+8.1 Appropriate AI responsibilities
+
+AI can add value in six bounded areas:
+
+Structuring visual selections into a Taste Profile.
+
+Assisting with permitted Ready Design properties.
+
+Supporting portfolio tagging and Creative DNA review.
+
+Ranking compatible creatives or teams.
+
+Maintaining consistency across project services.
+
+Summarizing project information and preserving handoff context.
+
+8.2 Guardrails
+
+AI cannot modify a property outside the published Ready Design schema.
+
+Users must preview and confirm material changes.
+
+Portfolio and Ready Design assets cannot be used for model training without separate explicit consent.
+
+Provider, model version, action type, result, and user acceptance should be logged.
+
+Failed AI actions require a safe deterministic fallback.
+
+Internal scores must not be presented as guarantees.
+
+Human creators retain authorship of original creative work.
+
+8.3 Technical innovation claim
+
+TENTORA’s innovation is the orchestration of visual taste, creator evidence, controlled design adaptation, explainable matching, and project continuity. The credible claim is not that any individual algorithm is unprecedented; it is that these components are combined to solve a cultural and creative-production workflow coherently.
+
+9. Human Creativity, Rights, and Trust
+
+Creator rights are a product requirement, not an administrative afterthought.
+
+Every published Ready Design should include:
+
+Verified creator identity.
+
+Ownership and source-asset records.
+
+Editable-property boundaries.
+
+Permitted and prohibited AI actions.
+
+Licence type and commercial-use terms.
+
+Attribution requirements.
+
+Compensation model.
+
+Design and licence version history.
+
+Separate model-training consent, where applicable.
+
+Publication must be blocked when mandatory rights fields are incomplete. Historical sessions, exports, and licences must remain traceable even if a design is later unpublished.
+
+10. Brand and Experience Direction
+
+The name TENTORA combines Tentacle and Aurora:
+
+Tentacle represents several creative capabilities connected to one coordinated vision.
+
+Aurora represents color, artistic diversity, movement, and visual wonder.
+
+The concept should be expressed abstractly through flexible connecting lines, controlled motion, selective color fields, modular clusters, and relationships between project images. Literal octopus illustrations and full-interface rainbow gradients should be avoided.
+
+Experience principles
+
+Artistic, expressive, contemporary, and memorable.
+
+Simple enough for non-designers to understand quickly.
+
+Work-led, with large authentic project imagery.
+
+Neutral interface so creative projects provide most of the color.
+
+Editorial hierarchy and an asymmetric but controlled grid.
+
+Clear calls to action and restrained micro-interactions.
+
+Arabic-first RTL architecture with an English option when localized.
+
+Mobile-first, keyboard-accessible, and compatible with reduced motion.
+
+No generic SaaS-dashboard appearance, excessive glassmorphism, or empty decorative effects.
+
+11. Value Proposition and Differentiation
+
+Alternative
+
+Common limitation
+
+TENTORA distinction
+
+Freelance marketplace
+
+Large lists and manual comparison.
+
+Curated, taste-informed options capped at six.
+
+Template library
+
+Speed without a professional continuation path.
+
+Creator-authored designs with direct handoff to human execution.
+
+Generative AI tool
+
+Fast output with inconsistent authorship or art direction.
+
+Controlled AI inside creator-defined rules.
+
+Creative agency
+
+High-touch service that may be slower or less accessible.
+
+Two paths serving urgent and custom needs.
+
+Project-management tool
+
+Organizes work after the creative has already been found.
+
+Connects discovery, taste, matching, handoff, and delivery.
+
+12. Business and Revenue Logic
+
+The business model requires validation. Potential revenue streams include:
+
+Ready Design licence or customization transactions.
+
+Platform commission on custom creative projects.
+
+Paid professional modification of a Ready Design.
+
+Managed project coordination fees.
+
+Creator or studio tools introduced after value is proven.
+
+Enterprise or recurring arrangements for clients with repeated creative needs.
+
+The MVP should not implement every revenue path. Before payment development, the project must decide:
+
+Who pays, when, and for which outcome.
+
+Platform commission or fee structure.
+
+Creator compensation and settlement rules.
+
+Refund, cancellation, revision, and dispute rules.
+
+Saudi tax, invoicing, consumer, e-commerce, and payment requirements.
+
+Whether payments are inside the MVP or handled through a documented pilot process.
+
+13. Cultural and Economic Impact
+
+TENTORA has the potential to support the cultural and creative sector by:
+
+Increasing discoverability for Saudi and regional creatives.
+
+Creating new project and reusable-design income opportunities.
+
+Helping SMEs access stronger creative outcomes.
+
+Preserving human attribution in AI-assisted workflows.
+
+Enabling multidisciplinary collaboration.
+
+Producing structured knowledge about creative styles, services, and demand.
+
+Supporting the digitization and operational organization of creative production.
+
+These are intended impacts, not achieved results. Employment, revenue, GDP contribution, audience reach, and sector participation require baselines and measured evidence.
+
+14. Relevance to Cultural AI Funding
+
+Based on the funding information supplied for the Saudi Cultural Development Fund’s AI incentives, TENTORA appears directionally aligned with:
+
+Creativity and production.
+
+Cultural experiences and participation.
+
+Management and operation of cultural projects.
+
+Governance and intellectual property.
+
+Architecture and design and visual-arts activity.
+
+AI adoption by an eligible Saudi SME or technology enterprise serving culture.
+
+Evidence required for a credible application
+
+Evaluation area
+
+What TENTORA can present
+
+Evidence still required
+
+Team capability
+
+Named product, database, backend/frontend, and QA responsibilities.
+
+CVs, availability, role commitments, and relevant past work.
+
+Work plan
+
+Five-stage documentation and four proposed implementation sprints.
+
+Dates, owners, dependencies, measurable milestones, and current progress.
+
+Technical innovation
+
+Taste Profile, Creative DNA, controlled AI, explainable matching, and connected handoff.
+
+Prototype, architecture decisions, evaluation method, and demonstration.
+
+Financial efficiency
+
+Controlled MVP and staged scope.
+
+Supplier quotations, salary assumptions, contingency, co-funding, and cash-flow plan.
+
+Cultural impact
+
+Better access, creator income, rights controls, and multi-service cultural production.
+
+Beneficiary baseline, targets, letters of interest, and impact measurement method.
+
+Legal eligibility
+
+Application may accept an eligible Saudi establishment or company.
+
+Valid registration, tax/legal documents, authority to apply, and rights evidence.
+
+Program requirements, dates, and eligibility must be verified against the official application portal before submission.
+
+15. Proposed MVP Scope
+
+Must demonstrate
+
+Five sector entry points with relevant services and curated examples.
+
+A clear choice between Design Now and Work With a Creative.
+
+One complete Ready Design vertical slice with controlled properties.
+
+A validated preview and at least one export format.
+
+One safe AI-assisted action or an explicitly documented deterministic prototype.
+
+Multi-service project needs.
+
+One Taste Discovery flow and reusable Main Taste Profile.
+
+Curated Creative DNA data.
+
+Explainable recommendations capped at six.
+
+Creative profile exploration and selection.
+
+A preserved Design-to-Creative handoff.
+
+A basic protected workspace.
+
+Progressive authentication without loss of anonymous progress.
+
+Explicitly deferred unless separately approved
+
+Blank-canvas AI design generation.
+
+Advanced animation or 3D editing.
+
+Open uncurated marketplace publishing.
+
+Fully learned or autonomous recommendation models.
+
+Real-time collaborative design editing.
+
+Advanced team pricing and scheduling optimization.
+
+Native mobile applications.
+
+Multi-country tax and settlement infrastructure.
+
+Expansion beyond the approved five sectors.
+
+16. Technical Blueprint
+
+16.1 Proposed architecture
+
+The recommended MVP is a modular monolith:
+
+flowchart TD
+    WEB["React Web Application"] --> API["Flask REST API"]
+    API --> DB[(PostgreSQL)]
+    API --> STORE["Private Object Storage"]
+    API --> QUEUE["Task Queue"]
+    QUEUE --> WORKER["Export and AI Worker"]
+    WORKER --> STORE
+
+This is a proposed technical baseline, not a verified deployed stack. Architecture changes should be recorded through Architecture Decision Records.
+
+16.2 Principal modules
+
+Identity; Catalogue; Creatives; Ready Designs; Design Sessions; Taste; Matching; Projects; Workspace; AI Orchestration; Administration; Analytics.
+
+16.3 Core data domains
+
+Users, client profiles, creative profiles, and roles.
+
+Sectors, services, work examples, portfolios, and style tags.
+
+Ready Designs, immutable versions, editable properties, licences, sessions, and exports.
+
+Projects, services, Taste Profiles, service directions, and Creative DNA.
+
+Recommendation runs, options, members, explanations, and feedback.
+
+Workspace members, messages, files, milestones, feedback, approvals, and deliverables.
+
+AI actions, rights events, audits, analytics, and operational logs.
+
+16.4 Security and privacy baseline
+
+Backend authorization for every protected resource.
+
+Private object storage and short-lived authorized access.
+
+Input, schema, upload, and file-type validation.
+
+Secure token handling and progressive account conversion.
+
+Rate limiting for sensitive and expensive operations.
+
+Audit events for AI, rights, exports, handoffs, and approvals.
+
+Data minimization and retention rules.
+
+No secrets in source control.
+
+No raw private project content in analytics identifiers.
+
+17. Implementation and Governance Plan
+
+Sprint
+
+Objective
+
+Exit evidence
+
+1
+
+Foundation, catalogue, sectors, services, creatives, and public work.
+
+Working routes, API responses, database migrations, seed integrity, tests.
+
+2
+
+Ready Design pilot, editor, preview, export, rights, and one bounded AI action.
+
+End-to-end design evidence, schema validation, export, licence completeness.
+
+3
+
+Project needs, Taste Profile, Creative DNA, matching, and optional team coverage.
+
+Stored profiles, evaluation set, ranked results, explanations, six-option limit.
+
+4
+
+Handoff, workspace, authentication conversion, integration, security, and hardening.
+
+Two complete journeys, access-control tests, handoff integrity, final QA evidence.
+
+Four one-week sprints are an ambitious proposed schedule. The team must confirm capacity and reduce breadth when a feature threatens the two complete vertical slices.
+
+Governance rules
+
+Every task has an owner, priority, acceptance criteria, and evidence requirement.
+
+Implementation occurs through scoped branches and reviewed pull requests.
+
+QA begins with feature planning rather than after development.
+
+Scope changes are documented instead of silently added.
+
+Completed, implemented, verified, partial, and deferred statuses remain distinct.
+
+Evidence is collected during each sprint.
+
+18. Team and Capability
+
+Team member
+
+Current documented role
+
+Evidence required at final reporting
+
+Raghad Naseef
+
+Founder / developer role documented in Stage 5.
+
+Product ownership, development, design, coordination, or other verified contributions.
+
+Banan Aleid
+
+Database lead, project management, and development support.
+
+Issues, migrations, project records, reviews, and deliverables.
+
+Khulood Alqarni
+
+Backend lead with frontend and UI/UX support.
+
+APIs, integration, components, design work, tests, and reviews.
+
+Layan Aldossari
+
+QA lead with database and frontend support.
+
+Test plans, defects, retests, evidence, and supporting implementation.
+
+Before implementation, assign named ownership for AI integration, the Taste Engine, matching evaluation, Ready Design authoring, curation, rights review, and security review.
+
+19. Evaluation Framework
+
+19.1 Product tests
+
+Can a non-designer explain the two paths?
+
+Can a user reach the right sector and service?
+
+Can a user customize and export without breaking the design?
+
+Can a multi-service client complete one taste test instead of several?
+
+Are recommendations understandable and relevant?
+
+Does the handoff preserve all required context?
+
+Can users complete basic workspace tasks?
+
+19.2 Proposed success targets
+
+Metric
+
+Proposed target
+
+Status
+
+Product-path comprehension
+
+At least 90%
+
+Requires approved test design and measurement.
+
+Design Now completion
+
+At least 80%
+
+Unverified.
+
+Design Now median task time
+
+5 minutes or less
+
+Unverified.
+
+Taste-test median time
+
+Under 3 minutes
+
+Unverified.
+
+Recommendation count
+
+Maximum 6
+
+Product rule; requires automated verification.
+
+Match relevance
+
+At least 85% satisfaction
+
+Requires controlled evaluation and approved sample.
+
+Handoff required-field integrity
+
+100%
+
+Requires integration tests.
+
+Ready Design rights completeness
+
+100%
+
+Mandatory publication control.
+
+Critical defects at closure
+
+0 open
+
+Mandatory closure rule.
+
+Targets are planning baselines, not achieved statistics.
+
+20. Principal Risks and Responses
+
+Risk
+
+Consequence
+
+Response
+
+Product scope is too broad
+
+Core journeys remain incomplete.
+
+Prioritize one end-to-end slice per path.
+
+Insufficient validated demand
+
+A polished product may not attract transactions.
+
+Conduct interviews, prototype tests, and willingness-to-pay validation.
+
+Weak curated content
+
+The experience and matching appear unconvincing.
+
+Start with a small rights-cleared, carefully tagged collection.
+
+Ready Design editor expands into a full design tool
+
+Cost and schedule increase sharply.
+
+Use one renderer and controlled 2D properties.
+
+No dedicated AI or data owner
+
+Matching and AI work becomes inconsistent.
+
+Assign accountable ownership and use transparent rules for the MVP.
+
+Sparse or subjective tags
+
+Taste and recommendations become unreliable.
+
+Define a controlled taxonomy and curator-review method.
+
+Missing creative rights
+
+Legal and trust risk; publication blocked.
+
+Make rights metadata a release gate.
+
+Team matching is overly complex
+
+Unstable or confusing results.
+
+Allow small teams only when service coverage requires them.
+
+Private data or asset exposure
+
+Security and reputational harm.
+
+Enforce backend ownership, private storage, and security testing.
+
+Funding application overstates readiness
+
+Evaluation credibility decreases.
+
+Separate concept, prototype, implementation, and verified outcomes.
+
+Four-week schedule is unrealistic
+
+Testing and evidence are sacrificed.
+
+Confirm capacity, reduce breadth, and protect acceptance gates.
+
+Revenue mechanics are undefined
+
+Sustainability remains unproven.
+
+Test pricing and define creator economics before scaling.
+
+21. Critical Open Decisions
+
+The following items must be resolved before related implementation or funding claims are finalized:
+
+Final pilot service for each sector.
+
+Minimum number and source of rights-cleared Ready Designs and portfolios.
+
+First Ready Design renderer and authoring workflow.
+
+Export format or formats.
+
+Initial style-tag taxonomy and curation governance.
+
+Matching weights, evaluation set, and relevance threshold approval.
+
+Maximum team size and team-generation rules.
+
+AI provider or local-rule approach for every permitted action.
+
+Authentication token storage and anonymous-session retention.
+
+Creator licences, compensation, commercial use, and dispute handling.
+
+MVP payment boundary and transaction method.
+
+Hosting, object storage, worker technology, and operational budget.
+
+Data privacy, retention, terms, and Saudi regulatory review.
+
+Verified development-team capacity and unassigned ownership.
+
+Funding budget, co-funding ability, procurement evidence, and delivery schedule.
+
+22. Decision Gates
+
+Gate
+
+Required decision or evidence
+
+Current status
+
+Concept baseline
+
+Product definition, two paths, five sectors, human-authorship principle.
+
+Documented; owner approval should be recorded.
+
+MVP authorization
+
+Pilot services, content volume, payment boundary, and schedule.
+
+Open.
+
+Technical readiness
+
+ADRs, schema, renderer prototype, security approach, and deployment selection.
+
+Pending validation.
+
+Content readiness
+
+Rights-cleared portfolios, Ready Designs, tags, and licences.
+
+Pending evidence.
+
+Build acceptance
+
+Implemented scope, tests, demonstration, and known limitations.
+
+Pending Stage 4 execution.
+
+Funding submission
+
+Eligibility documents, work plan, budget, team evidence, and impact case.
+
+Pending application pack.
+
+Final closure
+
+Zero critical defects, handover, rights audit, approvals, and evidence register.
+
+Pending Stage 5 completion.
+
+23. Immediate Next Actions
+
+Priority 1 — Make the application defensible
+
+Confirm the official deadline and all application requirements.
+
+Collect the commercial registration, legal representation, company profile, and eligibility documents.
+
+Assign final team roles and obtain short relevant biographies.
+
+Build a work breakdown, schedule, budget, quotations, and co-funding statement.
+
+Define measurable cultural and economic outcomes without unsupported claims.
+
+Priority 2 — Demonstrate the product’s distinctive logic
+
+Prototype the sector-to-service entry.
+
+Prototype one Ready Design with controlled properties.
+
+Prototype the visual Taste Discovery experience.
+
+Create a small Creative DNA dataset from rights-cleared portfolios.
+
+Demonstrate explainable matching and the six-option limit.
+
+Demonstrate the saved-design handoff.
+
+Priority 3 — Validate with real users
+
+Interview representative project owners in the five sectors.
+
+Interview creatives and studios about fit, rights, compensation, and onboarding.
+
+Test comprehension of the two paths within the first page experience.
+
+Record objections, task completion, willingness to pay, and partner interest.
+
+24. Final Assessment
+
+TENTORA should not be described as a guaranteed success or a finished intelligent platform. It should be presented as a strong, coherent, and testable product direction with an unusually thoughtful connection between creative discovery, visual taste, controlled technology, human authorship, and project delivery.
+
+Its most valuable strategic choices are:
+
+Beginning with the client’s sector and need.
+
+Offering two connected paths instead of forcing one workflow.
+
+Reusing one project-level Taste Profile.
+
+Restricting recommendations to a curated, explainable set.
+
+Treating a multidisciplinary team as one possible result.
+
+Keeping AI inside creator-defined and rights-aware boundaries.
+
+Preserving continuity between self-service design and professional execution.
+
+Its main threat is not that the idea lacks value. The threat is attempting to build the entire vision before proving its smallest valuable system.
+
+The project should therefore proceed through a focused MVP and evidence-led funding application. A credible demonstration should prove the relationship between one client need, one curated design path, one visual-taste path, a small verified creative dataset, an explainable recommendation, and a preserved handoff. Once that connected loop works and users value it, TENTORA can expand its catalogue, intelligence, creator economics, sectors, and project-management depth with substantially lower risk.
+
+25. Final Statement
+
+TENTORA’s intended outcome is not simply faster design. It is a more understandable, respectful, and coordinated creative journey—one in which technology helps people reach human creativity without flattening it.
+
+The platform’s tentacle idea represents multiple creative capabilities working as connected arms of one project vision. Its aurora idea represents the varied color, movement, and artistic identity of the creators within it. Together, they express the central promise of TENTORA: many creative possibilities, coordinated into one clear direction.
+
+This report establishes the complete project baseline. Final claims of implementation, performance, impact, or closure must be added only after the evidence requirements in Stages 4 and 5 have been satisfied.
