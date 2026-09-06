@@ -1,1 +1,1439 @@
+1. Overview
 
+TENTORA is an AI-powered creative-solutions platform designed to help project owners obtain creative work through two connected paths:
+
+Design Now: select a ready interactive design, customize it through controlled properties and AI-assisted actions, then preview, save, or export the result.
+
+Work With a Creative: select one or multiple services, complete one visual taste test, receive up to six compatible creative or team recommendations, select the preferred option, and manage the project through delivery.
+
+The MVP is implemented as a web application using React, Flask, and PostgreSQL. The architecture follows the modular-monolith approach defined in Stage 3.
+
+This document is a development and evidence plan. Statements must be updated with repository links, screenshots, pull requests, test results, and final status as implementation progresses. Planned items must not be reported as completed until they are verified.
+
+2. MVP Development Objectives
+
+The implementation stage aims to deliver and validate the following functional areas:
+
+Five project-sector entry points.
+
+Sector-specific creative services and curated work examples.
+
+A clear choice between Design Now and Work With a Creative.
+
+A limited Ready Design pilot with controlled editable properties.
+
+At least one validated preview and export flow.
+
+One approved AI-assisted customization action within the Ready Design rules.
+
+One or multiple service selection through My Project Needs.
+
+One Main Taste Profile per project.
+
+Optional service-specific taste refinement without repeating the full test.
+
+A curated Creative DNA dataset.
+
+Explainable matching with no more than six creative or team recommendations.
+
+Creative profiles and portfolio exploration.
+
+Design-to-Creative handoff.
+
+A basic project workspace for messages, files, milestones, feedback, and deliverables.
+
+Progressive authentication that preserves anonymous progress.
+
+3. Approved MVP Journeys
+
+3.1 Shared Entry
+
+Sector → Service → Choose Product Path
+
+3.2 Design Now
+
+Sector → Service → Ready Interactive Design → Customize → Preview → Save or Export
+
+Design Now does not begin with a blank canvas and does not require the full visual taste test.
+
+3.3 Work With a Creative
+
+Sector → Services and Work → My Project Needs → One Taste Test → Optional Service Direction → Up to Six Recommendations → Selection → Workspace → Delivery
+
+3.4 Connected Handoff
+
+Saved Ready Design → Continue With a Creative → Transfer Design Context → Match or Select → Professional Development
+
+4. Technology Baseline
+
+Area
+
+Technology or Direction
+
+Backend
+
+Python and Flask REST API
+
+Frontend
+
+React, JavaScript, HTML5, and CSS3
+
+Styling
+
+Tailwind CSS or the approved project styling system
+
+Database
+
+PostgreSQL
+
+ORM and Migrations
+
+SQLAlchemy and migration tooling
+
+Authentication
+
+JWT-based progressive authentication
+
+API Documentation
+
+Swagger / OpenAPI
+
+File Storage
+
+Local storage during early development; object storage before production
+
+Background Processing
+
+Required for longer exports or AI actions; exact tool selected during implementation
+
+AI and Matching
+
+Controlled AI actions, weighted taste tags, cosine similarity, and rule-based ranking
+
+Version Control
+
+Git and GitHub
+
+Project Management
+
+GitHub Projects and GitHub Issues
+
+Database Inspection
+
+Postico or another approved PostgreSQL client
+
+Development Environment
+
+Visual Studio Code
+
+Technical choices that remain open must follow the decisions listed in Stage 3 rather than being assumed during implementation.
+
+5. Team Structure
+
+The current implementation team is smaller than the complete role model described in Stage 2. Responsibilities therefore need to be shared explicitly.
+
+Team Member
+
+Primary Role
+
+Implementation Responsibilities
+
+Banan
+
+Database Lead and Project Manager
+
+Database schema, migrations, data integrity, sprint planning, task coordination, documentation tracking, and delivery oversight.
+
+Khuloud
+
+Backend Lead with Frontend and UI Support
+
+Flask APIs, backend modules, integration, selected React components, and UI/UX implementation after team restructuring.
+
+Layan
+
+QA Engineer
+
+Test planning, API validation, manual UI testing, regression testing, issue reporting, and evidence collection.
+
+5.1 Unassigned or Shared Responsibilities
+
+The following responsibilities require a named owner before related work begins:
+
+AI-assisted customization integration.
+
+Taste Engine implementation.
+
+Matching algorithm implementation and evaluation.
+
+Ready Design technical authoring.
+
+Creative curation and style-tag review.
+
+Creator rights and licence validation.
+
+Security review.
+
+If no additional specialist joins the team, these responsibilities must be assigned to existing members and limited to the controlled MVP scope.
+
+6. Agile Delivery Method
+
+Development is organized into four one-week sprints. Each sprint includes:
+
+Sprint planning.
+
+Task assignment.
+
+Implementation on feature branches.
+
+Continuous QA and issue reporting.
+
+Pull request review.
+
+Sprint demonstration.
+
+Retrospective and backlog adjustment.
+
+The four-sprint duration is a constraint. Features that threaten the core demonstration must be reduced or deferred according to Stage 2 scope rules.
+
+6.1 Priority Method
+
+The backlog uses MoSCoW priority:
+
+Must Have: required for the connected MVP demonstration.
+
+Should Have: important but can use a simplified fallback.
+
+Could Have: implemented only if Must and Should items are stable.
+
+Won't Have: explicitly deferred from the MVP.
+
+7. Sprint Plan
+
+Sprint 1: Foundation, Catalogue, and Creative Data
+
+Goal
+
+Create the technical foundation and allow users to explore the five sectors, relevant services, and curated creative work.
+
+Backend and Database Tasks
+
+Initialize the Flask application using the Stage 3 modular structure.
+
+Configure PostgreSQL and migrations.
+
+Create core identity, sector, service, creative-profile, portfolio, and style-tag tables.
+
+Implement sector and service catalogue endpoints.
+
+Implement public creative-profile and portfolio endpoints.
+
+Seed the five sectors and an approved initial service list.
+
+Add initial anonymous-session support.
+
+Frontend Tasks
+
+Initialize the React application and route structure.
+
+Build the landing-page entry to the two product paths.
+
+Build SectorGrid.
+
+Build sector and service pages.
+
+Build ServiceGallery using curated work examples.
+
+Build the initial public CreativeProfile.
+
+Build loading, empty, and error states.
+
+Content and Curation Tasks
+
+Define the controlled service taxonomy.
+
+Define the first style-tag categories.
+
+Prepare initial creative profiles and portfolio metadata.
+
+Confirm which content is approved for public MVP use.
+
+QA Focus
+
+Sector and service navigation.
+
+Correct service filtering by sector.
+
+Public portfolio visibility rules.
+
+API response structure and error states.
+
+Database relationships and seed integrity.
+
+Responsive layout and basic accessibility.
+
+Sprint 1 Exit Criteria
+
+All five sector entries are visible.
+
+Each sector returns its approved service list.
+
+Curated work can be displayed under the correct service.
+
+Public creative profiles load from the API.
+
+Anonymous browsing works without authentication.
+
+Sprint 2: Design Now Pilot
+
+Goal
+
+Allow a user to select a ready interactive design, modify approved properties, preview the result, and save or export it.
+
+Backend and Database Tasks
+
+Create Ready Design, version, property, licence, design-session, session-value, and export tables.
+
+Implement Ready Design catalogue endpoints.
+
+Implement design-session creation and update endpoints.
+
+Validate all property changes against the design schema.
+
+Implement preview and first export workflow.
+
+Store creator attribution, ownership, allowed edits, AI permissions, and licence data.
+
+Implement one approved AI-assisted action or deterministic fallback.
+
+Frontend Tasks
+
+Build ProductPathChoice.
+
+Build ReadyDesignGallery.
+
+Build DesignEditorShell.
+
+Build schema-driven PropertyControlRenderer.
+
+Build DesignCanvas for the selected renderer.
+
+Add save, preview, reset, and export actions.
+
+Display creator attribution and relevant licence information.
+
+Ready Design Tasks
+
+Confirm the pilot services approved in Stage 2 or later decision records.
+
+Prepare the minimum approved pilot design set.
+
+Define editable properties and constraints for every design.
+
+Test each design with realistic content lengths and assets.
+
+QA Focus
+
+Only allowed design properties can be changed.
+
+Invalid values are rejected safely.
+
+Preview matches stored session values.
+
+Export produces the approved format.
+
+Creator and licence data appear correctly.
+
+AI action does not break layout rules.
+
+Anonymous work survives progressive authentication.
+
+Sprint 2 Exit Criteria
+
+At least one complete pilot design works end to end.
+
+The approved pilot catalogue can load by sector and service.
+
+A user can customize, preview, save, and export.
+
+Rights metadata is complete for every published pilot design.
+
+Unsupported AI actions are blocked.
+
+Sprint 3: Project Needs, Taste, and Matching
+
+Goal
+
+Allow a client to select one or multiple services, complete one visual taste test, and receive no more than six relevant creative or team recommendations.
+
+Backend and Database Tasks
+
+Create project, project-service, taste-test, taste-session, Taste Profile, Creative DNA, and recommendation tables.
+
+Implement My Project Needs endpoints.
+
+Implement taste-test delivery and selection storage.
+
+Implement Main Taste Profile calculation using weighted tags.
+
+Implement optional service-direction deltas.
+
+Aggregate approved portfolio attributes into Creative DNA.
+
+Implement candidate filtering and initial matching score.
+
+Implement concise recommendation explanations.
+
+Implement limited team composition only when required for service coverage.
+
+Frontend Tasks
+
+Build ProjectNeedsTray.
+
+Build the service-selection state and project context.
+
+Build TasteTestGrid.
+
+Build TasteProfileSummary.
+
+Build optional ServiceDirectionEditor.
+
+Build RecommendationGrid with a six-option maximum.
+
+Build RecommendationReason.
+
+Add save, reject, compare, and select actions.
+
+Data and Curation Tasks
+
+Tag taste-test images.
+
+Review portfolio style tags.
+
+Confirm services covered by each creative.
+
+Prepare the controlled matching evaluation set.
+
+QA Focus
+
+One Main Taste Profile is created per project.
+
+The same taste is reused across selected services.
+
+Service refinement does not repeat the full test.
+
+Candidate filtering excludes unapproved creatives.
+
+No recommendation set contains more than six options.
+
+Recommendation reasons correspond to stored data.
+
+Team options cover missing services without unnecessary members.
+
+Sprint 3 Exit Criteria
+
+A client can select multiple services in one project.
+
+The taste test produces an explainable stored profile.
+
+An optional service direction can be saved separately.
+
+Matching returns a ranked and explainable result set.
+
+At least one controlled matching test meets the approved relevance threshold or has documented corrective actions.
+
+Sprint 4: Handoff, Workspace, Integration, and Hardening
+
+Goal
+
+Connect both product paths, support professional creative execution, and stabilize the complete MVP demonstration.
+
+Backend and Database Tasks
+
+Implement progressive signup and ownership transfer.
+
+Implement creative selection.
+
+Implement Design-to-Creative handoff snapshots.
+
+Create workspace membership, messages, files, milestones, feedback, and deliverable tables.
+
+Implement protected workspace APIs.
+
+Add authorization and ownership checks.
+
+Add audit events for handoff, rights, AI, export, and approval actions.
+
+Resolve critical integration and data-integrity issues.
+
+Frontend Tasks
+
+Add Continue With a Creative from a saved design session.
+
+Preserve selected design, content, properties, assets, and preview references.
+
+Build the basic project workspace.
+
+Build messages, files, milestones, feedback, and deliverable views.
+
+Complete authentication conversion flows.
+
+Refine empty, loading, success, and error states.
+
+Complete responsive and accessibility review.
+
+QA Focus
+
+End-to-end Design Now journey.
+
+End-to-end Work With a Creative journey.
+
+Design-to-Creative handoff integrity.
+
+Anonymous-to-authenticated ownership transfer.
+
+Workspace access control.
+
+File and asset privacy.
+
+Deliverable version and approval history.
+
+Regression testing across all sprint features.
+
+Sprint 4 Exit Criteria
+
+Both main journeys can be demonstrated end to end.
+
+Handoff preserves all required design context.
+
+Unauthorized users cannot access private sessions or projects.
+
+Critical defects are closed or have an approved limitation note.
+
+Final test evidence and demonstration steps are documented.
+
+8. Project Management and Evidence
+
+8.1 Sprint Planning
+
+Before every sprint, the team should:
+
+Confirm the sprint goal.
+
+Review dependencies from the previous sprint.
+
+Break features into GitHub Issues.
+
+Assign an owner, priority, estimate, and acceptance criteria.
+
+Identify QA tasks before development begins.
+
+Confirm what will be demonstrated at sprint review.
+
+8.2 Sprint Review
+
+At the end of every sprint, record:
+
+Features completed.
+
+Features partially completed.
+
+Features moved to the backlog.
+
+Demonstration screenshots or recordings.
+
+Pull requests merged.
+
+Test results.
+
+Important feedback and scope decisions.
+
+8.3 Retrospective
+
+Document:
+
+What worked well.
+
+What blocked progress.
+
+Which defects or rework consumed time.
+
+What process change will be applied next sprint.
+
+Whether the remaining scope is still achievable.
+
+8.4 Required Evidence
+
+Do not rely only on board status. Preserve:
+
+GitHub Issue links.
+
+Pull request links.
+
+Commit references.
+
+Screenshots or short demonstration recordings.
+
+API test results.
+
+Database screenshots or migration output where relevant.
+
+QA test cases and results.
+
+Defect links and retest evidence.
+
+Sprint review and retrospective notes.
+
+9. Source Control Strategy
+
+9.1 Branches
+
+main: stable and reviewed code.
+
+develop: integration branch if the team continues using it.
+
+feature/<short-name>: feature development.
+
+fix/<short-name>: defect correction.
+
+docs/<short-name>: documentation changes.
+
+9.2 Workflow
+
+git pull origin develop
+git checkout -b feature/short-name
+
+After implementation and local testing:
+
+git add <specific-files>
+git commit -m "Add concise feature description"
+git push origin feature/short-name
+
+Create a pull request from the feature branch to the integration branch. Merge only after required checks and review are complete.
+
+9.3 Pull Request Requirements
+
+Every pull request should include:
+
+Problem and implemented solution.
+
+Scope and files changed.
+
+Acceptance criteria addressed.
+
+Screenshots for visual changes.
+
+API examples for endpoint changes.
+
+Database migration notes.
+
+Tests executed and results.
+
+Known limitations or follow-up issues.
+
+9.4 Pull Request Checklist
+
+The issue and acceptance criteria are linked.
+
+The branch contains only relevant changes.
+
+Code formatting and linting pass.
+
+Tests pass or limitations are documented.
+
+Database migrations are included when required.
+
+API documentation is updated.
+
+UI screenshots are included when applicable.
+
+Security and authorization effects are reviewed.
+
+Creator rights and licence effects are reviewed when applicable.
+
+At least one peer review is complete.
+
+10. Quality Assurance Strategy
+
+10.1 Test Types
+
+Test Type
+
+Scope
+
+Unit Testing
+
+Validation, taste calculations, matching scores, state transitions, and rights rules.
+
+API Testing
+
+HTTP methods, schemas, status codes, authorization, errors, and persistence.
+
+Database Testing
+
+Constraints, relationships, migrations, rollback, and data integrity.
+
+Frontend Testing
+
+Interaction, loading, empty, validation, and error states.
+
+Integration Testing
+
+Frontend-to-API, API-to-database, renderer, storage, and AI adapter flows.
+
+End-to-End Testing
+
+Both main journeys, handoff, authentication conversion, and workspace.
+
+Security Testing
+
+Ownership, roles, token handling, uploads, rights enforcement, and data isolation.
+
+Accessibility Testing
+
+Keyboard use, labels, focus, contrast, image alternatives, and editor controls.
+
+Usability Testing
+
+Path clarity, editor ease, taste-test time, recommendation relevance, and handoff comprehension.
+
+10.2 Defect Severity
+
+Severity
+
+Definition
+
+Release Rule
+
+Critical
+
+Data loss, unauthorized access, broken core journey, rights violation, or unusable export.
+
+Must be fixed before acceptance.
+
+High
+
+Major feature failure without reliable workaround.
+
+Fix before final demonstration unless formally accepted.
+
+Medium
+
+Partial failure with a usable workaround.
+
+Fix if capacity allows or document clearly.
+
+Low
+
+Cosmetic or minor usability issue.
+
+May be deferred with issue reference.
+
+10.3 Bug Workflow
+
+New → Triaged → Assigned → In Progress → Ready for QA → Verified → Closed
+
+If QA cannot reproduce or the fix fails, return the issue to the responsible developer with evidence.
+
+11. MVP Test Plan
+
+The result column must remain Not Run until the scenario has actually been executed.
+
+ID
+
+Feature
+
+Test Scenario
+
+Expected Result
+
+Status
+
+T-01
+
+Sector Discovery
+
+Open the sector catalogue.
+
+Five approved sectors are displayed.
+
+Not Run
+
+T-02
+
+Service Filtering
+
+Select a sector.
+
+Only relevant approved services and work appear.
+
+Not Run
+
+T-03
+
+Path Choice
+
+Open a service.
+
+Design Now and Work With a Creative are clearly distinguishable.
+
+Not Run
+
+T-04
+
+Ready Design
+
+Open a published ready design.
+
+Correct version and permitted controls load.
+
+Not Run
+
+T-05
+
+Property Validation
+
+Submit an invalid property value.
+
+API rejects it without corrupting the session.
+
+Not Run
+
+T-06
+
+Preview
+
+Change allowed properties and request preview.
+
+Preview reflects stored validated values.
+
+Not Run
+
+T-07
+
+Export
+
+Request approved export format.
+
+Export completes and authorized download becomes available.
+
+Not Run
+
+T-08
+
+AI Permission
+
+Request a disallowed AI action.
+
+Action is blocked and recorded safely.
+
+Not Run
+
+T-09
+
+Creator Rights
+
+Publish design with missing rights fields.
+
+Publication is blocked.
+
+Not Run
+
+T-10
+
+Multi-Service Needs
+
+Add multiple services to one project.
+
+All services remain in one project context.
+
+Not Run
+
+T-11
+
+Taste Test
+
+Complete image selections.
+
+One Main Taste Profile is created.
+
+Not Run
+
+T-12
+
+Taste Reuse
+
+Continue across selected services.
+
+Full taste test is not repeated.
+
+Not Run
+
+T-13
+
+Service Direction
+
+Refine one service direction.
+
+Delta is stored separately from main taste.
+
+Not Run
+
+T-14
+
+Creative Filtering
+
+Run matching with unapproved profiles.
+
+Unapproved creatives are excluded.
+
+Not Run
+
+T-15
+
+Recommendation Limit
+
+Run a recommendation request.
+
+Result contains no more than six options.
+
+Not Run
+
+T-16
+
+Recommendation Reason
+
+View a result.
+
+Taste, service, and sector reasons are displayed.
+
+Not Run
+
+T-17
+
+Team Recommendation
+
+Select services no single creative covers.
+
+Valid compatible team may be returned as one option.
+
+Not Run
+
+T-18
+
+Anonymous Conversion
+
+Save anonymous work after signup.
+
+Ownership transfers without losing progress.
+
+Not Run
+
+T-19
+
+Handoff
+
+Continue from ready design to creative.
+
+Design, values, content, assets, and preview are preserved.
+
+Not Run
+
+T-20
+
+Workspace Access
+
+Open another user's private project.
+
+Access is denied.
+
+Not Run
+
+T-21
+
+Deliverable Version
+
+Submit a revised deliverable.
+
+Earlier version remains available in history.
+
+Not Run
+
+T-22
+
+Approval
+
+Approve exact deliverable version.
+
+Approver, timestamp, and version are recorded.
+
+Not Run
+
+11.1 API Testing Checklist
+
+Correct HTTP status code.
+
+Valid JSON response schema.
+
+Required fields enforced.
+
+Domain validation enforced.
+
+Authentication and authorization enforced.
+
+Database persistence verified.
+
+Error does not expose internal details.
+
+Idempotent operations do not duplicate data.
+
+11.2 Usability Test Tasks
+
+Ask representative users to:
+
+Identify the difference between the two paths.
+
+Customize and export a pilot design.
+
+Select multiple creative services.
+
+Complete the visual taste test.
+
+Explain why a recommended creative appears relevant.
+
+Transfer a saved ready design to a creative.
+
+Record completion, time, errors, confusion, and user comments.
+
+12. Definition of Done
+
+A task is complete only when:
+
+Acceptance criteria are met.
+
+Code builds and runs without relevant errors.
+
+Required automated or manual tests pass.
+
+API schemas and documentation are updated.
+
+Database migrations are included and verified when required.
+
+Authorization and private-data effects are tested.
+
+Creator-rights effects are reviewed when applicable.
+
+UI includes loading, empty, success, and error states.
+
+Responsive and accessibility checks are complete for affected screens.
+
+Pull request is reviewed and approved.
+
+QA evidence is attached to the issue or pull request.
+
+Known limitations are documented.
+
+13. Local Development Environment
+
+13.1 Backend
+
+The Flask API runs locally during development. The exact port must be documented in the repository setup instructions.
+
+Example:
+
+http://localhost:5000
+
+13.2 Frontend
+
+The React development server runs locally using the configured project toolchain.
+
+Example:
+
+http://localhost:5173
+
+13.3 Database
+
+PostgreSQL runs locally or through an approved development container. Postico or another PostgreSQL client may be used for inspection, but schema changes must be made through migrations rather than manual production-style edits.
+
+13.4 Storage and Processing
+
+The MVP may begin with local development storage, but application code should use a storage interface so it can move to private object storage later. Exports and longer AI actions should use a background-worker interface when synchronous processing becomes unreliable.
+
+14. Environment Variables and Secrets
+
+Real secrets must never be committed to GitHub. Commit an .env.example file containing names and safe placeholders only.
+
+Example categories:
+
+FLASK_ENV=development
+DATABASE_URL=postgresql://user:password@localhost:5432/tentora
+JWT_SECRET_KEY=replace-me
+FRONTEND_ORIGIN=http://localhost:5173
+STORAGE_BACKEND=local
+STORAGE_PATH=./storage
+AI_PROVIDER=disabled
+AI_API_KEY=replace-me
+
+The actual project may use different names. .env must be excluded through .gitignore.
+
+15. MVP Demonstration Plan
+
+The final demonstration should show both journeys and their connection.
+
+Demo 1: Design Now
+
+Select Food and Beverage.
+
+Select a pilot service such as Menu Design.
+
+Open a ready interactive design.
+
+Change allowed content and visual properties.
+
+Run one permitted AI-assisted action if implemented.
+
+Preview and export.
+
+Demo 2: Work With a Creative
+
+Select one or multiple services.
+
+Complete one visual taste test.
+
+View the Main Taste Profile.
+
+Optionally refine one service.
+
+View no more than six recommendations and their reasons.
+
+Select a creative or team.
+
+Open the project workspace.
+
+Demo 3: Connected Handoff
+
+Open a saved Design Now session.
+
+Select Continue With a Creative.
+
+Confirm that design context transfers.
+
+Open the resulting creative project context.
+
+If a feature is simulated rather than implemented, the demonstration and report must label it as a prototype or mock rather than a completed backend capability.
+
+16. Implementation Risks
+
+Risk
+
+Effect During Stage 4
+
+Response
+
+Four-sprint schedule is insufficient
+
+Core journeys remain incomplete.
+
+Prioritize one complete vertical slice per path before catalogue breadth.
+
+Ready Design editor becomes too broad
+
+Sprint 2 overruns.
+
+Use one renderer, controlled properties, and simple two-dimensional outputs.
+
+No dedicated AI/ML engineer
+
+Taste, matching, or AI work lacks ownership.
+
+Assign a named team owner and use transparent rule-based MVP methods.
+
+Insufficient Ready Design content
+
+Editor cannot be demonstrated meaningfully.
+
+Approve creator, licence, schema, and assets before development begins.
+
+Curated portfolio data is incomplete
+
+Matching quality becomes unreliable.
+
+Prioritize accurate tags and a smaller verified dataset over volume.
+
+Team matching is too complex
+
+Results become unstable or confusing.
+
+Support limited team size and only generate teams when service coverage requires it.
+
+Rights data is missing
+
+Designs cannot be published safely.
+
+Block publication until attribution, ownership, edit, AI, and licence fields are complete.
+
+Old project code is reused without redesign
+
+Incorrect homeowner/provider concepts remain.
+
+Map every reused component and table to the Stage 3 domain before adoption.
+
+Test evidence is collected late
+
+Final report cannot prove implementation.
+
+Attach evidence during each issue and sprint, not after development ends.
+
+Secrets appear in Git history
+
+Security and submission risk.
+
+Use .env, .gitignore, secret scanning, and immediate rotation if exposed.
+
+17. Evidence Register
+
+Replace TBD only with real evidence.
+
+Evidence
+
+Reference
+
+Status
+
+TENTORA GitHub repository
+
+TBD
+
+Pending
+
+GitHub Project Board
+
+TBD
+
+Pending
+
+Sprint 1 review
+
+TBD
+
+Pending
+
+Sprint 2 review
+
+TBD
+
+Pending
+
+Sprint 3 review
+
+TBD
+
+Pending
+
+Sprint 4 review
+
+TBD
+
+Pending
+
+API documentation
+
+TBD
+
+Pending
+
+Database diagram and migrations
+
+TBD
+
+Pending
+
+Design Now demonstration
+
+TBD
+
+Pending
+
+Taste and matching demonstration
+
+TBD
+
+Pending
+
+Handoff demonstration
+
+TBD
+
+Pending
+
+Final QA report
+
+TBD
+
+Pending
+
+Do not reuse links from the earlier Interior Design Platform unless the repository has been formally renamed and its source has actually been replaced with the TENTORA implementation.
+
+18. Completion Summary Template
+
+Complete this section only at the end of Stage 4.
+
+Final Implementation Status
+
+Area
+
+Planned
+
+Implemented
+
+Verified
+
+Evidence
+
+Sector and service discovery
+
+Yes
+
+Pending
+
+Pending
+
+TBD
+
+Design Now catalogue
+
+Yes
+
+Pending
+
+Pending
+
+TBD
+
+Interactive editor
+
+Yes
+
+Pending
+
+Pending
+
+TBD
+
+AI-assisted customization
+
+Yes, limited
+
+Pending
+
+Pending
+
+TBD
+
+Multi-service project needs
+
+Yes
+
+Pending
+
+Pending
+
+TBD
+
+Main Taste Profile
+
+Yes
+
+Pending
+
+Pending
+
+TBD
+
+Service-specific direction
+
+Yes
+
+Pending
+
+Pending
+
+TBD
+
+Creative DNA
+
+Yes
+
+Pending
+
+Pending
+
+TBD
+
+Up-to-six recommendations
+
+Yes
+
+Pending
+
+Pending
+
+TBD
+
+Limited team recommendation
+
+Yes
+
+Pending
+
+Pending
+
+TBD
+
+Creative profiles
+
+Yes
+
+Pending
+
+Pending
+
+TBD
+
+Design-to-Creative handoff
+
+Yes
+
+Pending
+
+Pending
+
+TBD
+
+Basic workspace
+
+Yes
+
+Pending
+
+Pending
+
+TBD
+
+Progressive authentication
+
+Yes
+
+Pending
+
+Pending
+
+TBD
+
+Final Summary
+
+At completion, replace this paragraph with a factual summary of what was built, what was tested, what was deferred, which limitations remain, and where the evidence can be found.
+
+Next Stage
+
+After implementation and verification, proceed to Stage 5 — Project Closure, including final acceptance testing, defect closure, presentation, demonstration, documentation handover, and lessons learned.
