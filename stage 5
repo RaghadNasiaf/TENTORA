@@ -1,1 +1,1413 @@
+1. Project Summary
 
+TENTORA is an AI-powered creative-solutions platform that connects project needs, ready interactive design, visual taste, and human creative expertise in one organized experience.
+
+The platform gives project owners two connected paths:
+
+Design Now: choose a ready interactive design, customize approved properties quickly, and preview, save, or export the result.
+
+Work With a Creative: select one or multiple services, complete one visual taste test, receive up to six compatible creative or team recommendations, select the preferred option, and manage the project through delivery.
+
+TENTORA is not a conventional freelance marketplace, a generic template catalogue, or a blank-canvas AI generator. It is designed to shorten the route from creative need to usable result while preserving human authorship and professional execution.
+
+Important: This closure document must describe verified implementation only. Replace all Pending, TBD, and bracketed fields with real evidence after Stage 4. Do not mark a feature complete because it was planned.
+
+2. Problem Addressed
+
+Project owners often spend significant time browsing portfolios, moving between platforms, and trying to identify creatives who understand both the required service and the desired visual direction.
+
+The problem becomes more complex when one project requires several services. Separate searches may produce disconnected creative work, repeated onboarding, inconsistent styles, and difficult project coordination.
+
+TENTORA addresses this fragmentation by:
+
+Organizing discovery by project sector and service.
+
+Showing services through real visual work.
+
+Providing an immediate Ready Design path for urgent needs.
+
+Using one Main Taste Profile across a multi-service project.
+
+Limiting recommendations to a small, relevant set.
+
+Supporting a creative or visually compatible team.
+
+Connecting self-service work to professional execution.
+
+Keeping custom projects organized through delivery.
+
+3. Final Product Experience
+
+3.1 Shared Entry
+
+Sector → Service → Choose Product Path
+
+3.2 Design Now
+
+Sector → Service → Ready Interactive Design → Customize → Preview → Save or Export
+
+The user begins with a ready structured design rather than a blank canvas. Editable properties and AI-assisted actions remain inside the limits defined by the original design.
+
+3.3 Work With a Creative
+
+Sector → Services and Work → My Project Needs → One Taste Test → Optional Service Direction → Up to Six Recommendations → Selection → Workspace → Delivery
+
+3.4 Connected Handoff
+
+Saved Ready Design → Continue With a Creative → Transfer Design Context → Professional Development
+
+The final closure review must verify each implemented journey against the Stage 4 test evidence.
+
+4. Target Sectors
+
+The planned initial sectors are:
+
+Sector
+
+Example Creative Needs
+
+Food and Beverage
+
+Identity, menus, packaging, social content, digital displays, staff products, and artwork.
+
+Events and Celebrations
+
+Event identity, invitations, decorative visuals, signage, photography, and motion content.
+
+Exhibitions and Conferences
+
+Booth graphics, event identity, signage, presentations, digital screens, and printed materials.
+
+Real Estate and Development
+
+Branding, brochures, renders, campaigns, signage, and property marketing content.
+
+E-commerce and Online Stores
+
+Identity, packaging, product imagery, store interfaces, campaigns, and social content.
+
+At closure, record which sectors and services were actually implemented and populated with verified content.
+
+5. Final Feature Matrix
+
+Update the status and evidence columns only after verification.
+
+Feature
+
+Client
+
+Creative
+
+Curator / Admin
+
+Status
+
+Evidence
+
+Browse sectors and services
+
+Yes
+
+Yes
+
+Yes
+
+Pending
+
+TBD
+
+Explore curated creative work
+
+Yes
+
+Yes
+
+Yes
+
+Pending
+
+TBD
+
+Choose Design Now or Work With a Creative
+
+Yes
+
+No
+
+No
+
+Pending
+
+TBD
+
+Browse Ready Designs
+
+Yes
+
+Yes
+
+Yes
+
+Pending
+
+TBD
+
+Customize approved design properties
+
+Yes
+
+No
+
+Review
+
+Pending
+
+TBD
+
+Use approved AI-assisted design actions
+
+Yes
+
+No
+
+Configure
+
+Pending
+
+TBD
+
+Preview and export a design
+
+Yes
+
+No
+
+No
+
+Pending
+
+TBD
+
+Submit and manage Ready Designs
+
+No
+
+Yes
+
+Review
+
+Pending
+
+TBD
+
+Select one or multiple services
+
+Yes
+
+No
+
+No
+
+Pending
+
+TBD
+
+Complete one visual taste test
+
+Yes
+
+No
+
+Configure
+
+Pending
+
+TBD
+
+Reuse one Main Taste Profile
+
+Yes
+
+No
+
+Review
+
+Pending
+
+TBD
+
+Refine one service direction
+
+Yes
+
+No
+
+No
+
+Pending
+
+TBD
+
+Receive up to six recommendations
+
+Yes
+
+No
+
+Configure
+
+Pending
+
+TBD
+
+Explore and select a creative or team
+
+Yes
+
+View own profile
+
+Review
+
+Pending
+
+TBD
+
+Transfer a design to a creative
+
+Yes
+
+Receive context
+
+Review
+
+Pending
+
+TBD
+
+Use project workspace
+
+Yes
+
+Yes
+
+Assigned
+
+Pending
+
+TBD
+
+Exchange files and feedback
+
+Yes
+
+Yes
+
+Assigned
+
+Pending
+
+TBD
+
+Submit and approve deliverables
+
+Approve
+
+Submit
+
+Assigned
+
+Pending
+
+TBD
+
+Progressive authentication
+
+Yes
+
+Yes
+
+Yes
+
+Pending
+
+TBD
+
+Accepted statuses:
+
+Completed
+
+Partial
+
+Deferred
+
+Not Implemented
+
+Pending Verification
+
+6. Technology Stack
+
+Record the technologies actually used in the final build. Remove planned tools that were not implemented.
+
+Area
+
+Planned Baseline
+
+Final Technology
+
+Evidence
+
+Frontend
+
+React and JavaScript
+
+TBD
+
+TBD
+
+Frontend Tooling
+
+Vite or approved React toolchain
+
+TBD
+
+TBD
+
+Styling
+
+Tailwind CSS or approved styling system
+
+TBD
+
+TBD
+
+Backend
+
+Python and Flask
+
+TBD
+
+TBD
+
+Authentication
+
+JWT-based progressive authentication
+
+TBD
+
+TBD
+
+Database
+
+PostgreSQL
+
+TBD
+
+TBD
+
+ORM and Migrations
+
+SQLAlchemy and migration tooling
+
+TBD
+
+TBD
+
+API Documentation
+
+Swagger / OpenAPI
+
+TBD
+
+TBD
+
+Ready Design Rendering
+
+SVG, Canvas, or approved renderer
+
+TBD
+
+TBD
+
+File Storage
+
+Private object storage or documented local MVP storage
+
+TBD
+
+TBD
+
+Background Processing
+
+Approved worker or documented synchronous MVP fallback
+
+TBD
+
+TBD
+
+AI Integration
+
+Approved provider adapter or local rules
+
+TBD
+
+TBD
+
+Testing
+
+Automated and manual test tools
+
+TBD
+
+TBD
+
+Deployment
+
+Approved hosting environment
+
+TBD
+
+TBD
+
+Version Control
+
+Git and GitHub
+
+TBD
+
+TBD
+
+Project Management
+
+GitHub Projects and Issues
+
+TBD
+
+TBD
+
+Stripe or another payment gateway must not appear in the final stack unless a payment flow was actually implemented and verified.
+
+7. Team
+
+Name
+
+Primary Role
+
+Final Contribution Summary
+
+Khulood Alqarni
+
+Backend Lead, UI/UX and Frontend Support
+
+Update with verified contributions and evidence.
+
+Banan Aleid
+
+Database Lead, Project Manager and Development Support
+
+Update with verified contributions and evidence.
+
+Layan Aldossari
+
+QA Lead, Database and Frontend Support
+
+Update with verified contributions and evidence.
+
+Raghad Naseef
+
+Developer
+
+Update with verified contributions and evidence.
+
+Contribution summaries should be based on assigned issues, commits, pull requests, reviews, test evidence, design work, documentation, and project coordination—not commit count alone.
+
+8. Final Deliverables
+
+Deliverable
+
+Required Closure Evidence
+
+Status
+
+Stage 1: Idea Development
+
+Approved document in docs/.
+
+Completed
+
+Stage 2: Project Charter
+
+Approved document in docs/.
+
+Completed
+
+Stage 3: Technical Documentation
+
+Approved document in docs/.
+
+Completed
+
+Stage 4: Development and Execution Report
+
+Updated implementation status and evidence.
+
+Pending
+
+Source Repository
+
+Final reviewed source and release reference.
+
+Pending
+
+Database
+
+Migrations, schema, and seed instructions.
+
+Pending
+
+API Documentation
+
+OpenAPI document or verified endpoint reference.
+
+Pending
+
+Frontend Application
+
+Production build or approved demonstration build.
+
+Pending
+
+Backend Application
+
+Tested API build.
+
+Pending
+
+Ready Design Pilot
+
+Published designs, schemas, rights data, preview, and export evidence.
+
+Pending
+
+Taste and Matching Pilot
+
+Taste Profile, Creative DNA, recommendations, and evaluation evidence.
+
+Pending
+
+Connected Handoff
+
+Preserved session-to-project data evidence.
+
+Pending
+
+Project Workspace
+
+Messages, files, milestones, feedback, and deliverable evidence.
+
+Pending
+
+QA Report
+
+Final executed test cases, defects, and retest results.
+
+Pending
+
+Final Presentation
+
+Approved presentation file.
+
+Pending
+
+Demonstration
+
+Recording or live demonstration link.
+
+Pending
+
+Handover Guide
+
+Setup, configuration, deployment, and known limitations.
+
+Pending
+
+9. Deployment and Live Demo
+
+9.1 Deployment Status
+
+Component
+
+Environment
+
+URL or Reference
+
+Status
+
+Frontend
+
+TBD
+
+TBD
+
+Pending
+
+Backend API
+
+TBD
+
+TBD
+
+Pending
+
+Database
+
+TBD
+
+Private reference only
+
+Pending
+
+Object Storage
+
+TBD
+
+Private reference only
+
+Pending
+
+Background Worker
+
+TBD
+
+Private reference only
+
+Pending
+
+API Documentation
+
+TBD
+
+TBD
+
+Pending
+
+9.2 Live Demo
+
+Live URL: TBD
+Demo account or access instructions: TBD
+Demo recording: TBD
+
+Do not reuse the Swagne deployment URL. It represents a different product and cannot serve as evidence for TENTORA.
+
+9.3 Release Information
+
+Release version: TBD
+
+Git tag: TBD
+
+Release commit: TBD
+
+Release date: TBD
+
+Deployment owner: TBD
+
+10. Results and Acceptance
+
+10.1 Functional Results
+
+Goal
+
+Target
+
+Final Result
+
+Status
+
+Evidence
+
+Two clear product paths
+
+Design Now and Work With a Creative
+
+TBD
+
+Pending
+
+TBD
+
+Sector discovery
+
+Five approved sectors
+
+TBD
+
+Pending
+
+TBD
+
+Ready Design pilot
+
+Approved limited catalogue
+
+TBD
+
+Pending
+
+TBD
+
+Interactive customization
+
+Valid controls, preview, and export
+
+TBD
+
+Pending
+
+TBD
+
+AI-assisted customization
+
+At least one controlled action
+
+TBD
+
+Pending
+
+TBD
+
+Multi-service needs
+
+One project can contain several services
+
+TBD
+
+Pending
+
+TBD
+
+Main Taste Profile
+
+One reusable profile per project
+
+TBD
+
+Pending
+
+TBD
+
+Service taste direction
+
+Optional refinement without retest
+
+TBD
+
+Pending
+
+TBD
+
+Creative matching
+
+Up to six explainable options
+
+TBD
+
+Pending
+
+TBD
+
+Team recommendation
+
+Limited compatible team when needed
+
+TBD
+
+Pending
+
+TBD
+
+Creative profiles
+
+Curated portfolios and Creative DNA
+
+TBD
+
+Pending
+
+TBD
+
+Connected handoff
+
+Ready Design context transfers to project
+
+TBD
+
+Pending
+
+TBD
+
+Project workspace
+
+Basic collaboration and delivery functions
+
+TBD
+
+Pending
+
+TBD
+
+Responsive web experience
+
+Approved target screens and devices
+
+TBD
+
+Pending
+
+TBD
+
+Deployment
+
+Approved accessible environment
+
+TBD
+
+Pending
+
+TBD
+
+10.2 Acceptance Rules
+
+The project may be closed only when:
+
+Critical defects are resolved.
+
+Any accepted high-severity limitations are documented.
+
+Implemented features have executed test evidence.
+
+Deferred features are clearly separated from completed features.
+
+Creator rights are complete for every published Ready Design.
+
+Private project data is protected by verified authorization.
+
+Setup and handover documentation is usable by another developer.
+
+The final demonstration accurately reflects the implemented product.
+
+11. Final Metrics
+
+Record actual measured results; do not estimate them after the fact.
+
+Metric
+
+Target
+
+Actual
+
+Data Source
+
+Result
+
+Product-path comprehension
+
+At least 90%
+
+TBD
+
+Usability test
+
+Pending
+
+Design Now completion
+
+At least 80%
+
+TBD
+
+Usability test
+
+Pending
+
+Design Now median task time
+
+5 minutes or less
+
+TBD
+
+Analytics / observation
+
+Pending
+
+Taste-test median time
+
+Under 3 minutes
+
+TBD
+
+Analytics / observation
+
+Pending
+
+Recommendation limit
+
+Maximum 6
+
+TBD
+
+Automated test
+
+Pending
+
+Match relevance
+
+At least 85% satisfaction
+
+TBD
+
+Controlled evaluation
+
+Pending
+
+Main-taste reuse
+
+No repeat test within project
+
+TBD
+
+End-to-end test
+
+Pending
+
+Core journey completion
+
+At least 80%
+
+TBD
+
+Funnel analytics
+
+Pending
+
+Handoff data integrity
+
+100% required fields
+
+TBD
+
+Integration test
+
+Pending
+
+Ready Design rights completeness
+
+100%
+
+TBD
+
+Curation audit
+
+Pending
+
+Workspace task completion
+
+At least 80%
+
+TBD
+
+Usability test
+
+Pending
+
+Critical defects at closure
+
+0 open
+
+TBD
+
+GitHub Issues
+
+Pending
+
+12. Known Limitations and Deferred Scope
+
+Record only the limitations that apply to the final build. Expected MVP exclusions include:
+
+Blank-canvas AI generation.
+
+Advanced motion and 3D editing.
+
+Unrestricted creator marketplace publishing.
+
+Fully learned recommendation models.
+
+Real-time collaborative design editing.
+
+Advanced team pricing and scheduling optimization.
+
+Native mobile applications.
+
+Full multi-country payment, tax, and settlement operations.
+
+Additional sectors beyond the approved five.
+
+Limitation
+
+Reason
+
+User Impact
+
+Planned Response
+
+TBD
+
+TBD
+
+TBD
+
+TBD
+
+13. Challenges and Resolutions
+
+Replace the rows below with real Stage 4 issues and evidence.
+
+Challenge
+
+Impact
+
+Resolution or Decision
+
+Evidence
+
+Ready Design schema complexity
+
+TBD
+
+TBD
+
+TBD
+
+Maintaining design quality during AI actions
+
+TBD
+
+TBD
+
+TBD
+
+Taste-tag consistency
+
+TBD
+
+TBD
+
+TBD
+
+Multi-service and team matching
+
+TBD
+
+TBD
+
+TBD
+
+Anonymous-to-authenticated ownership
+
+TBD
+
+TBD
+
+TBD
+
+File privacy and workspace authorization
+
+TBD
+
+TBD
+
+TBD
+
+Deployment configuration
+
+TBD
+
+TBD
+
+TBD
+
+Team capacity and responsibility gaps
+
+TBD
+
+TBD
+
+TBD
+
+Do not copy technical resolutions from Swagne unless the same issue occurred in TENTORA and the resolution was independently verified.
+
+14. Lessons Learned
+
+Complete this section after the final retrospective.
+
+14.1 Product Lessons
+
+Did users understand the difference between Design Now and Work With a Creative?
+
+Were Ready Designs faster than starting a custom project?
+
+Which editable properties caused confusion?
+
+Did one Main Taste Profile work across several services?
+
+Were six recommendations enough, too many, or too few?
+
+Did users understand why creatives or teams were recommended?
+
+Was the handoff to a creative valuable and clear?
+
+14.2 Technical Lessons
+
+Which renderer was most suitable for the pilot designs?
+
+Which AI actions added measurable value?
+
+Which actions should remain deterministic rather than AI-based?
+
+Was the modular-monolith structure effective for the team?
+
+Were the Taste Profile and Creative DNA schemas flexible enough?
+
+Did progressive authentication preserve anonymous progress reliably?
+
+Which integrations created the most risk or delay?
+
+14.3 Process Lessons
+
+Were responsibilities clear from the first sprint?
+
+Was QA involved before implementation rather than only after it?
+
+Were API contracts documented before frontend integration?
+
+Was deployment tested early enough?
+
+Were rights and licence reviews part of the feature workflow?
+
+Did the team collect evidence continuously?
+
+15. Team Retrospective
+
+15.1 What Worked Well
+
+TBD
+
+15.2 What Did Not Work Well
+
+TBD
+
+15.3 What We Would Do Differently
+
+TBD
+
+15.4 Contribution Review
+
+Contribution should be reviewed using multiple forms of evidence:
+
+Issues owned and completed.
+
+Code commits and pull requests.
+
+Reviews and integration support.
+
+Database and migration work.
+
+UI/UX and creative preparation.
+
+QA plans, defects, and retesting.
+
+Documentation and project coordination.
+
+Commit count alone does not represent total contribution.
+
+16. Technical and Product Handover
+
+16.1 Repository Handover
+
+Default branch is stable.
+
+Final release tag exists.
+
+README contains setup and run instructions.
+
+Stage 1–5 documents are present under docs/.
+
+Architecture and database diagrams are current.
+
+API documentation matches implemented endpoints.
+
+Migrations are reproducible.
+
+Seed or demo-data instructions are documented.
+
+Licences and third-party notices are included.
+
+16.2 Environment Handover
+
+.env.example contains safe variable names and placeholders.
+
+No real secrets exist in source control.
+
+Production secrets have an identified owner.
+
+Deployment steps are documented.
+
+Backup and restore approach is documented.
+
+Storage and data-retention rules are documented.
+
+Monitoring and error-reporting access is transferred.
+
+16.3 Creative Rights Handover
+
+Every published Ready Design has a verified creator.
+
+Ownership and source assets are recorded.
+
+Editable properties are documented.
+
+Allowed AI actions are documented.
+
+Licence and commercial-use terms are recorded.
+
+Compensation terms are recorded.
+
+Model-training consent is separate and explicit where applicable.
+
+16.4 QA Handover
+
+Final test plan is executed.
+
+Results and evidence are attached.
+
+Critical defects are closed.
+
+Accepted limitations are documented.
+
+Regression test instructions are available.
+
+Demo accounts and data are safe and non-sensitive.
+
+17. Recommended Next Phase
+
+After MVP closure, prioritize improvements according to evidence rather than adding every possible feature.
+
+Potential next-phase directions include:
+
+Expand Ready Designs within the services that showed the strongest completion and demand.
+
+Add richer AI-assisted adaptation while preserving design rules.
+
+Analyze uploaded reference images to improve Taste Profiles.
+
+Improve ranking with consented recommendation feedback.
+
+Strengthen team formation for multi-service projects.
+
+Add more advanced creator revenue and licensing workflows.
+
+Expand workspace coordination and managed project capabilities.
+
+Add new sectors only after the initial taxonomy and matching quality are stable.
+
+Each proposed feature should have a user problem, success metric, rights assessment, and technical estimate before entering development.
+
+18. Acknowledgements
+
+This project reflects the combined work of the development team, mentors, testers, creative contributors, and everyone who provided thoughtful feedback throughout the process.
+
+Final acknowledgements should name only people and organizations whose contribution to TENTORA has been confirmed.
+
+19. Closure Approval
+
+Approval Area
+
+Owner
+
+Status
+
+Date
+
+Notes
+
+Product scope
+
+TBD
+
+Pending
+
+TBD
+
+TBD
+
+Technical implementation
+
+TBD
+
+Pending
+
+TBD
+
+TBD
+
+Quality assurance
+
+TBD
+
+Pending
+
+TBD
+
+TBD
+
+Creative rights and licences
+
+TBD
+
+Pending
+
+TBD
+
+TBD
+
+Documentation and handover
+
+TBD
+
+Pending
+
+TBD
+
+TBD
+
+Final project closure
+
+TBD
+
+Pending
+
+TBD
+
+TBD
+
+Final Closure Statement
+
+Replace this paragraph after approval with a factual statement summarizing:
+
+What TENTORA delivered.
+
+Which journeys were verified.
+
+Which features were partial or deferred.
+
+Where the source, deployment, test evidence, and handover materials are located.
+
+Whether the MVP has been accepted and formally closed.
