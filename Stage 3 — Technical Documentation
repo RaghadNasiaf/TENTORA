@@ -1,3 +1,43 @@
+Project: TENTORA
+Document type: MVP technical specification
+Status: Draft for technical validation
+Depends on: Stage 1 — Idea Development and Stage 2 — Project Charter
+Next: Stage 4 — MVP Development Plan
+
+Document Control
+
+Field
+
+Value
+
+Product
+
+TENTORA
+
+Stage
+
+3 of 5
+
+Audience
+
+Product, design, engineering, data/AI, security, and delivery teams
+
+Decision authority
+
+Product owner, with technical sign-off for architecture decisions
+
+Baseline
+
+Approved decisions in Stages 1 and 2
+
+Change rule
+
+Material architecture choices must be recorded as ADRs before implementation
+
+Table of Contents
+
+GitHub generates a navigable outline from the numbered headings below.
+
 1. Document Purpose
 
 This document converts the approved Stage 1 concept and Stage 2 charter into a technical plan for the TENTORA MVP.
@@ -29,6 +69,54 @@ The document replaces the earlier interior-design execution-provider architectur
 2. Approved Product Scope
 
 TENTORA has one shared entry and two connected product paths.
+
+Scope status legend
+
+Label
+
+Meaning
+
+Approved
+
+Inherited from Stages 1–2 and treated as a product constraint.
+
+Proposed
+
+Recommended technical direction that still requires validation.
+
+Open
+
+Must be resolved through a prototype or Architecture Decision Record (ADR).
+
+Approved launch sectors
+
+The MVP taxonomy must preserve the five approved sectors; technical implementation may not silently rename or replace them.
+
+#
+
+Sector
+
+1
+
+Restaurants & Cafés
+
+2
+
+Events & Occasions
+
+3
+
+Exhibitions & Conferences
+
+4
+
+Real Estate & Development
+
+5
+
+E-commerce Stores
+
+The architecture and stack in Section 4 are proposed until technically validated. The product journeys and five-sector structure are approved.
 
 2.1 Shared Entry
 
@@ -97,6 +185,7 @@ flowchart TD
     API --> QUEUE["Task Queue"]
     QUEUE --> WORKER["Export and AI Worker"]
     WORKER --> STORE
+
 
 4.2 Logical Layers
 
@@ -379,6 +468,7 @@ sequenceDiagram
     R-->>A: Output asset
     A-->>W: Preview or download reference
 
+
 7.2 Work With a Creative Sequence
 
 sequenceDiagram
@@ -398,6 +488,7 @@ sequenceDiagram
     A-->>W: Recommendation set
     C->>W: Select creative or team
     W->>A: Start project workspace
+
 
 7.3 Design-to-Creative Handoff
 
@@ -662,6 +753,7 @@ erDiagram
     PORTFOLIO_ITEMS ||--o{ PORTFOLIO_ITEM_TAGS : has
     STYLE_TAGS ||--o{ PORTFOLIO_ITEM_TAGS : classifies
 
+
 Project and Taste Domain
 
 erDiagram
@@ -670,6 +762,7 @@ erDiagram
     TASTE_PROFILES ||--o{ TASTE_PROFILE_TAGS : contains
     PROJECT_SERVICES ||--o| SERVICE_TASTE_DIRECTIONS : overrides
     STYLE_TAGS ||--o{ TASTE_PROFILE_TAGS : describes
+
 
 Recommendation Domain
 
@@ -680,7 +773,9 @@ erDiagram
     CREATIVE_PROFILES ||--o{ RECOMMENDATION_MEMBERS : participates
     RECOMMENDATION_OPTIONS ||--o{ RECOMMENDATION_FEEDBACK : receives
 
-9. Ready Design Technical Model
+## 9. Ready Design Technical Model
+
+
 
 9.1 Core Entities
 
@@ -793,8 +888,9 @@ Each property includes validation constraints. The renderer must reject values o
       "constraints": { "max_mb": 10, "aspect_ratio": "4:5" },
       "ai_policy": "background_removal_allowed"
     }
-  ],
-  "exports": ["png"]
+
+],
+"exports": ["png"]
 }
 
 9.4 Versioning Rules
@@ -830,6 +926,7 @@ Strong preference, if included in the interface.
 For tag t, the initial profile weight can be calculated as:
 
 raw_weight(t) = Σ selection_value(i) × item_tag_weight(i, t)
+
 profile_weight(t) = normalize(raw_weight(t))
 
 Where:
@@ -941,10 +1038,14 @@ Do not require price, location, or availability at the initial discovery stage u
 The MVP may use the following configurable starting weights:
 
 match_score =
-    0.50 × taste_similarity
-  + 0.30 × service_coverage
-  + 0.15 × sector_relevance
-  + 0.05 × portfolio_evidence
+
+0.50 × taste_similarity
+
+0.30 × service_coverage
+
+0.15 × sector_relevance
+
+0.05 × portfolio_evidence
 
 Factor
 
@@ -995,11 +1096,16 @@ Calculate visual coherence between members.
 Penalize unnecessary team size.
 
 team_score =
-    0.40 × project_taste_fit
-  + 0.30 × service_coverage
-  + 0.20 × member_coherence
-  + 0.10 × sector_relevance
-  - team_size_penalty
+
+0.40 × project_taste_fit
+
+0.30 × service_coverage
+
+0.20 × member_coherence
+
+0.10 × sector_relevance
+
+team_size_penalty
 
 For the MVP, a team should normally contain no more than three creatives unless the scope is formally expanded.
 
@@ -1068,6 +1174,7 @@ flowchart TD
     POLICY --> ADAPTER["AI Provider Adapter"]
     ADAPTER --> VALIDATE["Schema and Quality Validation"]
     VALIDATE --> SAVE["Store Result and Audit Event"]
+
 
 13.3 Provider Interface
 
@@ -1475,35 +1582,35 @@ Artistic landing and primary product paths.
 
 Sector discovery.
 
-/sectors/:sectorSlug
+/sectors/
 
 Services and curated work for a sector.
 
-/services/:serviceSlug
+/services/
 
 Service work and Design Now / Creative choice.
 
-/design-now/:designId
+/design-now/
 
 Interactive ready-design editor.
 
-/taste/:projectId
+/taste/
 
 Visual taste test.
 
-/projects/:projectId/needs
+/projects//needs
 
 Selected multi-service context.
 
-/projects/:projectId/recommendations
+/projects//recommendations
 
 Up-to-six recommendation options.
 
-/creatives/:creativeSlug
+/creatives/
 
 Public creative profile.
 
-/projects/:projectId/workspace
+/projects//workspace
 
 Collaboration and delivery.
 
@@ -1722,14 +1829,14 @@ Export records include design version, licence, user, format, and checksum.
 18.1 Project States
 
 stateDiagram-v2
-    [*] --> Draft
-    Draft --> Matching
-    Matching --> CreativeSelected
-    CreativeSelected --> Active
-    Active --> Review
-    Review --> Active: Revision requested
-    Review --> Completed: Approved
-    Draft --> Archived
+[*] --> Draft
+Draft --> Matching
+Matching --> CreativeSelected
+CreativeSelected --> Active
+Active --> Review
+Review --> Active: Revision requested
+Review --> Completed: Approved
+Draft --> Archived
 
 State transitions must be validated by the backend. Completion requires all required deliverables to be approved or explicitly waived.
 
@@ -1830,6 +1937,7 @@ The platform must block publication if required rights fields are incomplete.
     "field": "accent_color",
     "request_id": "uuid"
   }
+
 }
 
 20.2 HTTP Status Guidance
@@ -2034,6 +2142,7 @@ tentora/
 │   └── stage-3-technical-documentation.md
 ├── scripts/
 └── README.md
+
 
 23.2 Branching
 
