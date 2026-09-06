@@ -1,3 +1,68 @@
+Project: TENTORA
+Document type: Final acceptance, closure, and handover record
+Status: Template — not approved for closure until evidence is complete
+Depends on: Stage 1 — Idea Development, Stage 2 — Project Charter, Stage 3 — Technical Documentation, and Stage 4 — MVP Development and Evidence Plan
+
+Document Control
+
+Field
+
+Value
+
+Product
+
+TENTORA
+
+Stage
+
+5 of 5
+
+Audience
+
+Product owner, delivery team, reviewers, funders, and future maintainers
+
+Closure condition
+
+All mandatory acceptance evidence is linked and approved
+
+Evidence rule
+
+No planned item may be marked complete without executed, reviewable evidence
+
+Final authority
+
+Named owners in Section 19
+
+Closure Status Legend
+
+Status
+
+Meaning
+
+Completed
+
+Implemented and supported by evidence.
+
+Partial
+
+Some acceptance criteria passed; remaining gaps are documented.
+
+Deferred
+
+Intentionally moved beyond the MVP with an owner or backlog reference.
+
+Not Implemented
+
+Planned but not delivered.
+
+Pending Verification
+
+Implementation may exist, but acceptance evidence is incomplete.
+
+How to Use This Document
+
+Complete this file after Stage 4. Replace TBD and Pending only with verifiable repository, deployment, test, rights, or approval evidence. GitHub generates navigation from the numbered headings.
+
 1. Project Summary
 
 TENTORA is an AI-powered creative-solutions platform that connects project needs, ready interactive design, visual taste, and human creative expertise in one organized experience.
@@ -60,29 +125,29 @@ The final closure review must verify each implemented journey against the Stage 
 
 4. Target Sectors
 
-The planned initial sectors are:
+The approved initial sector taxonomy is:
 
 Sector
 
 Example Creative Needs
 
-Food and Beverage
+Restaurants & Cafés
 
 Identity, menus, packaging, social content, digital displays, staff products, and artwork.
 
-Events and Celebrations
+Events & Occasions
 
 Event identity, invitations, decorative visuals, signage, photography, and motion content.
 
-Exhibitions and Conferences
+Exhibitions & Conferences
 
 Booth graphics, event identity, signage, presentations, digital screens, and printed materials.
 
-Real Estate and Development
+Real Estate & Development
 
 Branding, brochures, renders, campaigns, signage, and property marketing content.
 
-E-commerce and Online Stores
+E-commerce Stores
 
 Identity, packaging, product imagery, store interfaces, campaigns, and social content.
 
@@ -332,17 +397,17 @@ Pending
 
 TBD
 
-Accepted statuses:
+Accepted statuses
 
-Completed
+Completed: implemented, verified, and linked to evidence.
 
-Partial
+Partial: partly accepted with documented gaps.
 
-Deferred
+Deferred: intentionally moved beyond the MVP.
 
-Not Implemented
+Not Implemented: planned but not delivered.
 
-Pending Verification
+Pending Verification: present or claimed, but evidence is incomplete.
 
 6. Technology Stack
 
@@ -530,23 +595,23 @@ Status
 
 Stage 1: Idea Development
 
-Approved document in docs/.
+Document exists in docs/; add approval reference.
 
-Completed
+Pending Verification
 
 Stage 2: Project Charter
 
-Approved document in docs/.
+Document exists in docs/; add approval reference.
 
-Completed
+Pending Verification
 
 Stage 3: Technical Documentation
 
-Approved document in docs/.
+Document exists in docs/; add technical sign-off reference.
 
-Completed
+Pending Verification
 
-Stage 4: Development and Execution Report
+Stage 4: MVP Development and Evidence Plan
 
 Updated implementation status and evidence.
 
@@ -897,6 +962,8 @@ The final demonstration accurately reflects the implemented product.
 11. Final Metrics
 
 Record actual measured results; do not estimate them after the fact.
+
+The targets below are proposed baselines inherited from earlier planning. Record the owner and approval source before treating any target as a formal closure threshold.
 
 Metric
 
