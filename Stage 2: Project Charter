@@ -1,0 +1,1228 @@
+Document status: Draft for approval
+Project: TENTORA
+Current stage: Stage 2 — Project Charter
+Previous document: Stage 1 — Idea Development
+Next document: Stage 3 — Technical Documentation
+
+Table of Contents
+
+Charter Purpose
+
+Project Purpose
+
+Product Definition
+
+MVP Objectives
+
+Target Users and Sectors
+
+MVP User Journeys
+
+Project Scope
+
+Functional Requirements
+
+Non-Functional Requirements
+
+Stakeholders
+
+Roles and Responsibilities
+
+Deliverables and Acceptance Criteria
+
+Success Metrics
+
+Assumptions and Constraints
+
+Risks and Mitigation
+
+High-Level Project Plan
+
+Milestones
+
+Value and Competitive Advantage
+
+Approval and Next Step
+
+1. Charter Purpose
+
+This charter translates the approved Stage 1 product concept into an actionable and controlled MVP plan.
+
+It defines:
+
+what the first version of TENTORA must prove;
+
+which users and sectors it will serve;
+
+what functionality is included and excluded;
+
+the required deliverables and acceptance criteria;
+
+how success will be measured;
+
+which assumptions, constraints, and risks must be managed; and
+
+what the team must approve before technical design begins.
+
+This charter controls MVP scope. Features outside it require an explicit change decision rather than being added informally during design or development.
+
+2. Project Purpose
+
+TENTORA is an AI-powered, curated creative-solutions platform that gives project owners two connected ways to obtain creative work:
+
+Design Now: Select a Ready Interactive Design, customize it within creator-defined boundaries, then save, purchase, or export a usable result.
+
+Work With a Creative: Define visual taste, receive up to six compatible creative, studio, or team recommendations, select the preferred option, and organize the project through delivery.
+
+The MVP is intended to test whether this model can:
+
+reduce unnecessary search;
+
+make creative services easier to understand;
+
+simplify visual decisions;
+
+preserve consistency across multiple services;
+
+produce relevant and explainable recommendations;
+
+protect creator rights; and
+
+connect self-service design with professional creative execution.
+
+3. Product Definition
+
+TENTORA begins with a project sector and relevant service, not an open directory of creative profiles or a long technical questionnaire.
+
+flowchart LR
+    A[Select Sector] --> B[Explore or Select Service]
+    B --> C{Choose a path}
+    C --> D[Design Now]
+    C --> E[Work With a Creative]
+
+The two paths address different levels of urgency and complexity while remaining connected. A user may customize a Ready Design first and later transfer the saved work to a suitable creative for professional development.
+
+TENTORA is not:
+
+a conventional freelance marketplace;
+
+a generic template library;
+
+a fully autonomous AI design generator;
+
+a simple portfolio directory; or
+
+a replacement for artists and designers.
+
+It is a structured system connecting Ready Interactive Designs, controlled AI assistance, visual taste, curated creative matching, and project delivery.
+
+4. MVP Objectives
+
+The MVP will test the following objectives:
+
+ID
+
+Objective
+
+OBJ-01
+
+Build a sector-led discovery experience covering the five initial sectors and their relevant creative services.
+
+OBJ-02
+
+Demonstrate Design Now with a controlled collection of Ready Interactive Designs and explicit editable properties.
+
+OBJ-03
+
+Allow a user without specialist design knowledge to select, customize, preview, and produce at least one valid output.
+
+OBJ-04
+
+Allow one or multiple services to be selected inside one project context.
+
+OBJ-05
+
+Allow users to complete one visual Taste Discovery exercise without mandatory registration at the beginning.
+
+OBJ-06
+
+Create one Main Taste Profile per project and reuse it across selected services.
+
+OBJ-07
+
+Allow an optional service-specific refinement without repeating the complete taste exercise.
+
+OBJ-08
+
+Return no more than six relevant, curated, and explainable recommendation options.
+
+OBJ-09
+
+Provide curated creative profiles with structured portfolio and Creative DNA information.
+
+OBJ-10
+
+Provide a basic workspace for references, files, feedback, milestones, responsibilities, and delivery status.
+
+OBJ-11
+
+Demonstrate a handoff from a saved Design Now result to professional execution without repeating existing information.
+
+OBJ-12
+
+Preserve creator attribution, customization permissions, AI permissions, licensing, and commercial terms for every MVP Ready Design.
+
+Quantities, test thresholds, and content-volume targets remain proposed until approved in this charter.
+
+5. Target Users and Sectors
+
+5.1 Primary client users
+
+The primary users are individuals and organizations seeking creative services within five initial sectors.
+
+Sector
+
+Example users
+
+Example services
+
+Restaurants & Cafés
+
+Restaurant, café, bakery, and food-brand owners.
+
+Identity, menu, packaging, social content, displays, staff products, and artwork.
+
+Events & Occasions
+
+Event organizers and people planning private occasions.
+
+Event identity, invitations, signage, decorative visuals, photography, and motion content.
+
+Exhibitions & Conferences
+
+Organizers, exhibitors, institutions, and participating companies.
+
+Booth graphics, identity, signage, presentations, screens, spatial artwork, and print.
+
+Real Estate & Development
+
+Developers, property companies, agents, and project owners.
+
+Branding, visualization, brochures, campaigns, signage, spatial concepts, and marketing content.
+
+E-commerce Stores
+
+Online retailers, founders, and product brands.
+
+Identity, packaging, product imagery, store interfaces, campaigns, and social content.
+
+5.2 Creative users
+
+Creative users may include approved independent creatives, artists, multidisciplinary designers, studios, and specialist teams.
+
+They may participate through:
+
+portfolio discovery and project recommendations;
+
+Ready Interactive Designs;
+
+paid professional customization;
+
+single-service projects; and
+
+multidisciplinary projects or coordinated teams.
+
+5.3 Future users
+
+Salons, wellness services, education, corporate offices, and other creative-service markets are outside the MVP. They may be assessed after the initial model is validated and must not appear as committed MVP sectors.
+
+6. MVP User Journeys
+
+6.1 Shared entry
+
+flowchart LR
+    A[Sector] --> B[Service and Creative Work]
+    B --> C[Choose Product Path]
+
+6.2 Design Now
+
+flowchart LR
+    A[Sector] --> B[Service]
+    B --> C[Ready Designs]
+    C --> D[Customize]
+    D --> E[Preview]
+    E --> F[Export or Save]
+
+The MVP does not require a complete taste test for this path and does not begin with an empty canvas. AI is limited to controlled, validated customization actions.
+
+6.3 Work With a Creative
+
+flowchart TD
+    A[Sector] --> B[Select One or Multiple Services]
+    B --> C[Visual Taste Discovery]
+    C --> D[Main Taste Profile]
+    D --> E[Optional Service Direction]
+    E --> F[Up to Six Recommendations]
+    F --> G[Portfolio Exploration and Selection]
+    G --> H[Project Workspace]
+    H --> I[Delivery]
+
+6.4 Design-to-Creative handoff
+
+flowchart LR
+    A[Saved Ready Design] --> B[Continue With a Creative]
+    B --> C[Transfer Content, Assets, and Edits]
+    C --> D[Match or Select Creative]
+    D --> E[Professional Development]
+
+7. Project Scope
+
+7.1 In scope for the MVP
+
+Area
+
+Included scope
+
+Sector and service discovery
+
+Five sector entry points, related services, curated examples, and access to both paths.
+
+Design Now pilot
+
+A controlled catalogue covering a proposed pilot service in every sector.
+
+Interactive customization
+
+Text, selected colors, approved fonts, supported image replacement, predefined layout variants, preview, save, and a validated export type.
+
+AI-assisted customization
+
+A limited set of feasible actions such as content reflow, text adaptation, color suggestions, background removal, or format adaptation.
+
+Multi-service selection
+
+Add one or multiple services to one project need.
+
+Taste Discovery
+
+Image-based selections that produce one Main Taste Profile.
+
+Taste reuse
+
+Apply the Main Taste Profile to selected services by default.
+
+Service direction
+
+Optional short refinement for one service without repeating the complete exercise.
+
+Creative matching
+
+Transparent service and taste matching with a maximum of six options.
+
+Creative data
+
+Curated portfolios with services, sectors, visual attributes, and initial Creative DNA.
+
+Portfolio exploration
+
+Profiles, relevant work, available services, and recommendation explanations.
+
+Basic workspace
+
+Summary, messages, references, files, feedback, milestones, responsibilities, and delivery status.
+
+Progressive authentication
+
+Explore without login; authenticate when identity, saving, purchase, export, or collaboration requires it.
+
+Rights data
+
+Creator, ownership, editable properties, AI permissions, license, and commercial terms.
+
+Design handoff
+
+Move saved design configuration, content, and assets into a creative project request.
+
+7.2 Out of scope for the MVP
+
+Area
+
+Excluded scope
+
+Blank-canvas AI generation
+
+Autonomous creation of complete designs from a prompt without an approved Ready Design.
+
+Advanced motion and 3D editors
+
+General-purpose WebGL, professional motion editing, or real-time 3D.
+
+Unrestricted marketplace
+
+Open publishing without TENTORA curation and approval.
+
+Mature learned recommendations
+
+Models requiring large behavioral datasets that do not yet exist.
+
+Unapproved model training
+
+Training on portfolios or Ready Designs without explicit permission and agreed terms.
+
+Real-time co-editing
+
+Simultaneous design or document editing by several users.
+
+Full financial operations
+
+Complex escrow, settlement, taxation, accounting, and multi-country compliance.
+
+Advanced team optimization
+
+Automated pricing, schedules, contracts, and optimization for large teams.
+
+3D production pipelines
+
+Automated architectural or product rendering.
+
+Native mobile applications
+
+Dedicated iOS and Android applications.
+
+Additional sectors
+
+Sectors outside the five approved initial categories.
+
+7.3 Proposed Design Now pilot services
+
+The final pilot services must be approved before Stage 3. The proposed set provides one technically controlled proof point per sector.
+
+Sector
+
+Proposed pilot service
+
+Example MVP output
+
+Restaurants & Cafés
+
+Menu Design
+
+Digital or print-ready menu.
+
+Events & Occasions
+
+Invitation Design
+
+Digital invitation.
+
+Exhibitions & Conferences
+
+Event Poster or Digital Display
+
+Screen or poster asset.
+
+Real Estate & Development
+
+Property Social Post
+
+Promotional social asset.
+
+E-commerce Stores
+
+Product Promotion Post
+
+Product-focused social asset.
+
+These proposals favor structured two-dimensional outputs that can share one editing and export foundation. Advanced motion, 3D, and complex multi-page production require explicit scope approval.
+
+7.4 Proposed content volume
+
+The working proposal is approximately two Ready Designs per pilot service, for at least ten designs in total, plus approximately 30–50 curated creative portfolios. These are planning assumptions that require feasibility, rights, and capacity approval before becoming commitments.
+
+8. Functional Requirements
+
+The keywords must, should, and may indicate required, recommended, and optional behavior respectively.
+
+8.1 Sector and service discovery
+
+FR-01: The system must display the five approved sectors.
+
+FR-02: The system must display relevant services and curated examples after sector selection.
+
+FR-03: The system must provide clear access to both product paths from a relevant service.
+
+8.2 Design Now
+
+FR-04: The system must display Ready Designs relevant to the selected sector and service.
+
+FR-05: The system must identify the original creator of every Ready Design.
+
+FR-06: The editor must load only properties allowed by the design definition.
+
+FR-07: The user must be able to preview changes before saving or exporting.
+
+FR-08: AI-assisted actions must preserve approved design rules.
+
+FR-09: A saved session must retain the selected design, values, client content, and uploaded assets.
+
+FR-10: Every pilot design must support at least one validated output type.
+
+8.3 Project needs and taste
+
+FR-11: A client must be able to add one or multiple services to My Project Needs.
+
+FR-12: Each project must have one image-based Taste Discovery exercise.
+
+FR-13: The system must produce and store one Main Taste Profile.
+
+FR-14: The Main Taste Profile must apply to selected services by default.
+
+FR-15: A client may create an optional service direction through a shorter refinement.
+
+FR-16: The system must not require the full taste exercise to be repeated within the same project.
+
+8.4 Creative DNA and matching
+
+FR-17: The system must store structured Creative DNA for every approved creative.
+
+FR-18: Creative DNA must include services, sector relevance, visual attributes, and portfolio evidence.
+
+FR-19: Matching must consider sector, services, Main Taste Profile, optional service directions, and Creative DNA.
+
+FR-20: Matching must return no more than six recommendation options.
+
+FR-21: An option may represent one creative, multidisciplinary studio, or compatible team.
+
+FR-22: Every result must explain its major recommendation reasons.
+
+8.5 Portfolio and selection
+
+FR-23: Clients must be able to inspect relevant portfolio work and services.
+
+FR-24: Clients should be able to save, compare, and select an option.
+
+FR-25: Project services and taste context must persist during selection.
+
+8.6 Project workspace
+
+FR-26: The system must create a workspace when a professional project begins.
+
+FR-27: The workspace must store the project summary, services, taste direction, references, files, feedback, milestones, responsibilities, and delivery state.
+
+FR-28: Client and creative must be able to exchange project messages and files.
+
+8.7 Design-to-Creative handoff
+
+FR-29: A Design Now user must be able to choose Continue With a Creative.
+
+FR-30: The system must transfer the design, customizations, content, and assets into the project context.
+
+FR-31: The handoff must not request information already stored in the design session.
+
+8.8 Authentication
+
+FR-32: Initial sector, service, work, and Ready Design exploration must not require login.
+
+FR-33: Authentication must be required when persistent identity, ownership, purchase, export, or project collaboration requires it.
+
+9. Non-Functional Requirements
+
+ID
+
+Category
+
+Requirement
+
+NFR-01
+
+Usability
+
+The interface must remain visual, minimal, and understandable without specialist terminology.
+
+NFR-02
+
+Performance
+
+Pilot designs and previews must meet a measurable loading target defined in Stage 3.
+
+NFR-03
+
+Responsiveness
+
+Core journeys must support current desktop and mobile web layouts.
+
+NFR-04
+
+Accessibility
+
+Controls, media, forms, and navigation must follow the accessibility standard selected in Stage 3.
+
+NFR-05
+
+Data integrity
+
+Project, taste, customization, creator, and recommendation relationships must remain consistent.
+
+NFR-06
+
+Security
+
+Authentication, uploads, private files, and personal data must follow secure implementation practices.
+
+NFR-07
+
+Explainability
+
+Recommendations must expose clear reasons rather than only an unexplained score.
+
+NFR-08
+
+Rights protection
+
+Ownership, permissions, AI actions, licensing, and commercial terms must be stored and enforced.
+
+NFR-09
+
+Modularity
+
+Sector, service, design, taste, matching, and workspace modules should support independent extension.
+
+10. Stakeholders
+
+10.1 Internal stakeholders
+
+Stakeholder
+
+Responsibility
+
+Project Team
+
+Product design, development, data, AI integration, testing, and delivery.
+
+Project Manager
+
+Scope, coordination, milestones, risks, decisions, and charter compliance.
+
+AI/ML Engineer
+
+Taste representation, matching, controlled AI actions, and evaluation.
+
+Creative Curation Lead
+
+Portfolio quality, Ready Design approval, editable-property rules, attribution, and creative consistency.
+
+10.2 External stakeholders
+
+project owners within the five initial sectors;
+
+curated artists, designers, studios, and teams;
+
+Ready Design contributors and rights holders;
+
+pilot and usability-test participants;
+
+legal, privacy, or IP advisers where engaged; and
+
+potential funders, partners, or investors evaluating feasibility and scalability.
+
+11. Roles and Responsibilities
+
+Role
+
+Key responsibilities
+
+Project Manager
+
+Scope control, planning, allocation, coordination, documentation, risk management, and delivery.
+
+Backend Lead
+
+APIs, architecture, authentication, data integration, design configuration, matching services, and workspace logic.
+
+Frontend Lead
+
+Discovery, editor, Taste Discovery, recommendations, profiles, workspace, accessibility, and responsive implementation.
+
+Database Lead
+
+Schema, migrations, integrity, portfolio and Creative DNA structures, design properties, and project data.
+
+AI/ML Engineer
+
+AI assistance, taste extraction, matching, image processing, evaluation, and future-model planning.
+
+QA Lead
+
+Functional, accessibility, journey, editor, export, matching, security, and regression testing.
+
+Creative Curation Lead
+
+Portfolio selection, design quality, attribution, customization limits, licensing data, and creative review.
+
+One person may hold more than one role during the MVP. Every responsibility must have a named owner and available capacity before Stage 4 begins.
+
+12. Deliverables and Acceptance Criteria
+
+ID
+
+Deliverable
+
+Minimum acceptance criterion
+
+DEL-01
+
+Sector and Service Experience
+
+All five sectors are accessible and display relevant services and curated examples.
+
+DEL-02
+
+Product-Path Selection
+
+Users can distinguish and enter either path from a relevant service.
+
+DEL-03
+
+Ready Design Pilot
+
+The approved number of permissioned designs is available across the approved pilot services.
+
+DEL-04
+
+Interactive Editor
+
+Every pilot design exposes only permitted controls, provides a valid preview, and supports an approved output.
+
+DEL-05
+
+AI Customization Pilot
+
+At least one approved AI action works without breaking the design's rules.
+
+DEL-06
+
+Taste Discovery
+
+Users complete visual selections and produce one stored Main Taste Profile.
+
+DEL-07
+
+Multi-Service Taste Model
+
+One profile applies across services and optional refinements are stored separately.
+
+DEL-08
+
+Creative Dataset
+
+The approved number of permissioned portfolios contains services, sectors, visual attributes, and initial Creative DNA.
+
+DEL-09
+
+Matching Engine
+
+The system returns no more than six relevant options with understandable reasons.
+
+DEL-10
+
+Creative Profiles
+
+Users can inspect relevant work, services, and Ready Designs where available.
+
+DEL-11
+
+Design Handoff
+
+Saved design configuration, content, and assets enter the professional project flow intact.
+
+DEL-12
+
+Project Workspace
+
+A project supports messages, files, references, feedback, milestones, responsibilities, and delivery state.
+
+DEL-13
+
+Technical Documentation
+
+Stage 3 documents architecture, schema, APIs, editor model, AI flow, and frontend plan.
+
+DEL-14
+
+Final Demonstration
+
+The demonstration shows both paths and at least one connected handoff journey.
+
+13. Success Metrics
+
+Final thresholds require approval after Stage 3 establishes realistic baselines and test design.
+
+ID
+
+Metric
+
+Proposed MVP target
+
+KPI-01
+
+Path comprehension
+
+At least 90% of test users correctly distinguish the two paths without explanation.
+
+KPI-02
+
+Design Now completion
+
+At least 80% complete and export the selected pilot task.
+
+KPI-03
+
+Design Now task time
+
+Median completion time of five minutes or less for the selected task.
+
+KPI-04
+
+Taste Discovery time
+
+Median completion time under three minutes.
+
+KPI-05
+
+Recommendation limit
+
+No result contains more than six options.
+
+KPI-06
+
+Match relevance
+
+At least 85% satisfaction with controlled matching relevance.
+
+KPI-07
+
+Multi-service reuse
+
+No full Taste Discovery repetition within one project.
+
+KPI-08
+
+Core journey completion
+
+At least 80% reach a valid Ready Design output or recommendation result.
+
+KPI-09
+
+Handoff integrity
+
+100% of required saved fields transfer during testing.
+
+KPI-10
+
+Creator-rights completeness
+
+100% of pilot designs have complete attribution, ownership, edit, AI, and license data.
+
+KPI-11
+
+Workspace task completion
+
+At least 80% complete the defined file, feedback, and milestone tasks.
+
+These numbers are proposed decision thresholds, not achieved performance or external benchmarks.
+
+14. Assumptions and Constraints
+
+14.1 Assumptions
+
+A permissioned portfolio set can be obtained and consistently classified.
+
+Ready Design contributors will provide explicit customization and licensing permissions.
+
+A controlled two-dimensional editor can validate the concept before motion or 3D tools.
+
+Weighted tag matching can validate the early recommendation experience.
+
+Users value both immediate self-service output and access to human creative expertise.
+
+14.2 Constraints
+
+Development time and team capacity are limited.
+
+Editor features and AI actions must remain controlled.
+
+Matching quality depends on portfolio and taste-data quality.
+
+The MVP will not have enough behavioral data for a mature learned recommendation model.
+
+Copyright, consent, licensing, privacy, and data requirements constrain permitted use.
+
+15. Risks and Mitigation
+
+ID
+
+Risk
+
+Impact
+
+Initial mitigation
+
+R-01
+
+Design Now makes the MVP too large.
+
+High
+
+Approve pilot services, limited properties, content volume, and one shared export foundation.
+
+R-02
+
+Editor complexity delays delivery.
+
+High
+
+Begin with structured two-dimensional designs and defer advanced motion, WebGL, and 3D.
+
+R-03
+
+AI actions damage design quality.
+
+High
+
+Restrict actions to validated properties and enforce layout rules.
+
+R-04
+
+Ready Design content is unavailable.
+
+High
+
+Confirm contributors, rights, and specifications before final editor design.
+
+R-05
+
+Matching relevance is weak.
+
+High
+
+Use transparent rules, curated attributes, controlled testing, and iterative feedback.
+
+R-06
+
+Portfolio data is insufficient.
+
+High
+
+Prioritize classification quality and permissioned data over catalogue size.
+
+R-07
+
+Multi-service matching becomes confusing.
+
+High
+
+Treat a multidisciplinary studio or compatible team as one recommendation option.
+
+R-08
+
+Recommended teams become visually inconsistent.
+
+High
+
+Use Main Taste Profile and Creative DNA compatibility as shared criteria.
+
+R-09
+
+Copyright or licensing disputes occur.
+
+High
+
+Store attribution, ownership, editable properties, AI permissions, licenses, and compensation.
+
+R-10
+
+Creative work is used for training without consent.
+
+High
+
+Require explicit opt-in and approved terms.
+
+R-11
+
+Users cannot distinguish the paths.
+
+Medium
+
+Use intent-based labels and early usability testing.
+
+R-12
+
+Anonymous activity is lost during sign-up.
+
+Medium
+
+Preserve temporary sessions and test conversion to authenticated ownership.
+
+R-13
+
+Export behavior is inconsistent.
+
+Medium
+
+Standardize pilot formats and test every approved design.
+
+R-14
+
+Creative participation is low.
+
+Medium
+
+Offer attribution, licensing income, customization opportunities, and transparent terms.
+
+R-15
+
+Scope expands informally.
+
+High
+
+Require a documented approval decision for additions outside this charter.
+
+16. High-Level Project Plan
+
+Stage
+
+Purpose
+
+Status
+
+Stage 1 — Idea Development
+
+Define concept, problem, sectors, product paths, product rules, and AI role.
+
+Completed baseline
+
+Stage 2 — Project Charter
+
+Approve MVP objectives, scope, stakeholders, deliverables, metrics, assumptions, constraints, and risks.
+
+Current
+
+Stage 3 — Technical Documentation
+
+Define architecture, database, APIs, editor model, AI workflows, matching logic, exports, and frontend components.
+
+Next
+
+Stage 4 — MVP Development
+
+Build and integrate the approved functions.
+
+Pending
+
+Stage 5 — Project Closure
+
+Complete testing, refinement, acceptance, demonstration, documentation, and handoff.
+
+Pending
+
+Stage 3 required design decisions
+
+system and deployment architecture;
+
+PostgreSQL schema and data relationships;
+
+Flask API routes and authentication flow;
+
+Ready Design property model and editor architecture;
+
+approved pilot services and export formats;
+
+Taste Profile and Creative DNA schemas;
+
+matching score and explanation logic;
+
+controlled AI workflows;
+
+React component architecture; and
+
+file, image, and workspace flows.
+
+17. Milestones
+
+Milestone
+
+Status
+
+Completion evidence
+
+Stage 1 Concept Defined
+
+Completed
+
+Approved Stage 1 document.
+
+Stage 2 Charter Approved
+
+Pending
+
+Approved scope, objectives, metrics, risks, and responsibilities.
+
+Stage 3 Architecture Complete
+
+Pending
+
+Architecture, schema, API, AI, editor, and frontend documentation.
+
+Ready Design Pilot Validated
+
+Pending
+
+Approved designs load, customize, preview, and export correctly.
+
+Taste and Matching Prototype Validated
+
+Pending
+
+Main Taste Profile and recommendation flow pass controlled tests.
+
+Connected MVP Complete
+
+Pending
+
+Both primary paths and the handoff operate end to end.
+
+Final Acceptance
+
+Pending
+
+User testing, defect closure, demonstration, and documentation are complete.
+
+18. Value and Competitive Advantage
+
+TENTORA combines an immediate self-service outcome with professional custom execution. It begins with a familiar project context, explains services visually, and uses AI where it can improve speed or relevance without removing creator ownership.
+
+Aspect
+
+TENTORA advantage to validate
+
+Speed
+
+Urgent clients can customize a Ready Design without starting a full commission.
+
+Simplicity
+
+Users begin with sector and service rather than an open directory or long brief.
+
+Personalization
+
+Professional projects use visual taste and project context, not keywords alone.
+
+Curation
+
+Designs and portfolios are reviewed before inclusion.
+
+Integration
+
+Self-service, matching, handoff, and delivery remain connected.
+
+Human and AI collaboration
+
+AI assists decisions and controlled customization while creators retain authorship and craft.
+
+Creative economics
+
+Creatives may earn from reusable designs, professional customization, and commissioned work.
+
+Learning potential
+
+Permissioned taste, design, and outcome signals may improve future recommendations.
+
+Scalability
+
+Sectors, services, designs, taste, and matching modules can expand independently.
+
+These advantages are product hypotheses until validated through the MVP and pilot evidence.
+
+19. Approval and Next Step
+
+19.1 Decisions required before Stage 3
+
+Approve or revise the five proposed Design Now pilot services.
+
+Approve the target number and source of Ready Designs.
+
+Approve the target number and source of creative portfolios.
+
+Approve the editor's supported properties.
+
+Approve initial output and export formats.
+
+Approve the AI-assisted actions included in the MVP.
+
+Approve the creative-data classification process.
+
+Assign named owners for creative rights, quality, and licensing.
+
+Approve or revise proposed success thresholds.
+
+Confirm role ownership and available team capacity.
+
+19.2 Charter approval record
+
+Decision
+
+Owner
+
+Status
+
+Date
+
+Notes
+
+Approve Stage 2 charter
+
+Project sponsor
+
+Pending
+
+TBD
+
+Complete after the decisions above.
+
+19.3 Required Stage 3 output
+
+Stage 3 must document the system architecture, database schema, API routes, Ready Design model, editor architecture, AI workflow, matching logic, output pipeline, and frontend component plan.
+
+Document Control
+
+Field
+
+Value
+
+Document type
+
+MVP project charter
+
+Change method
+
+Pull request with rationale and affected requirement IDs
+
+Scope changes
+
+Require explicit approval and update to this charter
+
+Requirement tracking
+
+Use objective, functional, non-functional, deliverable, KPI, and risk IDs
+
+Confidential content
+
+Do not commit credentials, personal IDs, private contracts, or unlicensed creative assets
+
+Previous document
+
+Stage 1 — Idea Development
+
+Next document
+
+Stage 3 — Technical Documentation
