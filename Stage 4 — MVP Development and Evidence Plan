@@ -1,3 +1,69 @@
+Project: TENTORA
+Document type: MVP implementation, QA, and evidence plan
+Status: Planned — update only with verified implementation evidence
+Depends on: Stage 1 — Idea Development, Stage 2 — Project Charter, and Stage 3 — Technical Documentation
+Next: Stage 5 — Project Closure
+
+Document Control
+
+Field
+
+Value
+
+Product
+
+TENTORA
+
+Stage
+
+4 of 5
+
+Audience
+
+Product owner, delivery team, engineering, QA, design, and reviewers
+
+Planning horizon
+
+Four proposed one-week sprints
+
+Source of truth
+
+GitHub Issues, pull requests, test results, and linked evidence
+
+Reporting rule
+
+Planned work must never be reported as implemented or verified without evidence
+
+Status Legend
+
+Status
+
+Meaning
+
+Planned
+
+Approved for implementation but not yet demonstrated.
+
+In Progress
+
+Work has started and has a linked issue or branch.
+
+Implemented
+
+Code is merged, but acceptance evidence may still be incomplete.
+
+Verified
+
+Acceptance criteria passed and evidence is linked.
+
+Deferred
+
+Explicitly removed from Stage 4 with rationale and destination backlog.
+
+Reading Guide
+
+GitHub generates the navigation outline from the numbered headings. Update the Evidence Register throughout implementation; do not wait until the end of the stage.
+
 1. Overview
 
 TENTORA is an AI-powered creative-solutions platform designed to help project owners obtain creative work through two connected paths:
@@ -6,7 +72,7 @@ Design Now: select a ready interactive design, customize it through controlled p
 
 Work With a Creative: select one or multiple services, complete one visual taste test, receive up to six compatible creative or team recommendations, select the preferred option, and manage the project through delivery.
 
-The MVP is implemented as a web application using React, Flask, and PostgreSQL. The architecture follows the modular-monolith approach defined in Stage 3.
+The MVP is planned as a web application using React, Flask, and PostgreSQL. Implementation must follow the modular-monolith direction in Stage 3 unless an approved Architecture Decision Record changes it.
 
 This document is a development and evidence plan. Statements must be updated with repository links, screenshots, pull requests, test results, and final status as implementation progresses. Planned items must not be reported as completed until they are verified.
 
@@ -43,6 +109,34 @@ Design-to-Creative handoff.
 A basic project workspace for messages, files, milestones, feedback, and deliverables.
 
 Progressive authentication that preserves anonymous progress.
+
+Approved sector baseline
+
+The implementation must use the following five sector names consistently across seeds, routes, filters, test data, demonstrations, and documentation:
+
+#
+
+Sector
+
+1
+
+Restaurants & Cafés
+
+2
+
+Events & Occasions
+
+3
+
+Exhibitions & Conferences
+
+4
+
+Real Estate & Development
+
+5
+
+E-commerce Stores
 
 3. Approved MVP Journeys
 
@@ -178,7 +272,7 @@ If no additional specialist joins the team, these responsibilities must be assig
 
 6. Agile Delivery Method
 
-Development is organized into four one-week sprints. Each sprint includes:
+Development is proposed as four one-week sprints. The team must confirm capacity, ownership, and dependencies at kickoff; the four-week duration must not be presented as validated until that review is complete. Each sprint includes:
 
 Sprint planning.
 
@@ -1082,7 +1176,7 @@ The final demonstration should show both journeys and their connection.
 
 Demo 1: Design Now
 
-Select Food and Beverage.
+Select Restaurants & Cafés.
 
 Select a pilot service such as Menu Design.
 
