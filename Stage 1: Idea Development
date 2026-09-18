@@ -1,11 +1,47 @@
-Document status: Completed baseline, subject to controlled revision
-Project: TENTORA
-Stage owner: Product team
-Next document: Stage 2 — Project Charter
+TENTORA is an AI-powered, curated creative-solutions platform that helps project owners discover, customize, and commission creative work through a clear sector-led experience.
+
+Document Control
+
+Field
+
+Value
+
+Project
+
+TENTORA
+
+Stage
+
+Stage 1 — Idea Development
+
+Document type
+
+Product concept baseline
+
+Status
+
+Completed baseline; subject to controlled revision
+
+Owner
+
+Product Team
+
+Next document
+
+Stage 2 — Project Charter
+
+Change method
+
+Pull request with a clear decision rationale
+
+[!CAUTION]
+Do not commit personal IDs, credentials, private contracts, confidential commercial terms, or unlicensed portfolio assets to this repository.
 
 Table of Contents
 
-Purpose
+Executive Summary
+
+Purpose and Stage Outputs
 
 Idea Evaluation
 
@@ -13,13 +49,15 @@ Problem Definition
 
 TENTORA Concept
 
-Initial Target Sectors
+Target Sectors
 
-Shared Product Experience
+Product Experience
 
-Path A: Design Now
+Path A — Design Now
 
-Path B: Work With a Creative
+Path B — Work With a Creative
+
+Public Landing Experience
 
 Core Product Components
 
@@ -43,147 +81,220 @@ Initial Risks and Mitigation
 
 Stage 1 Decisions and Exit Criteria
 
-1. Purpose
+1. Executive Summary
 
-This document defines the revised concept, problem, target sectors, product experience, role of artificial intelligence, core functionality, and initial technical direction of TENTORA.
+Project owners often know they need creative work but struggle to identify the right service, visual direction, or creative professional. Current experiences are fragmented across template libraries, portfolio platforms, freelance marketplaces, messaging tools, and project-management systems.
 
-Stage 1 establishes a shared product definition before the formal MVP objectives, scope, stakeholders, deliverables, risks, and success metrics are approved in Stage 2.
+TENTORA brings these activities into one curated journey. It begins with the client's industry and creative need, then offers fast and visible ways to move forward:
 
-Stage 1 outputs
+browse and edit a ready design created by a verified creative;
 
-A selected and clearly differentiated product concept.
+describe a need and use AI to discover a suitable template or starting point; or
 
-A defined customer problem.
+discover a visual taste profile and work with a compatible creative, studio, or coordinated team.
 
-Five initial project sectors.
+These are presented as clear customer entry points, while the underlying delivery model remains organized around two connected product paths:
 
-Two connected product paths.
+Product path
 
-Initial product rules and components.
+Intended outcome
+
+Design Now
+
+A fast, editable, ready-to-use creative result
+
+Work With a Creative
+
+An original or professionally developed creative solution
+
+TENTORA does not position AI as a replacement for creative professionals. AI reduces friction, interprets intent, recommends relevant work, assists permitted customization, structures taste preferences, and improves matching and project handoff.
+
+2. Purpose and Stage Outputs
+
+2.1 Purpose
+
+This document establishes the agreed product concept before Stage 2 defines the formal MVP objectives, boundaries, stakeholders, deliverables, schedule, risks, and success metrics.
+
+2.2 Stage 1 outputs
+
+A selected and differentiated product concept.
+
+A clearly defined customer problem.
+
+Five initial target sectors.
+
+Three visible customer entry points.
+
+Two connected fulfillment paths.
+
+Initial product rules and core components.
 
 A bounded role for artificial intelligence.
 
-Principles for creative ownership and licensing.
+Principles for creative ownership, licensing, and compensation.
 
 Provisional technical, team, measurement, and risk directions.
 
-2. Idea Evaluation
+3. Idea Evaluation
 
-Several concepts were compared based on user value, differentiation, technical feasibility, scalability, and their ability to solve a meaningful problem in the creative industry.
+Several concepts were evaluated according to user value, differentiation, technical feasibility, scalability, and their ability to solve a meaningful creative-industry problem.
 
 Proposed idea
 
 Strengths
 
-Weaknesses
+Limitations
 
 Decision
 
 Interior Design Platform
 
-Fast and visually engaging design inspiration.
+Fast and visually engaging inspiration
 
-Limited to one creative field and may stop at inspiration without supporting execution.
+Limited to one field and may stop at inspiration
 
-Retained as partial inspiration for visual taste discovery.
+Retained as inspiration for visual taste discovery
 
 Creative Solutions Platform — TENTORA
 
-Connects service discovery, instant customization, taste understanding, creative matching, and project organization.
+Connects discovery, customization, taste understanding, matching, and project delivery
 
-Requires curated creative content, structured taste data, and reliable matching logic.
+Requires curated content, structured taste data, and reliable matching logic
 
-Selected as the core concept.
+Selected as the core concept
 
 Event Management Platform
 
-Supports detailed planning and operational coordination.
+Supports detailed planning and operational coordination
 
-Too broad and operationally heavy for the intended MVP.
+Too broad and operationally heavy for the intended MVP
 
-Rejected because it does not focus on the creative problem.
+Rejected
 
 E-commerce Design Marketplace
 
-Provides access to ready-made design products and templates.
+Provides access to ready-made creative products
 
-Saturated category that often lacks artistic curation, personalization, and a path to custom execution.
+Often lacks curation, personalization, and a route to custom execution
 
-Retained only as partial inspiration for ready-to-customize creative work.
+Retained as inspiration for Ready Designs
 
 AI Mood-board Generator
 
-Offers a visually engaging AI experience.
+Creates an engaging visual AI experience
 
-Focuses on inspiration without reliably connecting users to practical outcomes or human execution.
+Inspiration alone does not guarantee a usable outcome
 
-Retained as a possible supporting feature.
+Retained as a supporting capability
 
-Selection rationale
+3.1 Selection rationale
 
-TENTORA was selected because it connects discovery with execution. It does not stop at inspiration, profile browsing, or template selection. It creates two routes to a usable outcome and preserves continuity between them.
+TENTORA was selected because it connects discovery with execution. It does not stop at inspiration, profile browsing, template selection, or AI generation. It gives users a path to a usable output and preserves continuity between self-service and professional creative work.
 
-3. Problem Definition
+4. Problem Definition
 
-Project owners often know that they need creative work but do not have a fast, clear path to the right outcome.
+4.1 Core problem
 
-The current process is fragmented. Users may need to:
+Project owners frequently need creative work but lack a fast, clear, and visually understandable route to the right result.
 
-browse large numbers of creative profiles;
+The current process may require users to:
 
-move between multiple platforms;
+browse large numbers of unrelated creative profiles;
 
-interpret specialist design terminology;
+move between several disconnected platforms;
 
-compare creatives without a consistent system;
+understand specialist design terminology;
 
-coordinate different creatives separately; and
+compare creatives without a consistent framework;
 
-manage files, feedback, revisions, approvals, and delivery through disconnected tools.
+coordinate multiple specialists independently; and
 
-The difficulty increases when one project requires several creative services. A restaurant or café, for example, may need visual identity, menu design, packaging, social-media assets, digital displays, motion graphics, staff products, and artwork. Finding and coordinating separate creatives can consume time and produce an inconsistent visual result.
+manage files, feedback, revisions, approvals, and delivery through separate tools.
 
-Clients also have different levels of urgency and complexity:
+4.2 Multi-service complexity
 
-Some need a fast, usable design they can customize immediately.
+A restaurant or café may require brand identity, menus, packaging, social-media assets, advertising, digital displays, websites, motion graphics, staff products, and artwork. Finding and coordinating separate creatives can consume time and produce an inconsistent visual outcome.
 
-Others need an original solution developed by a professional.
+4.3 Different users require different journeys
 
-Multi-service projects may require one multidisciplinary studio or a coordinated team.
+Client need
 
-Existing experiences often force these users through the same journey. TENTORA separates the two needs while keeping them connected.
+Suitable response
 
-4. TENTORA Concept
+“I need a usable design immediately.”
+
+Browse and edit a Ready Design
+
+“I know what I want but need help finding it.”
+
+Describe the need through Create with AI
+
+“I need an original professional solution.”
+
+Work With a Creative
+
+“My project requires several services.”
+
+Match with a multidisciplinary studio or coordinated team
+
+Existing platforms often force these needs through the same journey. TENTORA separates them while allowing clients to move between them without restarting.
+
+5. TENTORA Concept
 
 TENTORA is an AI-powered, curated creative-solutions platform that helps project owners move from a creative need to a usable result through a visual, simple, and organized experience.
 
-The platform begins with the client's project sector and required service, not an open directory of creative profiles.
+The platform begins with the client's project sector and required service—not with an open, unfiltered directory of creative profiles.
 
-After selecting a service, the client chooses the path that fits the need:
+5.1 Customer entry points
 
-Design Now: Customize a ready interactive design and obtain an immediate result.
+The public experience exposes three direct entry points:
 
-Work With a Creative: Discover a visual direction and work with a compatible creative, studio, or coordinated team.
+Ready Designs — browse editable templates created by verified creatives.
 
-TENTORA connects four capabilities:
+Create with AI — describe a need and receive relevant templates, structured starting points, or recommended next actions.
 
-sector-based service discovery;
+Work With a Creative — discover a visual direction and work with a compatible creative, studio, or team.
 
-interactive ready-design customization;
+Explore Creatives remains available as a discovery route for users who prefer to browse portfolios and creative profiles directly.
 
-visual taste understanding and intelligent creative matching; and
+5.2 Underlying product paths
 
-project organization from selection to delivery.
+flowchart TD
+    A[Creative Need] --> B{Choose an entry point}
+    B --> C[Ready Designs]
+    B --> D[Create with AI]
+    B --> E[Work With a Creative]
+    B --> F[Explore Creatives]
+    C --> G[Design Now]
+    D --> G
+    D --> H[Professional Handoff]
+    E --> H[Work With a Creative]
+    F --> H
 
-AI does not remove the role of artists and designers. It reduces friction, accelerates permitted customization, structures visual preferences, improves matching, supports project coordination, and enables a smooth transition from self-service design to professional execution.
+5.3 Connected capabilities
 
-Product boundary
+TENTORA connects:
 
-TENTORA is not a conventional freelance marketplace, generic template library, random portfolio feed, or blank-canvas AI image generator. Its role is to curate, understand, connect, and organize creative outcomes.
+sector-based creative discovery;
 
-5. Initial Target Sectors
+a curated marketplace of interactive Ready Designs;
 
-The initial version focuses on five project sectors. The selected sector determines which services, ready designs, creative work, and recommendations are shown. This prevents the experience from becoming a large, generic catalogue.
+prompt-assisted template and solution discovery;
+
+visual taste understanding;
+
+intelligent creative matching; and
+
+organized project collaboration through delivery.
+
+5.4 Product boundary
+
+[!IMPORTANT]
+TENTORA is not a conventional freelance marketplace, generic template library, random portfolio feed, or unrestricted blank-canvas AI image generator. Its role is to curate, understand, connect, and organize creative outcomes.
+
+6. Target Sectors
+
+The first product structure is organized around five sectors. The selected sector determines which services, Ready Designs, portfolio work, and recommendations appear.
 
 Sector
 
@@ -191,69 +302,79 @@ Example services
 
 Restaurants & Cafés
 
-Visual identity, menus, packaging, social-media design, digital advertising, websites and applications, digital displays, motion graphics, staff products, and artwork.
-
-Events & Occasions
-
-Event identity, invitations, decorative concepts, signage, photography, motion content, and event visuals.
-
-Exhibitions & Conferences
-
-Exhibition identity, booth graphics, signage, presentation materials, digital screens, printed materials, and spatial artwork.
+Brand identity, menus, packaging, social media, digital advertising, websites and apps, digital signage, motion, staff products, and artwork
 
 Real Estate & Development
 
-Branding, architectural visualization, interior visuals, brochures, digital campaigns, signage, and property-marketing content.
+Branding, architectural visualization, brochures, campaign design, signage, property marketing, and digital experiences
 
-E-commerce Stores
+Events & Occasions
 
-Brand identity, packaging, product photography, website interfaces, campaign design, social-media content, and digital advertising.
+Event identity, invitations, decorative concepts, signage, photography, motion content, and event visuals
 
-Product rule: The five sectors organize the experience. A secondary “Other Project” option may capture cases outside them, but it must not replace or weaken the sector-led journey.
+Exhibitions & Conferences
 
-6. Shared Product Experience
+Exhibition identity, booth graphics, signage, presentation materials, digital screens, print materials, and spatial artwork
 
-6.1 Entry journey
+E-commerce
 
-All clients begin with the same two actions:
+Brand identity, packaging, product photography, storefront interfaces, campaign design, social media, and digital advertising
+
+[!NOTE]
+The five sectors organize discovery across the platform. The initial operational pilot may begin with Restaurants & Cafés, while keeping the remaining sectors visible as part of the broader product vision.
+
+7. Product Experience
+
+7.1 Experience principles
+
+Show before asking. Users should see sectors, services, templates, and creative work before completing forms.
+
+Use plain language. Visual examples should explain services without requiring design terminology.
+
+Minimize early input. Budget, deadline, and technical details are requested only when necessary.
+
+Preserve continuity. A user can move from a template to a creative without re-entering existing information.
+
+Keep choices focused. Recommendations remain curated rather than endless.
+
+7.2 Shared entry journey
 
 flowchart LR
-    A[Select Project Sector] --> B[Select or Explore a Service]
-    B --> C{Choose a path}
-    C --> D[Design Now]
-    C --> E[Work With a Creative]
+    A[Select a Sector] --> B[Explore a Service]
+    B --> C{Choose how to continue}
+    C --> D[Browse Ready Designs]
+    C --> E[Describe with AI]
+    C --> F[Work With a Creative]
 
-Each service is presented through visual examples so clients can understand its possibilities without specialist terminology.
+7.3 Sector page structure
 
-Client intent
+Each sector page presents relevant work immediately. For example, Restaurants & Cafés may include:
 
-Product path
+All · Brand Identity · Menus · Packaging · Social Media · Digital Ads · Websites & Apps · Signage · Motion & Video
 
-“I need something now and want to customize it myself.”
+Visual category controls allow users to narrow the design grid with one action. Cards display the design preview, title, service, creator, price, editability, license summary, and save action.
 
-Design Now
+8. Path A — Design Now
 
-“I want a creative to design it for me.”
+8.1 Purpose
 
-Work With a Creative
+Design Now is the fast self-service path for clients who want an immediate result without beginning a full commissioned project.
 
-The paths remain connected. A client may begin with a ready design and later transfer saved work, content, assets, and preferences to a creative for professional development.
+8.2 Entry modes
 
-6.2 Experience principle
+Entry mode
 
-TENTORA minimizes required input at the beginning. It should not force users to complete a long questionnaire before they understand the services or see relevant creative work.
+Function
 
-Budget, deadline, deliverables, and technical requirements should be requested only when needed for purchasing, matching, or execution.
+Ready Designs
 
-7. Path A: Design Now
+The client browses sector- and service-specific editable templates
 
-7.1 Purpose
+Create with AI
 
-Design Now is the fast self-service path for clients who want an immediate result without beginning a full creative project.
+The client describes a need and AI recommends suitable templates or prepares a structured starting point
 
-The user does not start from a blank canvas, complete a full taste test, or wait for recommendations. The user selects a ready interactive design related to the chosen service and customizes it directly.
-
-7.2 Journey
+8.3 Ready Design journey
 
 flowchart LR
     A[Sector] --> B[Service]
@@ -261,15 +382,29 @@ flowchart LR
     C --> D[Select]
     D --> E[Customize]
     E --> F[Preview]
-    F --> G[Export or Purchase]
+    F --> G[Purchase or Export]
 
-Example:
+Example
 
-Restaurants & Cafés → Menu Design → Select a Ready Menu → Add Items and Prices → Adjust Type, Colors, Images, and Layout → Preview → Export
+Restaurants & Cafés → Menus → Select a Ready Menu → Add Items and Prices → Adjust Approved Properties → Preview → Purchase or Export
 
-7.3 Ready interactive designs
+8.4 Create with AI journey
 
-Ready designs are structured creative systems rather than flat images. Depending on the service, editable properties may include:
+flowchart LR
+    A[Describe the Need] --> B[Interpret Intent]
+    B --> C[Recommend Templates]
+    B --> D[Create a Starting Point]
+    B --> E[Recommend a Creative]
+
+Example prompt
+
+Create a modern bilingual menu for a specialty coffee shop in Riyadh.
+
+For the MVP, Create with AI may begin as AI-powered discovery: it interprets the request and retrieves the most relevant permissioned templates. Generating a completely new editable design can be introduced progressively after the editor and design schema are validated.
+
+8.5 Ready Design definition
+
+A Ready Design is a structured creative system rather than a flat image. Depending on its service and license, editable properties may include:
 
 text and content;
 
@@ -279,7 +414,7 @@ colors and brand tokens;
 
 images and illustrations;
 
-layout options;
+approved layout options;
 
 motion speed and behavior;
 
@@ -287,17 +422,31 @@ format, dimensions, and output channel; and
 
 logo and brand-asset placement.
 
-Ready designs may be produced by curated TENTORA creatives, selected studios, the internal creative team, or collaborations between TENTORA and independent creatives.
+8.6 Creator-led marketplace model
 
-The original creative remains identified and compensated according to the design's approved commercial model.
+Ready Designs are primarily uploaded by approved creatives or studios. TENTORA provides curation, quality standards, structured editability, discovery, licensing, purchase, and creator attribution.
 
-7.4 AI within Design Now
+Every listed design must identify:
 
-AI accelerates customization inside an existing design system. It does not need to generate the full design from an empty canvas.
+the original creative or studio;
 
-Depending on the service and creator permissions, AI may:
+editable and locked properties;
 
-reflow a layout according to content length;
+pricing and creator compensation;
+
+permitted AI-assisted actions;
+
+included output formats; and
+
+the applicable commercial license.
+
+TENTORA may also publish clearly identified collaborations or commissioned collections, but it must not present independent creative work as internally authored.
+
+8.7 AI-assisted customization
+
+Subject to creator permission and design rules, AI may:
+
+reflow layouts according to content length;
 
 suggest colors compatible with an uploaded logo;
 
@@ -305,9 +454,9 @@ remove image backgrounds;
 
 improve product images;
 
-generate a missing visual element when permitted;
+generate missing visual elements when permitted;
 
-adapt a design for multiple channels;
+adapt approved designs across channels;
 
 translate or rewrite content;
 
@@ -315,40 +464,29 @@ create consistent variations; and
 
 check readability, spacing, hierarchy, and visual balance.
 
-7.5 Moving from self-service to a creative
+8.8 Professional handoff
 
-If deeper customization or professional development is needed, the current work can be transferred without restarting the journey.
+When deeper customization is required, the client can transfer the current work to the original creative or another suitable professional.
 
-The transfer may include:
-
-selected ready design;
-
-client content and uploaded assets;
-
-saved customizations;
-
-preferred colors, typography, and visual properties;
-
-exported previews; and
-
-a structured summary generated from editing activity.
+The handoff may include the selected template, client content, uploaded assets, saved edits, visual preferences, previews, and an AI-generated structured brief.
 
 flowchart LR
-    A[Customize] --> B[Save]
-    B --> C[Continue With a Creative]
+    A[Customize] --> B[Save Work]
+    B --> C[Request Professional Help]
+    C --> D[Structured Creative Handoff]
 
-8. Path B: Work With a Creative
+9. Path B — Work With a Creative
 
-8.1 Purpose
+9.1 Purpose
 
-Work With a Creative is for clients who want an original, professionally developed, or multi-service creative solution.
+This path serves clients who need an original, professionally developed, or multi-service creative solution.
 
-8.2 Journey
+9.2 Journey
 
 flowchart TD
     A[Select Sector] --> B[Explore Services and Work]
     B --> C[Select One or Multiple Services]
-    C --> D[Complete One Visual Taste Test]
+    C --> D[Complete a Visual Taste Test]
     D --> E[Main Taste Profile]
     E --> F[Optional Service Refinement]
     F --> G[Up to Six Recommendations]
@@ -356,227 +494,261 @@ flowchart TD
     H --> I[Manage Project]
     I --> J[Final Delivery]
 
-8.3 Multi-service project needs
+9.3 Multi-service project needs
 
-The client can add one or multiple services to My Project Needs. All selected services remain inside one project context, preventing a separate discovery and matching journey for every service.
+Clients can add one or several services to My Project Needs. The selected services remain within one project context, preventing repeated discovery and matching journeys.
 
-8.4 One taste test per project
+9.4 Taste model
 
-The client completes one image-based visual taste test. TENTORA converts the selections into a structured Main Taste Profile and applies it across all selected services by default.
+The client completes one image-based taste test. TENTORA converts the choices into a reusable Main Taste Profile.
 
-The Main Taste Profile may include:
+The profile may include visual style, color preferences, mood, materials, textures, shape language, simplicity or boldness, and artistic direction.
 
-visual style;
-
-color preferences;
-
-mood and atmosphere;
-
-materials and textures;
-
-shape language;
-
-level of simplicity or boldness; and
-
-artistic direction.
-
-If the client wants a different direction for one service, Customize This Service Direction opens a shorter, service-specific refinement instead of repeating the full test.
-
-The taste model supports:
-
-Layer
+Taste layer
 
 Purpose
 
 Main Taste Profile
 
-Default visual direction for the complete project.
+Default direction for the complete project
 
 Service Taste Direction
 
-Optional variation for one selected service.
+Optional refinement for one selected service
 
 Additional Taste Direction
 
-Optional alternative when comparing more than one direction for the same service.
+Optional alternative when comparing directions
 
-8.5 Creative and team recommendations
+9.5 Recommendations
 
-TENTORA returns a maximum of six recommendation options to avoid recreating endless profile browsing.
-
-A recommendation may represent:
+TENTORA returns no more than six recommendation options. An option may be:
 
 one creative for one service;
 
-one multidisciplinary creative or studio for several services; or
+one multidisciplinary creative or studio; or
 
-one compatible creative team when several specialists are required.
+one compatible team when several specialists are required.
 
-For multi-service projects, TENTORA prioritizes options that preserve visual consistency. When one creative cannot cover every service, the platform may recommend a coordinated team whose Creative DNA profiles align with the project and with one another.
+Every recommendation explains its selection rationale, taste compatibility, relevant services, sector experience, portfolio evidence, and coverage.
 
-8.6 Selection and project workspace
+9.6 Project workspace
 
-Each recommendation should explain:
+After selection, the workspace may include the brief, stages, timeline, messages, references, files, responsibilities, feedback, revisions, approvals, deliverables, and delivery tracking.
 
-why the option was selected;
+10. Public Landing Experience
 
-taste compatibility;
+The landing page must explain the platform and let visitors begin without requiring registration or a long questionnaire.
 
-relevant services;
+10.1 Primary navigation
 
-sector experience;
+Ready Designs · Create with AI · Work With a Creative · Explore Creatives · How It Works
 
-similar portfolio work; and
+Account actions:
 
-services covered by the creative or team.
+Sign In · Get Started · EN / AR
 
-After selection, the project workspace may include stages, timeline, messages, references, files, feedback, revisions, approvals, responsibilities, deliverables, and delivery tracking.
+10.2 Sector navigation
 
-9. Core Product Components
+Restaurants & Cafés · Real Estate & Development · Events & Occasions · Exhibitions & Conferences · E-commerce
 
-9.1 Sector-based service discovery
+10.3 Hero proposition
 
-The selected sector structures available services and prevents irrelevant content from appearing. Every service includes curated visual examples and access to both product paths.
+Suggested headline
 
-9.2 Ready Design System
+Find the right design. Your way.
 
-Every ready design requires editable properties, preview states, output formats, authorship, pricing, licensing, and customization limits.
+Supporting copy
+
+Explore editable templates, create with AI, or work with a creative matched to your taste.
+
+The hero includes a prompt field—What would you like to create?—with quick service suggestions such as Menu, Brand Identity, Packaging, Social Media, and Website.
+
+10.4 Landing page sections
+
+Hero and AI prompt.
+
+Three ways to use TENTORA.
+
+Explore by industry.
+
+Featured Ready Designs.
+
+AI discovery demonstration.
+
+Selected work by real creatives.
+
+Featured creative profiles.
+
+How TENTORA works.
+
+Taste Discovery preview.
+
+Creator recruitment call to action.
+
+Trust, licensing, and quality signals.
+
+Final call to action and footer.
+
+[!IMPORTANT]
+The landing page should demonstrate value and direct users into the right journey. It should not attempt to contain the full marketplace, editor, matching flow, or project workspace.
+
+11. Core Product Components
+
+Component
+
+Responsibility
+
+Sector-Based Discovery
+
+Organizes services, templates, work, and recommendations by industry
+
+Ready Design Marketplace
+
+Supports creator uploads, curation, structured editability, pricing, licenses, purchase, and attribution
+
+Interactive Editor
+
+Allows clients to change only approved properties and preview valid outputs
+
+AI Intent Layer
+
+Interprets prompts and connects clients to templates, starting points, or professionals
+
+Taste Engine
+
+Converts visual choices into a structured Taste Profile
+
+Creative DNA
+
+Represents demonstrated style, skills, sector experience, and working preferences
+
+Matching Engine
+
+Compares project requirements and taste with Creative DNA and team compatibility
+
+Project Workspace
+
+Connects selection, communication, feedback, approvals, and delivery
+
+Curation and Quality Review
+
+Verifies creatives, templates, rights, and output standards
+
+11.1 Ready Design property model
 
 The system distinguishes between:
 
 properties editable directly by the client;
 
-properties adjustable with AI assistance;
+properties adjustable through AI assistance;
 
 changes requiring the original creative; and
 
-changes not permitted under the license.
+changes prohibited by the license.
 
-9.3 Taste Engine
+11.2 Creative DNA
 
-The Taste Engine converts visual choices into a structured Taste Profile. The MVP may begin with weighted tags. Later versions may introduce image embeddings and learned preference models.
+Creative DNA may include specialty, services, visual characteristics, sectors, portfolio attributes, multi-service capability, availability, scale, location, pricing level, and Ready Designs.
 
-9.4 Creative DNA
+11.3 Matching approach
 
-Creative DNA is derived from portfolio work and structured professional information. It may include specialty, services, visual characteristics, sectors, project experience, portfolio taste attributes, multi-service capability, availability, preferred scale, location, pricing level, and Ready Designs.
+The MVP may begin with weighted tags and cosine similarity. Later versions may incorporate visual embeddings, behavior signals, completed-project outcomes, and evaluated machine-learning models.
 
-This enables TENTORA to evaluate demonstrated visual identity and capability rather than relying only on job titles or keywords.
+11.4 Relational data requirements
 
-9.5 Matching Engine
+The platform must support relationships between sectors, services, Ready Designs, editable properties, creators, clients, projects, Taste Profiles, Creative DNA, recommendations, teams, workspace activity, licensing, purchases, and deliverables.
 
-The engine compares project sector, selected services, Main Taste Profile, optional service directions, Creative DNA, multi-service coverage, and team compatibility.
+12. Role of Artificial Intelligence
 
-The MVP may use weighted tag overlap and cosine similarity. Later versions may incorporate image embeddings, behavioral signals, completed-project outcomes, and machine-learning models.
-
-9.6 Project Workspace
-
-The workspace connects discovery and delivery. It stores services, taste directions, recommendations, selected participants, references, files, communication, feedback, approvals, milestones, and deliverables.
-
-9.7 Relational data requirements
-
-The platform must support relationships between:
-
-sectors and services;
-
-services and ready designs;
-
-ready designs and editable properties;
-
-ready designs and original creatives;
-
-clients and projects;
-
-projects and selected services;
-
-projects and Taste Profiles;
-
-services and optional taste directions;
-
-creatives, portfolios, and Creative DNA;
-
-recommendations, teams, and members; and
-
-workspace activity and deliverables.
-
-10. Role of Artificial Intelligence
-
-AI is a core intelligence and customization layer where it reduces time, improves relevance, simplifies visual decisions, or connects self-service activity with professional execution.
+AI is a cross-platform intelligence layer used where it reduces time, improves relevance, simplifies visual decisions, or supports professional execution.
 
 Capability
 
 AI responsibility
 
+Intent understanding
+
+Interpret natural-language requests and identify sector, service, style, format, and likely next action
+
+Template discovery
+
+Retrieve and rank relevant Ready Designs from the permissioned marketplace
+
 Interactive customization
 
-Adapt permitted design properties to client content, assets, formats, and brand inputs.
+Adapt approved properties to client content, assets, formats, and brand inputs
 
 Visual taste extraction
 
-Interpret selected images and, in later phases, uploaded references.
+Interpret selected images and, in later phases, uploaded references
 
 Taste structuring
 
-Convert visual choices into reusable project and service directions.
+Convert choices into reusable project and service directions
 
 Creative matching
 
-Compare project requirements and taste data with Creative DNA.
+Compare project requirements and taste data with Creative DNA
 
 Multi-service consistency
 
-Identify creatives or teams able to maintain a coherent direction.
+Identify creatives or teams able to maintain a coherent direction
 
 Creative handoff
 
-Turn self-service activity into a structured brief for a professional creative.
+Turn self-service activity into a structured professional brief
 
 Project assistance
 
-Organize briefs, feedback, revisions, files, decisions, and next actions.
+Organize briefs, feedback, revisions, files, decisions, and next actions
 
 Continuous improvement
 
-Learn from permitted signals such as selections, edits, rejected options, feedback, and completed outcomes.
+Learn from explicitly permitted interaction and outcome signals
 
-AI supports the product, but final artistic judgment, original authorship, professional craft, and custom execution remain human when a creative is involved.
+[!NOTE]
+Original authorship, professional craft, and final artistic judgment remain human when a creative is involved.
 
-11. Human Creativity, Ownership, and Rights
+13. Human Creativity, Ownership, and Rights
 
-TENTORA must create value for creatives rather than use their work as unprotected input.
+TENTORA must create value for creatives rather than treat their work as unprotected input.
 
 Every Ready Design must define:
 
 original creator attribution;
 
-ownership of the source design;
+source-design ownership;
 
 permitted customization;
 
-allowed AI-assisted changes;
+permitted AI-assisted changes;
 
-usage license;
+usage license and output rights;
 
-whether it is sold once or licensed repeatedly;
+single-sale or repeat-license model;
 
 creator compensation or revenue share; and
 
-whether further changes require the original creative.
+whether further changes require the original creator.
 
-The platform must not use portfolios or Ready Designs for model training without clear permission and appropriate terms.
+TENTORA must not use portfolios or Ready Designs for model training without explicit, informed permission and documented terms.
 
-Creatives may generate revenue through Ready Design licenses, paid customization, original commissioned work, and multidisciplinary projects.
+Creatives may generate revenue through template licenses, paid customization, commissioned work, and multidisciplinary projects.
 
-12. Unique Value Proposition
+14. Unique Value Proposition
 
-TENTORA transforms fragmented creative discovery into two connected outcomes: an immediate customizable result or an original professionally executed solution.
+TENTORA transforms fragmented creative discovery into connected, usable outcomes.
 
-Its value is based on six principles:
+Its differentiation is based on seven principles:
 
-Begin with the project sector and service, not an open profile directory.
+Begin with the project sector and service—not an open profile directory.
 
 Explain services through real creative work.
 
-Give urgent clients a fast Ready Design path.
+Offer creator-made Ready Designs for immediate needs.
+
+Let clients describe what they need through a direct AI prompt.
 
 Use one Main Taste Profile across one or multiple services.
 
@@ -584,39 +756,41 @@ Limit matching to a small, relevant set of creatives or teams.
 
 Move from self-service to professional execution without restarting.
 
-13. Potential Impact
+15. Potential Impact
 
 For clients
 
-Immediate usable results for simple or urgent needs.
+Faster access to relevant designs and services.
 
-Easier visual understanding of creative services.
+Immediate usable results for urgent needs.
 
-Less unnecessary profile browsing.
+Easier visual understanding of creative options.
 
-More relevant creative recommendations.
+More relevant professional recommendations.
 
-One visual direction across multiple services.
+One coherent direction across multiple services.
 
-Organized custom projects through delivery.
+Organized collaboration through final delivery.
 
 For creatives
 
-Recurring revenue from Ready Designs.
+Recurring revenue from Ready Design licenses.
 
-Better-fit custom opportunities.
+Better-fit project opportunities.
 
-Preserved attribution and ownership.
+Preserved attribution, ownership, and permissions.
 
-Conversion of self-service users into customization clients.
+Visibility within relevant sectors and services.
 
-Portfolio discovery within relevant sectors and services.
+Conversion from template users to customization clients.
 
 For the platform
 
-With appropriate consent and governance, interactions can create structured signals about selected services, design choices, edits, saved results, taste preferences, rejected recommendations, and successful matches. These signals can improve personalization and matching over time.
+With appropriate consent and governance, interactions may create structured signals about service demand, template selection, edits, taste preferences, rejected recommendations, and successful outcomes. These signals can improve discovery and matching over time.
 
-14. Project Roadmap
+16. Project Roadmap
+
+16.1 Delivery stages
 
 Stage
 
@@ -624,59 +798,58 @@ Focus
 
 Status
 
-Stage 1: Idea Development
+Stage 1 — Idea Development
 
-Concept, problem, sectors, product paths, AI role, product logic, and initial features.
+Concept, problem, sectors, product paths, AI role, and product logic
 
 Completed baseline
 
-Stage 2: Project Charter
+Stage 2 — Project Charter
 
-Objectives, approved MVP scope, stakeholders, deliverables, risks, and success metrics.
+Objectives, approved MVP scope, stakeholders, deliverables, risks, and metrics
 
 Next
 
-Stage 3: Technical Documentation
+Stage 3 — Technical Documentation
 
-Architecture, schema, APIs, AI flow, Ready Design structure, and frontend components.
-
-Pending
-
-Stage 4: MVP Development
-
-Build the approved discovery, customization, taste, matching, portfolio, and workspace functions.
+Architecture, schema, APIs, AI flow, Ready Design model, and frontend components
 
 Pending
 
-Stage 5: Project Closure
+Stage 4 — MVP Development
 
-Testing, refinement, acceptance, final demonstration, documentation, and handover.
+Build the approved discovery, editing, taste, matching, portfolio, and workspace functions
 
 Pending
 
-14.1 Product phases
+Stage 5 — Project Closure
+
+Testing, refinement, acceptance, demonstration, documentation, and handover
+
+Pending
+
+16.2 Product phases
 
 Phase
 
 Proposed focus
 
-Phase 1: MVP
+Phase 1 — MVP
 
-Five-sector structure, service discovery, limited Ready Design pilot, basic editing, Main Taste Profile, multi-service selection, weighted matching, up to six recommendations, portfolio exploration, and basic workspace.
+Sector-led discovery; Restaurants & Cafés pilot; limited creator-made Ready Designs; basic editing; AI-assisted retrieval; Main Taste Profile; multi-service selection; weighted matching; up to six recommendations; portfolio exploration; basic workspace
 
-Phase 2: Intelligence and Expansion
+Phase 2 — Intelligence and Expansion
 
-More Ready Design services, stronger AI assistance, uploaded-image analysis, service-level taste refinement, improved recommendation logic, dashboards, and progressive authentication.
+Additional sectors and Ready Designs; stronger AI assistance; uploaded-reference analysis; service-level taste refinement; improved matching; creator and client dashboards
 
-Phase 3: Creative Ecosystem
+Phase 3 — Creative Ecosystem
 
-Advanced interactive designs, AI-assisted mood boards, team formation, broader marketplace, 3D integrations, additional sectors, and expanded creative commerce.
+Advanced interactive designs; generated editable starting points; AI-assisted mood boards; team formation; broader marketplace; 3D integrations; expanded creative commerce
 
-The exact Phase 1 feature set must be approved in Stage 2 to prevent Design Now from making the MVP unmanageable.
+[!WARNING]
+The exact Phase 1 scope must be approved in Stage 2. A complete design editor, AI generation system, marketplace, matching engine, and project workspace should not all be treated as equally mature MVP commitments.
 
-15. Team Composition
-
-The table describes required project roles. Named assignments and capacity commitments must be confirmed in Stage 2.
+17. Team Composition
 
 Role
 
@@ -688,65 +861,71 @@ Backend Lead
 
 Backend development
 
-APIs, architecture, Ready Design data, matching services, and server-side integration.
+APIs, architecture, Ready Design data, matching services, and integrations
 
 Frontend Lead
 
 Frontend development
 
-Discovery, customization, Taste Discovery, recommendations, workspace, and responsive UI.
+Discovery, editing, Taste Discovery, recommendations, workspace, and responsive UI
 
 QA Lead
 
 Quality assurance
 
-Functional, journey, export, recommendation, accessibility, and stability testing.
+Journey, editor, export, recommendation, accessibility, and stability testing
 
 Database Lead / Project Manager
 
 Data and coordination
 
-Relational schema, data integrity, task coordination, scope control, and delivery planning.
+Relational schema, data integrity, task coordination, scope, and delivery planning
 
 AI/ML Engineer
 
 Artificial intelligence
 
-Customization assistance, taste extraction, Creative DNA, matching, image analysis, and evaluation.
+Intent interpretation, taste extraction, Creative DNA, matching, image analysis, and evaluation
 
 Creative Curation Lead
 
 Creative quality and rights
 
-Design curation, portfolio quality, editable-property standards, attribution, and licensing coordination.
+Curation, template standards, portfolio quality, attribution, licensing, and creator onboarding
 
-16. Initial Technical Direction
+Named assignments and capacity commitments must be confirmed in Stage 2.
 
-The following technologies are candidates, not final architecture decisions. They must be validated in Stage 3 against the approved MVP, available team skills, hosting model, cost, security, and delivery timeline.
+18. Initial Technical Direction
 
-16.1 Backend and infrastructure
+The following technologies are candidates, not final architecture decisions. Stage 3 must validate them against the approved MVP, team skills, hosting model, cost, security, and timeline.
+
+18.1 Application and infrastructure
 
 Component
 
 Initial candidate
 
-Language
+Web application
 
-Python
+Next.js / React
 
-API framework
+Styling
 
-Flask / RESTful API
+Tailwind CSS or a controlled design system
+
+API layer
+
+Next.js server functions or a dedicated Python API, subject to Stage 3 architecture
 
 Authentication
 
-JWT
+Managed authentication or standards-based token sessions
 
 API documentation
 
-Swagger / OpenAPI
+OpenAPI where a separate service layer is used
 
-16.2 Data and persistence
+18.2 Data and persistence
 
 Component
 
@@ -756,15 +935,19 @@ Relational database
 
 PostgreSQL
 
-ORM
+Data access
 
-SQLAlchemy
+ORM selected according to the final application architecture
+
+File and asset storage
+
+Object storage with permissioned access and delivery controls
 
 Data modeling
 
-Mermaid / MySQL Workbench
+Mermaid ER diagrams and schema migration tooling
 
-16.3 AI and data processing
+18.3 AI and processing
 
 Component
 
@@ -772,57 +955,53 @@ Initial direction
 
 Initial matching
 
-Weighted tags, cosine similarity, and nearest-neighbor methods
+Weighted tags and cosine similarity
+
+Prompt interpretation
+
+Structured extraction into sector, service, style, format, and intent
 
 Image processing
 
-OpenCV / Pillow
+Pillow / OpenCV or managed media services
 
-Future visual models
+Future visual understanding
 
-CLIP or comparable visual embedding models
+CLIP or comparable embedding models
 
-Machine learning
+Evaluation
 
-Scikit-learn; TensorFlow or PyTorch when justified
+Curated test sets, human review, relevance measures, and outcome feedback
 
-Data processing
-
-Pandas / NumPy
-
-16.4 Frontend and interactive design
+18.4 Interactive design
 
 Component
 
 Initial direction
 
-Web application
+Initial editor
 
-HTML5, CSS3, JavaScript, and React
+Schema-controlled text, image, color, and layout properties
 
-Styling
+Rendering
 
-Tailwind CSS
+Evaluate DOM/SVG, Canvas, or a specialist editor SDK
+
+Export
+
+Validate image and PDF first; introduce video or web outputs only when justified
 
 Prototyping
 
 Figma
 
-Interactive rendering
-
-Evaluate SVG, Canvas, or WebGL based on approved design types
-
-Export
-
-Validate service-specific image, PDF, video, or web output in Stage 3
-
-16.5 Collaboration
+18.5 Collaboration
 
 Component
 
 Initial tool
 
-Development environment
+Development
 
 Visual Studio Code
 
@@ -832,59 +1011,63 @@ Git and GitHub
 
 Project management
 
-Notion / GitHub Projects
+GitHub Projects / Notion
 
-Communication
+Team communication
 
 Slack / Zoom
 
-17. Initial Success Measures
+19. Initial Success Measures
 
-These measures are provisional. Stage 2 must confirm definitions, sample sizes, baselines, and targets before they are treated as commitments.
+These measures are hypotheses. Stage 2 must confirm definitions, test sizes, baselines, and targets.
 
 Area
 
 Provisional measure
 
-Path clarity
+Entry clarity
 
-Users distinguish Design Now from Work With a Creative without assistance.
+Users understand Ready Designs, Create with AI, and Work With a Creative without assistance
+
+Sector discovery
+
+Users reach a relevant service or design without registration
 
 Design Now speed
 
-Test users customize and export a pilot design within the Stage 2 target time.
+Test users customize and export a pilot design within the approved target time
 
 Ready Design usability
 
-Users identify editable properties and complete a valid output without specialist knowledge.
+Users identify editable properties and complete a valid output without specialist knowledge
+
+AI discovery relevance
+
+Prompt results contain relevant templates or next actions in controlled evaluation
 
 Taste Discovery speed
 
-Full visual taste test completed in under three minutes.
+Full visual taste test completed in under three minutes
 
 Recommendation set
 
-No more than six creative or team options shown.
+No more than six creative or team options shown
 
 Match relevance
 
-Proposed target: more than 85% satisfaction in controlled testing.
-
-Multi-service taste reuse
-
-Users do not repeat the full test for services inside the same project.
+Proposed target: more than 85% satisfaction in controlled testing
 
 Core journey completion
 
-Proposed target: more than 80% reach an output or recommendation.
+Proposed target: more than 80% reach an output or recommendation
 
 Creative handoff
 
-Saved self-service work transfers without re-entering the same information.
+Saved work transfers without requiring duplicate information
 
-The 85% and 80% values are hypotheses for Stage 2 review, not achieved results.
+The 85% and 80% values are proposed Stage 2 targets—not achieved results.
 
-18. Initial Risks and Mitigation
+20. Initial Risks and Mitigation
 
 Risk
 
@@ -892,144 +1075,146 @@ Impact
 
 Initial mitigation
 
-MVP grows after adding Design Now
+MVP expands across too many capabilities
 
 High
 
-Pilot a limited number of editable designs and approve exact scope in Stage 2.
+Approve a narrow pilot and explicit exclusions in Stage 2
 
-Ready Design editor becomes complex
-
-High
-
-Use a controlled property schema and start with simpler output types.
-
-Limited curated creative data
+Interactive editor becomes complex
 
 High
 
-Begin with a controlled set of permissioned portfolios and consistent labels.
+Start with a controlled property schema and limited output types
+
+Full AI-generated editable templates are unreliable
+
+High
+
+Begin with AI-powered retrieval and structured starting points
+
+Limited curated creative supply
+
+High
+
+Onboard a controlled set of permissioned creatives and templates
 
 Inaccurate taste or matching results
 
 High
 
-Start with transparent weighted tags, test with users, collect feedback, and improve progressively.
+Use transparent weighted tags, controlled testing, and human review
 
-Multi-service recommendations become complex
-
-High
-
-Prioritize multidisciplinary creatives and treat a compatible team as one option.
-
-Visual inconsistency across creatives
+Multi-service matching becomes complex
 
 High
 
-Use the Main Taste Profile and evaluate compatibility between team members.
+Prioritize multidisciplinary studios and treat compatible teams as one option
+
+Visual inconsistency across a team
+
+High
+
+Reuse the Main Taste Profile and measure Creative DNA compatibility
 
 Ownership or licensing disputes
 
 High
 
-Record attribution, ownership, permissions, licensing, and compensation for every Ready Design.
+Store attribution, ownership, permissions, license, and compensation per design
 
-Unauthorized use for model training
+Unauthorized model training
 
 High
 
-Require explicit permission and documented terms.
+Require explicit permission and documented terms
 
-AI produces unusable customization
+AI produces unusable edits
 
 Medium
 
-Constrain AI actions to validated properties and preserve layout rules.
+Constrain AI actions to validated properties and preserve design rules
 
 User onboarding friction
 
 Medium
 
-Begin with sector and service exploration and request details only when necessary.
+Show sectors, work, and services before requesting project details
 
-Too many recommendations
+Navigation becomes crowded
 
 Medium
 
-Limit final results to six and explain every recommendation.
+Separate primary product navigation from sector navigation
 
 Low creative adoption
 
 Medium
 
-Offer licensing revenue, relevant projects, attribution, and transparent commercial terms.
+Offer licensing revenue, attribution, quality exposure, and relevant opportunities
 
-19. Stage 1 Decisions and Exit Criteria
+21. Stage 1 Decisions and Exit Criteria
 
-19.1 Approved product decisions
+21.1 Approved product decisions
 
 TENTORA uses five initial sectors to organize discovery.
 
-TENTORA offers two connected paths: Design Now and Work With a Creative.
+The public experience offers Ready Designs, Create with AI, and Work With a Creative as direct entry points.
 
-Design Now begins with a Ready Interactive Design, not a blank canvas or full taste test.
+The underlying fulfillment model remains two connected paths: Design Now and Work With a Creative.
 
-Every custom project has one Main Taste Profile by default.
+Ready Designs are primarily uploaded by approved creatives and studios, not anonymously presented as TENTORA-owned work.
 
-A service may have an optional refinement without repeating the full test.
+Design Now begins with a structured Ready Design or an AI-assisted discovery result—not an unrestricted blank canvas.
 
-Recommendation results are limited to six creative, studio, or team options.
+The initial AI experience may retrieve and rank existing templates before full editable-design generation is introduced.
+
+Every custom project uses one Main Taste Profile by default.
+
+A selected service may have an optional taste refinement without repeating the full test.
+
+Recommendations are limited to six creative, studio, or team options.
 
 Self-service work can move into professional execution without restarting.
 
-Creators retain attribution, ownership, and defined commercial rights.
+Creators retain attribution, ownership, permissions, and defined commercial rights.
 
-AI supports customization, understanding, matching, handoff, and coordination; it does not replace human authorship and craft.
+AI supports intent understanding, discovery, customization, taste, matching, handoff, and coordination; it does not replace human authorship or professional craft.
 
-19.2 Items to approve in Stage 2
+21.2 Items requiring approval in Stage 2
 
-exact Phase 1 MVP scope;
+Exact Phase 1 MVP scope and explicit exclusions.
 
-pilot services and Ready Design types;
+Whether Phase 1 launches all five sectors or pilots Restaurants & Cafés first.
 
-named stakeholders and role capacity;
+Pilot services and Ready Design formats.
 
-deliverables and acceptance criteria;
+Definition and limits of Create with AI in the MVP.
 
-validated success metrics;
+Creator onboarding, review, pricing, revenue share, and licensing model.
 
-delivery schedule and budget boundaries;
+Named stakeholders and role capacity.
 
-governance, escalation, and decision rights; and
+Deliverables and acceptance criteria.
 
-legal entity and ownership structure.
+Validated success metrics.
 
-19.3 Exit criterion
+Delivery schedule and budget boundaries.
 
-Stage 1 is complete when the project sponsor and core team accept the product definition and authorize Stage 2 to convert it into a bounded project charter.
+Governance, escalation, and decision rights.
 
-Document Control
+Legal entity and intellectual-property structure.
 
-Field
+21.3 Exit criterion
 
-Value
+Stage 1 is complete when the project sponsor and core team accept this product definition and authorize Stage 2 to convert it into a bounded Project Charter.
 
-Current stage
+Stage Handoff
 
-Stage 1 — Idea Development
+flowchart LR
+    A[Stage 1<br/>Product Definition] --> B[Stage 2<br/>Project Charter]
+    B --> C[Stage 3<br/>Technical Documentation]
+    C --> D[Stage 4<br/>MVP Development]
+    D --> E[Stage 5<br/>Closure and Handover]
 
-Document type
-
-Product concept baseline
-
-Change method
-
-Pull request with a clear decision rationale
-
-Confidential content
-
-Do not commit personal IDs, credentials, private contracts, or unlicensed portfolio assets
-
-Next document
-
-Stage 2 — Project Charter
+Next: Stage 2 must convert the product vision into an approved, measurable, and technically bounded MVP.
