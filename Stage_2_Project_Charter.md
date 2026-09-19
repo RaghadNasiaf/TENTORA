@@ -43,14 +43,14 @@ The platform organizes creative discovery by sector and service, allowing users 
 
 ### Internal Stakeholders
 
-- Project Team.
-- Project Manager.
-- Backend Development Team.
-- Frontend Development Team.
-- Database Team.
-- Quality Assurance Team.
-- AI and Matching Development Team.
-- Creative Curation Team.
+- Project Team
+- Project Manager
+- Backend Development Team
+- Frontend Development Team
+- Database Team
+- Quality Assurance Team
+- AI and Matching Development Team
+- Creative Curation Team
 
 The internal stakeholders are responsible for planning, designing, developing, testing, and managing the TENTORA MVP.
 
@@ -58,12 +58,12 @@ The internal stakeholders are responsible for planning, designing, developing, t
 
 External stakeholders include:
 
-- Project owners within the five approved sectors.
-- Independent creatives and artists.
-- Creative studios and multidisciplinary teams.
-- Ready Design contributors and rights holders.
-- Pilot users and usability-testing participants.
-- Potential creative partners, investors, and funders.
+- Project owners within the five approved sectors
+- Independent creatives and artists
+- Creative studios and multidisciplinary teams
+- Ready Design contributors and rights holders
+- Pilot users and usability-testing participants
+- Potential creative partners, investors, and funders
 
 ---
 
@@ -73,19 +73,19 @@ The primary users of the MVP are **project owners, entrepreneurs, and organizati
 
 | Sector | Example Users |
 | :--- | :--- |
-| **Restaurants & Cafés** | Restaurant, café, bakery, and food-brand owners. |
-| **Real Estate & Development** | Developers, property companies, agents, and project owners. |
-| **Events & Occasions** | Event organizers and individuals planning private occasions. |
-| **Exhibitions & Conferences** | Organizers, exhibitors, institutions, and participating companies. |
-| **E-commerce** | Online retailers, founders, and product brands. |
+| **Restaurants & Cafés** | Restaurant, café, bakery, and food-brand owners |
+| **Real Estate & Development** | Developers, property companies, agents, and project owners |
+| **Events & Occasions** | Event organizers and individuals planning private occasions |
+| **Exhibitions & Conferences** | Organizers, exhibitors, institutions, and participating companies |
+| **E-commerce** | Online retailers, founders, and product brands |
 
 These users need a faster and clearer way to:
 
-- Understand available creative services.
-- Find suitable Ready Designs.
-- Discover their visual preferences.
-- Compare relevant creatives.
-- Organize creative projects until delivery.
+- Understand available creative services
+- Find suitable Ready Designs
+- Discover their visual preferences
+- Compare relevant creatives
+- Organize creative projects until delivery
 
 ---
 
@@ -93,19 +93,19 @@ These users need a faster and clearer way to:
 
 Creative users may include:
 
-- Approved independent creatives.
-- Artists and designers.
-- Multidisciplinary creatives.
-- Creative studios.
-- Specialist or coordinated teams.
+- Approved independent creatives
+- Artists and designers
+- Multidisciplinary creatives
+- Creative studios
+- Specialist or coordinated teams
 
 They may participate through:
 
-- Creative profiles and portfolio discovery.
-- Ready Design licensing.
-- Paid design customization.
-- Single-service projects.
-- Multi-service creative projects.
+- Creative profiles and portfolio discovery
+- Ready Design licensing
+- Paid design customization
+- Single-service projects
+- Multi-service creative projects
 
 ---
 
@@ -113,26 +113,30 @@ They may participate through:
 
 Future versions may expand to additional sectors such as:
 
-- Beauty and wellness.
-- Education.
-- Corporate offices.
-- Tourism and hospitality.
-- Cultural institutions.
+- Beauty and wellness
+- Education
+- Corporate offices
+- Tourism and hospitality
+- Cultural institutions
 
 These sectors are not included in the current MVP.
 
 ---
 
-## Team Roles & Responsibilities
+## 👥 Team Roles & Responsibilities
 
-| Team Member | Role | Key Responsibilities |
-| :--- | :--- | :--- |
-| **Khuloud Alqarni** | Backend Lead | Backend development, API logic, authentication, matching services, and server-side functionality. |
-| **Raghad Nassef** | Frontend Lead | Building the website interface, sector discovery, Ready Designs, Taste Discovery, and responsive frontend experience. |
-| **Layan Aldosari** | QA Lead | Testing user journeys, reviewing functionality, and ensuring quality, accessibility, and usability. |
-| **Banan Aleid** | Database Lead & Project Manager | Database design, schema structure, project planning, task allocation, scope control, and team coordination. |
+| Team Member | Proposed Role | Key Responsibilities |
+| :---: | :--- | :--- |
+| **—** | Founder / Product Owner | Product vision, strategic decisions, scope approval, and stakeholder coordination |
+| **—** | Project Manager | Project planning, task allocation, scope control, documentation, risk tracking, and delivery coordination |
+| **—** | Frontend Lead | Website interface, sector discovery, Ready Designs, Taste Discovery, responsive design, and frontend integration |
+| **—** | Backend Lead | Backend development, API logic, authentication, matching services, and server-side integrations |
+| **—** | Database Lead | Database design, schema structure, migrations, relationships, and data integrity |
+| **—** | QA Lead | User-journey testing, defect tracking, regression testing, accessibility, quality, and usability verification |
+| **—** | AI/ML Lead | Taste Profile logic, Creative DNA, matching, AI integration, and evaluation |
+| **—** | Creative Curation Lead | Portfolio review, Ready Design standards, attribution, licensing, and creative-rights verification |
 
-> Additional AI/ML and Creative Curation responsibilities may be assigned according to team capacity during MVP development.
+> **Note:** Team members, final role ownership, and capacity commitments have not yet been confirmed.
 
 ---
 
@@ -158,11 +162,11 @@ These sectors are not included in the current MVP.
 
 | Area | MVP Approach |
 | :--- | :--- |
-| **All Five Sectors** | Visible and clickable with services, examples, and prototype-level discovery. |
-| **Restaurants & Cafés** | First complete functional pilot. |
-| **Other Four Sectors** | Curated examples and clearly labeled demo content. |
-| **Creative Profiles** | Approved profiles or clearly labeled fictional demo profiles. |
-| **Ready Designs** | Permissioned creator designs or clearly labeled TENTORA demo collections. |
+| **All Five Sectors** | Visible and clickable with services, examples, and prototype-level discovery |
+| **Restaurants & Cafés** | First complete functional pilot |
+| **Other Four Sectors** | Curated examples and clearly labeled demo content |
+| **Creative Profiles** | Approved profiles or clearly labeled fictional demo profiles |
+| **Ready Designs** | Permissioned creator designs or clearly labeled TENTORA demo collections |
 
 Demo content must use labels such as:
 
@@ -203,106 +207,104 @@ The user should not be required to re-enter information already saved during cus
 
 | Risk | Mitigation Strategy |
 | :--- | :--- |
-| **MVP scope becomes too large** | Build one complete Restaurants & Cafés pilot while presenting the other sectors at prototype level. |
-| **Limited Ready Design catalogue** | Begin with a small curated collection of permissioned or clearly labeled demo designs. |
-| **Editor complexity** | Limit editing to approved text, colors, fonts, images, and predefined layouts. |
-| **Weak AI recommendations** | Begin with structured retrieval and transparent matching rules. |
-| **Weak creative matching** | Use sector, service, taste, and Creative DNA tags with controlled testing. |
-| **Limited creative profiles** | Prioritize profile quality and classification over catalogue size. |
-| **Copyright or licensing problems** | Store attribution, ownership, editable properties, permissions, and license terms for every design. |
-| **Unauthorized AI training** | Require explicit permission before using creative work for model training. |
-| **Users cannot distinguish product paths** | Use clear labels, visual examples, and early usability testing. |
-| **Anonymous progress is lost during sign-up** | Preserve temporary sessions through progressive authentication. |
-| **Scope creep** | Require documented approval for features outside the Project Charter. |
+| **MVP scope becomes too large** | Build one complete Restaurants & Cafés pilot while presenting the other sectors at prototype level |
+| **Limited Ready Design catalogue** | Begin with a small curated collection of permissioned or clearly labeled demo designs |
+| **Editor complexity** | Limit editing to approved text, colors, fonts, images, and predefined layouts |
+| **Weak AI recommendations** | Begin with structured retrieval and transparent matching rules |
+| **Weak creative matching** | Use sector, service, taste, and Creative DNA tags with controlled testing |
+| **Limited creative profiles** | Prioritize profile quality and classification over catalogue size |
+| **Copyright or licensing problems** | Store attribution, ownership, editable properties, permissions, and license terms for every design |
+| **Unauthorized AI training** | Require explicit permission before using creative work for model training |
+| **Users cannot distinguish product paths** | Use clear labels, visual examples, and early usability testing |
+| **Anonymous progress is lost during sign-up** | Preserve temporary sessions through progressive authentication |
+| **Scope creep** | Require documented approval for features outside the Project Charter |
 
 ---
-
-## High-Level Project Plan
 
 ## 🚀 Project Roadmap
 
-### Stage 1: Idea Development (Completed) ✅
+### Stage 1: Idea Development — Completed ✅
 
-- Define the TENTORA concept and problem statement.
-- Identify the five initial sectors.
-- Define the main product paths.
-- Define the role of AI.
-- Establish creator ownership and rights principles.
+- Define the TENTORA concept and problem statement
+- Identify the five initial sectors
+- Define the main product paths
+- Define the role of AI
+- Establish creator ownership and rights principles
 
-### Stage 2: Project Charter Development (Current Stage) 📍
+### Stage 2: Project Charter Development — Current Stage 📍
 
-- Define MVP objectives.
-- Define users and stakeholders.
-- Confirm included and excluded features.
-- Define team responsibilities.
-- Identify risks and mitigation strategies.
-- Approve MVP success measures.
+- Define MVP objectives
+- Define users and stakeholders
+- Confirm included and excluded features
+- Define team responsibilities
+- Identify risks and mitigation strategies
+- Approve MVP success measures
 
 ### Stage 3: Technical Documentation 📝
 
-- Design the system architecture.
-- Create the PostgreSQL database schema.
-- Define API routes and authentication flow.
-- Define the Ready Design property model.
-- Define Taste Profile and Creative DNA structures.
-- Define matching logic.
-- Define AI workflows.
-- Define frontend components and system flow.
+- Design the system architecture
+- Create the PostgreSQL database schema
+- Define API routes and authentication flow
+- Define the Ready Design property model
+- Define Taste Profile and Creative DNA structures
+- Define matching logic
+- Define AI workflows
+- Define frontend components and system flow
 
 ### Stage 4: MVP Development 🛠️
 
-- Build the five-sector discovery experience.
-- Develop the Restaurants & Cafés functional pilot.
-- Implement Ready Design browsing and customization.
-- Implement Create with AI discovery.
-- Implement Taste Discovery.
-- Implement creative matching.
-- Build Explore Creatives.
-- Develop the basic project workspace.
-- Add progressive authentication.
-- Connect Ready Designs to professional handoff.
+- Build the five-sector discovery experience
+- Develop the Restaurants & Cafés functional pilot
+- Implement Ready Design browsing and customization
+- Implement Create with AI discovery
+- Implement Taste Discovery
+- Implement creative matching
+- Build Explore Creatives
+- Develop the basic project workspace
+- Add progressive authentication
+- Connect Ready Designs to professional handoff
 
 ### Stage 5: Project Closure 🏁
 
-- Complete testing and bug fixing.
-- Validate the main user journeys.
-- Conduct usability testing.
-- Complete final UI improvements.
-- Prepare the final presentation and demonstration.
-- Submit the technical documentation and project report.
-- Complete final project handover.
+- Complete testing and bug fixing
+- Validate the main user journeys
+- Conduct usability testing
+- Complete final UI improvements
+- Prepare the final presentation and demonstration
+- Submit the technical documentation and project report
+- Complete final project handover
 
 ---
 
-## 📌 Key Milestones / Deliverables
+## 📌 Key Milestones & Deliverables
 
-- ✅ **Concept Defined:** The TENTORA idea, sectors, product paths, and AI role are documented.
-- 📍 **Project Charter:** MVP objectives, users, scope, roles, risks, and measures are approved.
-- ⏳ **Technical Architecture:** System architecture, database, APIs, AI flows, and frontend plan are documented.
-- ⚪ **Five-Sector Prototype:** All five sectors are visible, clickable, and contain relevant examples.
-- ⚪ **Restaurants & Cafés Pilot:** One complete functional sector journey is operational.
-- ⚪ **Ready Design Experience:** Users can browse, customize, preview, and save or export a pilot design.
-- ⚪ **Taste & Matching Prototype:** Users can generate a Taste Profile and receive up to six recommendations.
-- ⚪ **Connected Handoff:** Saved Ready Design information transfers to a professional creative journey.
-- ⚪ **Final Handover:** Testing, presentation, working demonstration, and documentation are completed.
+- ✅ **Concept Defined:** The TENTORA idea, sectors, product paths, and AI role are documented
+- 📍 **Project Charter:** MVP objectives, users, scope, roles, risks, and measures are approved
+- ⏳ **Technical Architecture:** System architecture, database, APIs, AI flows, and frontend plan are documented
+- ⚪ **Five-Sector Prototype:** All five sectors are visible, clickable, and contain relevant examples
+- ⚪ **Restaurants & Cafés Pilot:** One complete functional sector journey is operational
+- ⚪ **Ready Design Experience:** Users can browse, customize, preview, and save or export a pilot design
+- ⚪ **Taste & Matching Prototype:** Users can generate a Taste Profile and receive up to six recommendations
+- ⚪ **Connected Handoff:** Saved Ready Design information transfers to a professional creative journey
+- ⚪ **Final Handover:** Testing, presentation, working demonstration, and documentation are completed
 
 ---
 
-## Proposed Success Metrics
+## 📊 Proposed Success Metrics
 
 | Metric | Proposed MVP Target |
 | :--- | :--- |
-| **Path Comprehension** | At least 90% of test users correctly distinguish Design Now and Work With a Creative. |
-| **Design Now Completion** | At least 80% complete the selected pilot task. |
-| **Design Now Task Time** | Median completion time of five minutes or less. |
-| **Taste Discovery Time** | Median completion time under three minutes. |
-| **Recommendation Limit** | No result displays more than six options. |
-| **Match Relevance** | At least 85% satisfaction during controlled testing. |
-| **Core Journey Completion** | At least 80% reach a valid design output or creative recommendation. |
-| **Handoff Integrity** | 100% of required saved information transfers during testing. |
-| **Creator Rights Completeness** | 100% of pilot designs include attribution, permissions, ownership, and license information. |
+| **Path Comprehension** | At least 90% of test users correctly distinguish Design Now and Work With a Creative |
+| **Design Now Completion** | At least 80% complete the selected pilot task |
+| **Design Now Task Time** | Median completion time of five minutes or less |
+| **Taste Discovery Time** | Median completion time under three minutes |
+| **Recommendation Limit** | No result displays more than six options |
+| **Match Relevance** | At least 85% satisfaction during controlled testing |
+| **Core Journey Completion** | At least 80% reach a valid design output or creative recommendation |
+| **Handoff Integrity** | 100% of required saved information transfers during testing |
+| **Creator Rights Completeness** | 100% of pilot designs include attribution, permissions, ownership, and license information |
 
-> These values are proposed MVP testing targets and do not represent achieved results.
+> **Important:** These values are proposed MVP testing targets and do not represent achieved results.
 
 ---
 
@@ -312,53 +314,55 @@ TENTORA simplifies the process of finding and obtaining creative work by transfo
 
 It allows users to:
 
-- Find relevant creative services by sector.
-- Access editable Ready Designs.
-- Describe their needs using an AI prompt.
-- Discover their visual taste.
-- Connect with suitable creatives.
-- Manage the project until final delivery.
+- Find relevant creative services by sector
+- Access editable Ready Designs
+- Describe their needs using an AI prompt
+- Discover their visual taste
+- Connect with suitable creatives
+- Manage the project until final delivery
 
 ---
 
 ## 🚀 Key Innovation
 
-- **Sector-Led Discovery:** Users begin with a familiar project sector instead of an open creative directory.
-- **Ready Designs:** Clients can obtain fast results from editable designs created by approved creatives.
-- **AI-Assisted Discovery:** Users describe their needs in plain language and receive relevant recommendations.
-- **Visual Taste Discovery:** Client preferences are converted into one reusable Taste Profile.
-- **Curated Matching:** The platform provides no more than six relevant creative, studio, or team recommendations.
-- **Connected Handoff:** A Ready Design can move into professional execution without restarting the journey.
-- **Progressive Authentication:** Registration is delayed until saving, exporting, purchasing, or collaboration requires it.
-- **Creator Protection:** Attribution, ownership, permissions, and commercial rights remain clearly defined.
+- **Sector-Led Discovery:** Users begin with a familiar project sector instead of an open creative directory
+- **Ready Designs:** Clients can obtain fast results from editable designs created by approved creatives
+- **AI-Assisted Discovery:** Users describe their needs in plain language and receive relevant recommendations
+- **Visual Taste Discovery:** Client preferences are converted into one reusable Taste Profile
+- **Curated Matching:** The platform provides no more than six relevant creative, studio, or team recommendations
+- **Connected Handoff:** A Ready Design can move into professional execution without restarting the journey
+- **Progressive Authentication:** Registration is delayed until saving, exporting, purchasing, or collaboration requires it
+- **Creator Protection:** Attribution, ownership, permissions, and commercial rights remain clearly defined
 
 ---
 
 ## 🏆 Competitive Advantage
 
-- **Accessibility:** Easier for non-designers to understand than traditional creative-service platforms.
-- **Speed:** Faster than searching manually across multiple platforms.
-- **Personalization:** Uses visual taste and project context instead of keywords alone.
-- **Curation:** Designs and creative profiles are reviewed before inclusion.
-- **Flexibility:** Supports both immediate Ready Designs and original commissioned work.
-- **Continuity:** Connects discovery, customization, matching, collaboration, and delivery.
-- **Human and AI Collaboration:** AI reduces friction while creatives retain authorship and professional judgment.
-- **Creative Economics:** Creatives may earn from Ready Design licenses, customization, and commissioned projects.
+- **Accessibility:** Easier for non-designers to understand than traditional creative-service platforms
+- **Speed:** Faster than searching manually across multiple platforms
+- **Personalization:** Uses visual taste and project context instead of keywords alone
+- **Curation:** Designs and creative profiles are reviewed before inclusion
+- **Flexibility:** Supports both immediate Ready Designs and original commissioned work
+- **Continuity:** Connects discovery, customization, matching, collaboration, and delivery
+- **Human and AI Collaboration:** AI reduces friction while creatives retain authorship and professional judgment
+- **Creative Economics:** Creatives may earn from Ready Design licenses, customization, and commissioned projects
 
 ---
 
-## Stage 2 Approval
+## ✅ Stage 2 Approval Requirements
 
 Before moving to Stage 3, the team must approve:
 
-- The exact Restaurants & Cafés pilot services.
-- The number and source of Ready Designs.
-- The editor’s supported customization properties.
-- The initial output and export formats.
-- The AI-assisted actions included in the MVP.
-- The source and labeling of demo content.
-- The creative-profile classification process.
-- The proposed success metrics.
-- Named responsibility owners and available team capacity.
+- The exact Restaurants & Cafés pilot services
+- The number and source of Ready Designs
+- The editor’s supported customization properties
+- The initial output and export formats
+- The AI-assisted actions included in the MVP
+- The source and labeling of demo content
+- The creative-profile classification process
+- The proposed success metrics
+- Named responsibility owners and available team capacity
+
+---
 
 > **Next Step:** Stage 3 will convert the approved Project Charter into a complete technical blueprint for MVP development.
