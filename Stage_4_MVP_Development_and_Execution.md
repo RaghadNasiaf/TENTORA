@@ -127,11 +127,16 @@ Each sprint includes:
 
 ## Team Roles & Responsibilities
 
-| Team Member | Primary Role | Implementation Responsibilities |
-| :--- | :--- | :--- |
-| **Banan Aleid** | Database Lead & Project Manager | Database schema, migrations, data integrity, sprint planning, task coordination, documentation tracking, and delivery oversight. |
-| **Khuloud Alqarni** | Backend Lead with Frontend & UI Support | Flask APIs, backend modules, integration, selected React components, and UI implementation after team restructuring. |
-| **Layan Aldosari** | QA Engineer | Test planning, API testing, UI testing, defect tracking, regression testing, and evidence collection. |
+| Team Member | Proposed Role | Implementation Responsibilities |
+| :---: | :--- | :--- |
+| **—** | Founder / Product Owner | Product vision, strategic decisions, scope approval, stakeholder coordination, and final product acceptance. |
+| **—** | Project Manager | Sprint planning, task coordination, documentation tracking, risk management, and delivery oversight. |
+| **—** | Frontend Lead | React architecture, user-interface implementation, responsive layouts, accessibility, and frontend integration. |
+| **—** | Backend Lead | Flask APIs, backend modules, authentication, authorization, business logic, and server-side integration. |
+| **—** | Database Lead | Database schema, migrations, relationships, data integrity, and query optimization. |
+| **—** | QA Lead | Test planning, API testing, UI testing, defect tracking, regression testing, and evidence collection. |
+| **—** | AI/ML Lead | AI prompt interpretation, Taste Profile calculation, Creative DNA, matching logic, evaluation, and AI safety controls. |
+| **—** | Creative Curation Lead | Ready Design preparation, portfolio review, classification, attribution, licensing, and creative-rights verification. |
 
 ### Shared or Unassigned Responsibilities
 
@@ -147,6 +152,9 @@ The following responsibilities must receive a named owner before their sprint be
 - Deployment and environment configuration.
 
 > One person may hold more than one responsibility, but every task must have a named owner and acceptance criteria.
+
+> [!NOTE]
+> Team members, final role ownership, and capacity commitments have not yet been confirmed. The roles above are proposed implementation roles only.
 
 ---
 
@@ -526,15 +534,15 @@ Each Pull Request should include:
 
 | Test Type | Scope |
 | :--- | :--- |
-| **Unit Testing** | Validation, Taste Profile calculations, matching scores, permissions, and state transitions. |
-| **API Testing** | HTTP methods, schemas, status codes, authorization, validation, and persistence. |
-| **Database Testing** | Relationships, constraints, migrations, rollback, and data integrity. |
-| **Frontend Testing** | User interaction, forms, editor controls, loading, empty, success, and error states. |
-| **Integration Testing** | Frontend-to-API, API-to-database, renderer, storage, and AI flows. |
-| **End-to-End Testing** | Design Now, Work With a Creative, handoff, authentication, and workspace. |
-| **Security Testing** | Ownership, roles, token handling, uploads, rights enforcement, and data isolation. |
-| **Accessibility Testing** | Keyboard navigation, labels, focus, contrast, image alternatives, and editor controls. |
-| **Usability Testing** | Path clarity, editor ease, Taste Discovery time, matching relevance, and handoff comprehension. |
+| **Unit Testing** | Validation, Taste Profile calculations, matching scores, permissions, and state transitions |
+| **API Testing** | HTTP methods, schemas, status codes, authorization, validation, and persistence |
+| **Database Testing** | Relationships, constraints, migrations, rollback, and data integrity |
+| **Frontend Testing** | User interaction, forms, editor controls, loading, empty, success, and error states |
+| **Integration Testing** | Frontend-to-API, API-to-database, renderer, storage, and AI flows |
+| **End-to-End Testing** | Design Now, Work With a Creative, handoff, authentication, and workspace |
+| **Security Testing** | Ownership, roles, token handling, uploads, rights enforcement, and data isolation |
+| **Accessibility Testing** | Keyboard navigation, labels, focus, contrast, image alternatives, and editor controls |
+| **Usability Testing** | Path clarity, editor ease, Taste Discovery time, matching relevance, and handoff comprehension |
 
 ---
 
@@ -542,10 +550,10 @@ Each Pull Request should include:
 
 | Severity | Definition | Release Rule |
 | :--- | :--- | :--- |
-| **Critical** | Data loss, unauthorized access, rights violation, unusable export, or broken core journey. | Must be fixed before acceptance. |
-| **High** | Major feature failure without a reliable workaround. | Fix before the final demonstration unless formally accepted. |
-| **Medium** | Partial failure with an available workaround. | Fix if capacity allows or document clearly. |
-| **Low** | Cosmetic or minor usability issue. | May be deferred with an issue reference. |
+| **Critical** | Data loss, unauthorized access, rights violation, unusable export, or broken core journey | Must be fixed before acceptance |
+| **High** | Major feature failure without a reliable workaround | Fix before the final demonstration unless formally accepted |
+| **Medium** | Partial failure with an available workaround | Fix if capacity allows or document clearly |
+| **Low** | Cosmetic or minor usability issue | May be deferred with an issue reference |
 
 ### Bug Workflow
 
@@ -562,26 +570,26 @@ If the defect is not resolved or cannot be reproduced, it returns to the respons
 
 | ID | Feature | Test Scenario | Expected Result | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **T-01** | Sector Discovery | Open the sector catalogue. | Five approved sectors are displayed. | Not Run |
-| **T-02** | Service Filtering | Select a sector. | Only relevant services and work appear. | Not Run |
-| **T-03** | Path Choice | Open a service. | Design Now and Work With a Creative are distinguishable. | Not Run |
-| **T-04** | Ready Design | Open a published design. | The correct version and controls load. | Not Run |
-| **T-05** | Property Validation | Submit an invalid property value. | API rejects it without corrupting the session. | Not Run |
-| **T-06** | Preview | Change properties and request a preview. | Preview reflects the stored values. | Not Run |
-| **T-07** | Export | Request an approved format. | Export completes and an authorized download is available. | Not Run |
-| **T-08** | AI Permission | Request a disallowed AI action. | The action is blocked safely. | Not Run |
-| **T-09** | Creator Rights | Publish a design with missing rights fields. | Publication is blocked. | Not Run |
-| **T-10** | Multi-Service Needs | Add multiple services. | All services remain in one project. | Not Run |
-| **T-11** | Taste Discovery | Complete the visual selections. | One Main Taste Profile is created. | Not Run |
-| **T-12** | Taste Reuse | Continue through selected services. | The complete test is not repeated. | Not Run |
-| **T-13** | Service Direction | Refine one service. | The change is stored separately. | Not Run |
-| **T-14** | Creative Filtering | Run matching with unapproved profiles. | Unapproved profiles are excluded. | Not Run |
-| **T-15** | Recommendation Limit | Generate recommendations. | No more than six options appear. | Not Run |
-| **T-16** | Recommendation Reason | View an option. | Taste, service, and sector reasons appear. | Not Run |
-| **T-17** | Anonymous Conversion | Register after temporary activity. | Ownership transfers without losing progress. | Not Run |
-| **T-18** | Handoff | Continue from a design to a creative. | Design data, content, and assets are preserved. | Not Run |
-| **T-19** | Workspace Access | Open another client’s project. | Access is denied. | Not Run |
-| **T-20** | Deliverable Version | Submit a revised deliverable. | The previous version remains in history. | Not Run |
+| **T-01** | Sector Discovery | Open the sector catalogue | Five approved sectors are displayed | Not Run |
+| **T-02** | Service Filtering | Select a sector | Only relevant services and work appear | Not Run |
+| **T-03** | Path Choice | Open a service | Design Now and Work With a Creative are distinguishable | Not Run |
+| **T-04** | Ready Design | Open a published design | The correct version and controls load | Not Run |
+| **T-05** | Property Validation | Submit an invalid property value | API rejects it without corrupting the session | Not Run |
+| **T-06** | Preview | Change properties and request a preview | Preview reflects the stored values | Not Run |
+| **T-07** | Export | Request an approved format | Export completes and an authorized download is available | Not Run |
+| **T-08** | AI Permission | Request a disallowed AI action | The action is blocked safely | Not Run |
+| **T-09** | Creator Rights | Publish a design with missing rights fields | Publication is blocked | Not Run |
+| **T-10** | Multi-Service Needs | Add multiple services | All services remain in one project | Not Run |
+| **T-11** | Taste Discovery | Complete the visual selections | One Main Taste Profile is created | Not Run |
+| **T-12** | Taste Reuse | Continue through selected services | The complete test is not repeated | Not Run |
+| **T-13** | Service Direction | Refine one service | The change is stored separately | Not Run |
+| **T-14** | Creative Filtering | Run matching with unapproved profiles | Unapproved profiles are excluded | Not Run |
+| **T-15** | Recommendation Limit | Generate recommendations | No more than six options appear | Not Run |
+| **T-16** | Recommendation Reason | View an option | Taste, service, and sector reasons appear | Not Run |
+| **T-17** | Anonymous Conversion | Register after temporary activity | Ownership transfers without losing progress | Not Run |
+| **T-18** | Handoff | Continue from a design to a creative | Design data, content, and assets are preserved | Not Run |
+| **T-19** | Workspace Access | Open another client’s project | Access is denied | Not Run |
+| **T-20** | Deliverable Version | Submit a revised deliverable | The previous version remains in history | Not Run |
 
 ---
 
@@ -735,16 +743,16 @@ The real `.env` file must be excluded using `.gitignore`.
 
 | Risk | Effect | Response |
 | :--- | :--- | :--- |
-| **Four sprints are insufficient** | Core journeys remain incomplete. | Prioritize one complete vertical slice for each path. |
-| **Ready Design editor becomes too broad** | Sprint 2 is delayed. | Use one renderer and controlled two-dimensional properties. |
-| **No dedicated AI/ML engineer** | Taste or matching lacks ownership. | Assign a named owner and use transparent rule-based methods. |
-| **Insufficient Ready Designs** | Editor demonstration becomes weak. | Approve designs, rights, schema, and assets before development. |
-| **Incomplete portfolio data** | Matching quality becomes unreliable. | Prioritize accurate tags over catalogue size. |
-| **Team matching is too complex** | Results become unstable. | Use small teams only when service coverage requires them. |
-| **Rights data is incomplete** | Designs cannot be published safely. | Block publication until all required rights fields are complete. |
-| **Old project code is reused unchanged** | Interior-design provider concepts remain. | Map every reused component and table to the TENTORA model. |
-| **Test evidence is collected late** | Final report cannot prove implementation. | Attach evidence during every sprint. |
-| **Secrets appear in Git history** | Security and submission risk. | Use `.env`, `.gitignore`, secret scanning, and immediate key rotation. |
+| **Four sprints are insufficient** | Core journeys remain incomplete | Prioritize one complete vertical slice for each path |
+| **Ready Design editor becomes too broad** | Sprint 2 is delayed | Use one renderer and controlled two-dimensional properties |
+| **No dedicated AI/ML engineer** | Taste or matching lacks ownership | Assign a named owner and use transparent rule-based methods |
+| **Insufficient Ready Designs** | Editor demonstration becomes weak | Approve designs, rights, schema, and assets before development |
+| **Incomplete portfolio data** | Matching quality becomes unreliable | Prioritize accurate tags over catalogue size |
+| **Team matching is too complex** | Results become unstable | Use small teams only when service coverage requires them |
+| **Rights data is incomplete** | Designs cannot be published safely | Block publication until all required rights fields are complete |
+| **Old project code is reused unchanged** | Interior-design provider concepts remain | Map every reused component and table to the TENTORA model |
+| **Test evidence is collected late** | Final report cannot prove implementation | Attach evidence during every sprint |
+| **Secrets appear in Git history** | Security and submission risk | Use `.env`, `.gitignore`, secret scanning, and immediate key rotation |
 
 ---
 
