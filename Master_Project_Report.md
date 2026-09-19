@@ -609,12 +609,18 @@ This architecture is a proposed modular-monolith baseline.
 
 # 18. Team & Capability
 
-| Team Member | Current Documented Role | Required Final Evidence |
+| Team Member | Proposed Role | Required Final Evidence |
 | :--- | :--- | :--- |
-| **Raghad Naseef** | Founder / Developer | Verified product, development, design, coordination, or documentation contributions. |
-| **Banan Aleid** | Database Lead, Project Manager & Development Support | Issues, migrations, project records, reviews, and deliverables. |
-| **Khulood Alqarni** | Backend Lead with Frontend & UI/UX Support | APIs, integrations, components, tests, and design work. |
-| **Layan Aldossari** | QA Lead with Database & Frontend Support | Test plans, defects, retesting, evidence, and implementation support. |
+| **—** | Founder / Product Owner | Verified product decisions, strategy, coordination, and documented contributions. |
+| **—** | Project Manager | Planning, scope management, task coordination, project records, and delivery evidence. |
+| **—** | Frontend Lead | Interface implementation, responsive design, accessibility, integration, tests, and reviews. |
+| **—** | Backend Lead | APIs, authentication, business logic, integrations, tests, and reviews. |
+| **—** | Database Lead | Database schema, migrations, seed data, relationships, and data-integrity evidence. |
+| **—** | QA Lead | Test plans, defects, retesting, acceptance evidence, and final QA reporting. |
+| **—** | AI/ML Lead | Taste Engine, Creative DNA, matching logic, AI integration, and evaluation evidence. |
+| **—** | Creative Curation Lead | Portfolio review, Ready Design quality, attribution, licensing, and rights verification. |
+
+> Team members, final role ownership, and capacity commitments have not yet been confirmed.
 
 Named ownership must also be assigned for:
 
