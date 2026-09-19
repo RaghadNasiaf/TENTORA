@@ -55,11 +55,11 @@ The MVP AI experience focuses on discovery and controlled assistance rather than
 
 | Sector | Example Creative Needs |
 | :--- | :--- |
-| **Restaurants & Cafés** | Identity, menus, packaging, social content, digital displays, websites, staff products, and artwork. |
-| **Real Estate & Development** | Branding, brochures, renders, campaigns, signage, and property-marketing content. |
-| **Events & Occasions** | Event identity, invitations, decorative visuals, signage, photography, and motion content. |
-| **Exhibitions & Conferences** | Booth graphics, identity, presentations, digital screens, signage, and printed materials. |
-| **E-commerce** | Identity, packaging, product imagery, storefront interfaces, campaigns, and social content. |
+| **Restaurants & Cafés** | Identity, menus, packaging, social content, digital displays, websites, staff products, and artwork |
+| **Real Estate & Development** | Branding, brochures, renders, campaigns, signage, and property-marketing content |
+| **Events & Occasions** | Event identity, invitations, decorative visuals, signage, photography, and motion content |
+| **Exhibitions & Conferences** | Booth graphics, identity, presentations, digital screens, signage, and printed materials |
+| **E-commerce** | Identity, packaging, product imagery, storefront interfaces, campaigns, and social content |
 
 > All five sectors are part of the TENTORA structure. **Restaurants & Cafés** is the first intended end-to-end functional pilot.
 
@@ -95,11 +95,11 @@ Update the status and evidence columns after final verification.
 
 | Status | Meaning |
 | :--- | :--- |
-| **Completed** | Implemented, tested, accepted, and supported by evidence. |
-| **Partial** | Some acceptance criteria passed; remaining gaps are documented. |
-| **Deferred** | Intentionally moved beyond the MVP. |
-| **Not Implemented** | Planned but not delivered. |
-| **Pending Verification** | Implementation may exist, but evidence is incomplete. |
+| **Completed** | Implemented, tested, accepted, and supported by evidence |
+| **Partial** | Some acceptance criteria passed; remaining gaps are documented |
+| **Deferred** | Intentionally moved beyond the MVP |
+| **Not Implemented** | Planned but not delivered |
+| **Pending Verification** | Implementation may exist, but evidence is incomplete |
 
 ---
 
@@ -132,26 +132,33 @@ Record only the technologies actually used in the final TENTORA implementation.
 
 ## 👥 Team
 
-| Name | Primary Role | Final Contribution Summary |
-| :--- | :--- | :--- |
-| **Khulood Alqarni** | Backend Lead, UI/UX & Frontend Support | Update with verified contributions and evidence. |
-| **Banan Aleid** | Database Lead, Project Manager & Development Support | Update with verified contributions and evidence. |
-| **Layan Aldossari** | QA Lead, Database & Frontend Support | Update with verified contributions and evidence. |
-| **Raghad Naseef** | Developer | Update with verified contributions and evidence. |
+| Team Member | Proposed Role | Final Contribution Summary | Status |
+| :---: | :--- | :--- | :--- |
+| **—** | Founder / Product Owner | Add only verified product decisions, scope approvals, and stakeholder contributions | Pending Verification |
+| **—** | Project Manager | Add only verified planning, coordination, documentation, risk-management, and delivery contributions | Pending Verification |
+| **—** | Frontend Lead | Add only verified interface, accessibility, responsive-design, and frontend-integration contributions | Pending Verification |
+| **—** | Backend Lead | Add only verified API, authentication, authorization, business-logic, and integration contributions | Pending Verification |
+| **—** | Database Lead | Add only verified schema, migration, data-integrity, and database-performance contributions | Pending Verification |
+| **—** | QA Lead | Add only verified test-planning, defect-management, regression-testing, and evidence contributions | Pending Verification |
+| **—** | AI/ML Lead | Add only verified AI, Taste Profile, Creative DNA, matching, evaluation, and safety contributions | Pending Verification |
+| **—** | Creative Curation Lead | Add only verified portfolio review, Ready Design preparation, classification, attribution, and rights contributions | Pending Verification |
 
 Contribution summaries should be based on:
 
-- Assigned and completed issues.
-- Code commits.
-- Pull Requests.
-- Code reviews.
-- Database and migration work.
-- UI/UX and creative preparation.
-- QA plans, defects, and retesting.
-- Documentation.
-- Project coordination.
+- Assigned and completed issues
+- Code commits
+- Pull Requests
+- Code reviews
+- Database and migration work
+- UI/UX and creative preparation
+- QA plans, defects, and retesting
+- Documentation
+- Project coordination
 
 > Commit count alone should not be used to measure total contribution.
+
+> [!NOTE]
+> Team members and final role ownership have not yet been confirmed. Replace each dash only after the responsible person and their contribution evidence are formally verified.
 
 ---
 
@@ -159,23 +166,23 @@ Contribution summaries should be based on:
 
 | Deliverable | Required Closure Evidence | Status |
 | :--- | :--- | :--- |
-| **Stage 1: Idea Development** | Approved document inside the repository. | Pending Verification |
-| **Stage 2: Project Charter** | Approved scope and charter document. | Pending Verification |
-| **Stage 3: Technical Documentation** | Architecture, schema, API, and technical sign-off. | Pending Verification |
-| **Stage 4: MVP Development** | Updated implementation status and evidence. | Pending |
-| **Source Repository** | Final reviewed source and release reference. | Pending |
-| **Database** | Migrations, schema, and seed instructions. | Pending |
-| **API Documentation** | OpenAPI document or verified endpoint reference. | Pending |
-| **Frontend Application** | Production or approved demonstration build. | Pending |
-| **Backend Application** | Tested API build. | Pending |
-| **Ready Design Pilot** | Designs, schemas, rights data, preview, and export evidence. | Pending |
-| **Taste & Matching Pilot** | Taste Profile, Creative DNA, matching, and evaluation evidence. | Pending |
-| **Connected Handoff** | Evidence that design data transfers into a project. | Pending |
-| **Project Workspace** | Messages, files, milestones, feedback, and deliverable evidence. | Pending |
-| **Final QA Report** | Executed tests, defects, and retest results. | Pending |
-| **Final Presentation** | Approved presentation file. | Pending |
-| **Demonstration** | Live demonstration or recording. | Pending |
-| **Handover Guide** | Setup, configuration, deployment, and limitations. | Pending |
+| **Stage 1: Idea Development** | Approved document inside the repository | Pending Verification |
+| **Stage 2: Project Charter** | Approved scope and charter document | Pending Verification |
+| **Stage 3: Technical Documentation** | Architecture, schema, API, and technical sign-off | Pending Verification |
+| **Stage 4: MVP Development** | Updated implementation status and evidence | Pending |
+| **Source Repository** | Final reviewed source and release reference | Pending |
+| **Database** | Migrations, schema, and seed instructions | Pending |
+| **API Documentation** | OpenAPI document or verified endpoint reference | Pending |
+| **Frontend Application** | Production or approved demonstration build | Pending |
+| **Backend Application** | Tested API build | Pending |
+| **Ready Design Pilot** | Designs, schemas, rights data, preview, and export evidence | Pending |
+| **Taste & Matching Pilot** | Taste Profile, Creative DNA, matching, and evaluation evidence | Pending |
+| **Connected Handoff** | Evidence that design data transfers into a project | Pending |
+| **Project Workspace** | Messages, files, milestones, feedback, and deliverable evidence | Pending |
+| **Final QA Report** | Executed tests, defects, and retest results | Pending |
+| **Final Presentation** | Approved presentation file | Pending |
+| **Demonstration** | Live demonstration or recording | Pending |
+| **Handover Guide** | Setup, configuration, deployment, and limitations | Pending |
 
 ---
 
@@ -283,16 +290,16 @@ The project may be closed only when:
 
 Expected MVP exclusions may include:
 
-- Blank-canvas AI design generation.
-- Advanced motion editing.
-- Advanced 3D editing.
-- Unrestricted creator marketplace publishing.
-- Fully learned recommendation models.
-- Real-time collaborative design editing.
-- Advanced team pricing and scheduling.
-- Native iOS and Android applications.
-- Full multi-country payment and tax operations.
-- Additional sectors beyond the approved five.
+- Blank-canvas AI design generation
+- Advanced motion editing
+- Advanced 3D editing
+- Unrestricted creator marketplace publishing
+- Fully learned recommendation models
+- Real-time collaborative design editing
+- Advanced team pricing and scheduling
+- Native iOS and Android applications
+- Full multi-country payment and tax operations
+- Additional sectors beyond the approved five
 
 Record only limitations that apply to the final build:
 
@@ -382,13 +389,13 @@ TBD
 
 Final contribution should be reviewed using:
 
-- Issues owned and completed.
-- Pull Requests and commits.
-- Reviews and integration support.
-- Database and migration work.
-- UI/UX and creative preparation.
-- QA plans, defects, and retesting.
-- Documentation and coordination.
+- Issues owned and completed
+- Pull Requests and commits
+- Reviews and integration support
+- Database and migration work
+- UI/UX and creative preparation
+- QA plans, defects, and retesting
+- Documentation and coordination
 
 ---
 
@@ -444,22 +451,22 @@ After the MVP is accepted, future development should be prioritized according to
 
 Potential next steps include:
 
-- Expand Ready Designs for the highest-demand services.
-- Add richer AI-assisted adaptation within design rules.
-- Analyze uploaded reference images.
-- Improve matching using consented feedback.
-- Strengthen multi-service team formation.
-- Add advanced creator revenue and licensing workflows.
-- Expand project workspace capabilities.
-- Add more sectors only after validating the initial five.
+- Expand Ready Designs for the highest-demand services
+- Add richer AI-assisted adaptation within design rules
+- Analyze uploaded reference images
+- Improve matching using consented feedback
+- Strengthen multi-service team formation
+- Add advanced creator revenue and licensing workflows
+- Expand project workspace capabilities
+- Add more sectors only after validating the initial five
 
 Every future feature should include:
 
-- A defined user problem.
-- A measurable success target.
-- A creative-rights assessment.
-- A technical estimate.
-- An assigned owner.
+- A defined user problem
+- A measurable success target
+- A creative-rights assessment
+- A technical estimate
+- An assigned owner
 
 ---
 
@@ -476,13 +483,13 @@ Every future feature should include:
 ## ✍️ Closure Approval
 
 | Approval Area | Owner | Status | Date | Notes |
-| :--- | :--- | :--- | :--- | :--- |
-| **Product Scope** | TBD | Pending | TBD | TBD |
-| **Technical Implementation** | TBD | Pending | TBD | TBD |
-| **Quality Assurance** | TBD | Pending | TBD | TBD |
-| **Creative Rights & Licenses** | TBD | Pending | TBD | TBD |
-| **Documentation & Handover** | TBD | Pending | TBD | TBD |
-| **Final Project Closure** | TBD | Pending | TBD | TBD |
+| :--- | :---: | :--- | :--- | :--- |
+| **Product Scope** | — | Pending | TBD | TBD |
+| **Technical Implementation** | — | Pending | TBD | TBD |
+| **Quality Assurance** | — | Pending | TBD | TBD |
+| **Creative Rights & Licenses** | — | Pending | TBD | TBD |
+| **Documentation & Handover** | — | Pending | TBD | TBD |
+| **Final Project Closure** | — | Pending | TBD | TBD |
 
 ---
 
@@ -490,12 +497,12 @@ Every future feature should include:
 
 Replace this section after final approval with a factual summary covering:
 
-- What TENTORA delivered.
-- Which journeys were implemented and verified.
-- Which features were partial or deferred.
-- Where the repository and deployment are located.
-- Where the testing and acceptance evidence can be found.
-- Whether the MVP was formally accepted and closed.
+- What TENTORA delivered
+- Which journeys were implemented and verified
+- Which features were partial or deferred
+- Where the repository and deployment are located
+- Where the testing and acceptance evidence can be found
+- Whether the MVP was formally accepted and closed
 
 ### Current Closure Status
 
